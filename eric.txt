@@ -1,0 +1,4 @@
+ packages i've installed:
+ 
+ npm install --save reactstrap react react-dom     
+ npm i -S react-router-dom                
