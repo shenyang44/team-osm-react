@@ -3,31 +3,26 @@ import logo from "./logo.svg";
 import "./App.css";
 import { Route } from "react-router-dom";
 import Home from "./components/Home";
-import { NavItem, NavLink } from "reactstrap";
+import Login from "./components/Login";
+import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
+import SignUp from "./components/Signup";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Go home
-        </a> */}
-        <NavItem>
-          <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
-            Go Home
-          </NavLink>
-        </NavItem>
       </header>
+      <Route exact path="/">
+        {" "}
+        <Login />
+        <SignUp />
+      </Route>
+
+      <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
+        Go Home .
+      </NavLink>
       <Route path="/home">
         <Home />
       </Route>
