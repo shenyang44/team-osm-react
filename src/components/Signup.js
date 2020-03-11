@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   Form,
@@ -17,6 +17,7 @@ const SignUp = ({ signUpUser }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [address, setAddress] = useState('')
 
   const successCallback = () => {
     setEmail("");
@@ -25,21 +26,26 @@ const SignUp = ({ signUpUser }) => {
     setConfirmPassword("");
   };
 
+  useEffect(() => {
+    console.log(email)
+  }, [email])
+
   const [emailError, setEmailError] = useState([])
   const signUp = (username, email, password, number, address) => {
     axios({
       method: 'POST',
-      url: 'https://localhost:5000/api/v1/users/create',
+      url: 'http://192.168.1.70:5000/api/v1/users/create',
       data: {
-        username: username,
+        name: username,
         email: email,
         password: password,
-        number: number,
+        number: 12345,
         address: address
       }
     })
       .then(response => {
         // toastMe();
+        console.log(response.message)
         successCallback()
       })
       .catch(error => {
@@ -148,7 +154,7 @@ const SignUp = ({ signUpUser }) => {
           type="text"
           placeholder="min 6 characters"
           value={username}
-          onChange={e => handleUsernameInput(e)}
+          onChange={e => setUsername(e.target.value)}
           {...getInputProp()}
         />
         {getFormFeedback()}
@@ -177,15 +183,15 @@ const SignUp = ({ signUpUser }) => {
         <Input
           type="Address"
           placeholder="Address"
-        //   value={confirmPassword}
-        //   onChange={e => setConfirmPassword(e.target.value)}
+          value={address}
+          onChange={e => setAddress(e.target.value)}
         />
       </FormGroup>
       <FormGroup>
         {/* action="/action_page.php" */}
         <Label>Blood Group</Label>
         <br />
-        <Input type="radio" id="A" name="bloodgroup" value="A" />
+        {/* <Input type="radio" id="A" name="bloodgroup" value="A" />
         <Label for="A">A</Label>
 
         <Input type="radio" id="B" name="bloodgroup" value="B" />
@@ -198,7 +204,7 @@ const SignUp = ({ signUpUser }) => {
         <Label for="O">O</Label>
 
         <Input type="radio" id="Unsure" name="bloodgroup" value="Unsure" />
-        <Label for="Unsure">Unsure</Label>
+        <Label for="Unsure">Unsure</Label> */}
       </FormGroup>
       <Button outline color="primary">
         Sign Up
