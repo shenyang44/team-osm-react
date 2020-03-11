@@ -1,43 +1,33 @@
-import React, { useState, useEffect } from 'react';
-import { Route } from 'react-router-dom'
-import SignUpForm from './pages/SignUpForm';
-import SignInForm from './pages/SignInForm';
-
-
-import './App.css';
-import LoginPage from './pages/LoginPage';
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import { Route } from "react-router-dom";
+import Home from "./components/Home";
+import Login from "./components/Login";
+import { NavLink } from "reactstrap";
+import { NavLink as Link } from "react-router-dom";
+import SignUp from "./components/Signup";
 
 function App() {
-  const [emailText, setEmailText] = useState('')
-  const [passwordText, setPasswordText] = useState('')
-
-
-  const handleChange = (e) => {
-    if (e.target.id == 'email') {
-      setEmailText(e.target.value)
-    }
-    else {
-      setPasswordText(e.target.value)
-    }
-    console.log(emailText)
-    console.log(passwordText)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
   return (
-    <>
-      <LoginPage />
-      <Route exact path="/sign-up">
-        <SignUpForm handleChange={handleChange} handleSubmit={handleSubmit} />
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+      </header>
+      <Route exact path="/">
+        {" "}
+        <Login />
+        <SignUp />
       </Route>
-      <Route path="/sign-in">
-        <SignInForm handleChange={handleChange} handleSubmit={handleSubmit} />
+
+      <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
+        Go Home .
+      </NavLink>
+      <Route path="/home">
+        <Home />
       </Route>
-    </>
+    </div>
   );
 }
-
 
 export default App;
