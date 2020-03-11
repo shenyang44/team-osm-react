@@ -10,7 +10,7 @@ import {
 } from "reactstrap";
 import { toast } from "react-toastify";
 
-const SignUp = ({ signUpUser, toggle }) => {
+const SignUp = ({ signUpUser }) => {
   const [delay, setDelay] = useState(null);
   const [usernameValid, setUsernameValid] = useState(true);
   const [email, setEmail] = useState("");
@@ -23,8 +23,30 @@ const SignUp = ({ signUpUser, toggle }) => {
     setUsername("");
     setPassword("");
     setConfirmPassword("");
-    toggle();
   };
+
+  const [emailError, setEmailError] = useState([])
+  const signUp = (username, email, password, number, address) => {
+    axios({
+      method: 'POST',
+      url: 'https://localhost:5000/api/v1/users/create',
+      data: {
+        username: username,
+        email: email,
+        password: password,
+        number: number,
+        address: address
+      }
+    })
+      .then(response => {
+        // toastMe();
+        successCallback()
+      })
+      .catch(error => {
+        console.error(error.response.data.message)
+        setEmailError(error.response.data.message)
+      })
+  }
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -48,7 +70,7 @@ const SignUp = ({ signUpUser, toggle }) => {
       return toast.error("Username is invalid, please check!", toastSettings);
     }
 
-    signUpUser(username, email, password, successCallback);
+    signUp(username, email, password);
   };
 
   const checkUsername = newUsername => {
