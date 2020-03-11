@@ -155,8 +155,8 @@ const SignUp = ({ signUpUser, toggle }) => {
         <Input
           type="Address"
           placeholder="Address"
-          //   value={confirmPassword}
-          //   onChange={e => setConfirmPassword(e.target.value)}
+        //   value={confirmPassword}
+        //   onChange={e => setConfirmPassword(e.target.value)}
         />
       </FormGroup>
       <FormGroup>
