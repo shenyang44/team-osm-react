@@ -2,24 +2,7 @@ import React, { Component, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const SignInForm = () => {
-  const [emailText, setEmailText] = useState('')
-  const [passwordText, setPasswordText] = useState('')
 
-
-  const handleChange = (e) => {
-    if (e.target.id == 'email') {
-      setEmailText(e.target.value)
-    }
-    else {
-      setPasswordText(e.target.value)
-    }
-    console.log(emailText)
-    console.log(passwordText)
-  }
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  }
 
 
   return (
