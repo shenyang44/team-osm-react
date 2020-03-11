@@ -1,36 +1,43 @@
-import React, { Component } from 'react';
-import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { Route } from 'react-router-dom'
 import SignUpForm from './pages/SignUpForm';
 import SignInForm from './pages/SignInForm';
 
+
 import './App.css';
+import LoginPage from './pages/LoginPage';
 
-class App extends Component {
-  render() {
-    return (
-      <Router basename="reactApp/my-app/">
-        <div className="App">
-          <div className="App__Aside"></div>
-          <div className="App__Form">
-            <div className="PageSwitcher">
-                <NavLink to="/sign-in" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign In</NavLink>
-                <NavLink exact to="/" activeClassName="PageSwitcher__Item--Active" className="PageSwitcher__Item">Sign Up</NavLink>
-              </div>
+function App() {
+  const [emailText, setEmailText] = useState('')
+  const [passwordText, setPasswordText] = useState('')
 
-              <div className="FormTitle">
-                  <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
-              </div>
 
-              <Route exact path="/" component={SignUpForm}>
-              </Route>
-              <Route path="/sign-in" component={SignInForm}>
-              </Route>
-          </div>
-
-        </div>
-      </Router>
-    );
+  const handleChange = (e) => {
+    if (e.target.id == 'email') {
+      setEmailText(e.target.value)
+    }
+    else {
+      setPasswordText(e.target.value)
+    }
+    console.log(emailText)
+    console.log(passwordText)
   }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  }
+  return (
+    <>
+      <LoginPage />
+      <Route exact path="/sign-up">
+        <SignUpForm handleChange={handleChange} handleSubmit={handleSubmit} />
+      </Route>
+      <Route path="/sign-in">
+        <SignInForm handleChange={handleChange} handleSubmit={handleSubmit} />
+      </Route>
+    </>
+  );
 }
+
 
 export default App;
