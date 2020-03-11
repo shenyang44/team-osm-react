@@ -1,7 +1,5 @@
 import React from "react"
-import SignUpForm from './SignUpForm';
-import SignInForm from './SignInForm';
-import { HashRouter as Router, Route, Link, NavLink } from 'react-router-dom';
+import { HashRouter as Link, NavLink } from 'react-router-dom';
 const LoginPage = () => {
 
     return (
@@ -15,13 +13,9 @@ const LoginPage = () => {
                 <div className="FormTitle">
                     <NavLink to="/sign-in" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign In</NavLink> or <NavLink exact to="/" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Sign Up</NavLink>
                 </div>
-                <Route exact path="/" component={SignUpForm}>
-                </Route>
-                <Route path="/sign-in" component={SignInForm}>
-                </Route>
+
             </div>
         </div>
     )
 }
-{/* <Router basename="team-osm-react"></Router> */ }
 export default LoginPage
