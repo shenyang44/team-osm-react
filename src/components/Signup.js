@@ -35,9 +35,13 @@ const SignUp = ({ email, usernameValid, checkUsername, handleChange, handleSignU
     //   return toast.error("Passwords are not matching!", toastSettings);
     // }
 
-    }, 500);
+    // if (username.length <= 6) {
+    //   return toast.error("Username is too short!", toastSettings);
+    // }
 
-    setDelay(newDelay);
+    // if (!usernameValid) {
+    //   return toast.error("Username is invalid, please check!", toastSettings);
+    // }
   };
 
   // const getInputProp = () => {
