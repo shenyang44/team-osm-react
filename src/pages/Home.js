@@ -1,22 +1,38 @@
 import React, { useState } from "react";
+import "./Home.css";
 import Carousel from "react-bootstrap/Carousel";
-import { Route, Link } from "react-router-dom";
-import SearchForm from "./searchbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+// import bloodtest from "./blood-tests.png";
 
-const CAROUSEL = () => {
+const ControlledCarousel = () => {
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(null);
+
+  const handleSelect = (selectedIndex, e) => {
+    setIndex(selectedIndex);
+    setDirection(e.direction);
+  };
+
   return (
-    <>
-      <Carousel style={{ width: "30%" }}>
+    <div className="Menu">
+      <Carousel
+        activeIndex={index}
+        direction={direction}
+        onSelect={handleSelect}
+      >
         <Carousel.Item>
-          <text>Hello</text>
-          alt="First slide" />
+          <img
+            className="d-block w-100"
+            src="./img/blood event.png"
+            alt="First slide"
+          />
           <Carousel.Caption>
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <text>Hello</text>
+          <img className="d-block w-100" src="event" alt="Second slide" />
 
           <Carousel.Caption>
             <h3>Second slide label</h3>
@@ -24,7 +40,7 @@ const CAROUSEL = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <text></text>
+          <img className="d-block w-100" src="info" alt="Third slide" />
 
           <Carousel.Caption>
             <h3>Third slide label</h3>
@@ -34,8 +50,8 @@ const CAROUSEL = () => {
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
-    </>
+    </div>
   );
 };
 
-export default CAROUSEL;
+export default ControlledCarousel;

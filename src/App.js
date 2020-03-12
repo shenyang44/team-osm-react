@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Authorization from "./pages/Authorization";
-import Home from "./components/Home";
+import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
 import FAQ from "./components/faq";
@@ -22,6 +22,10 @@ function App() {
 
         <Route path="/home">
           <Home />
+        </Route>
+
+        <Route path="/SearchForm">
+          <SearchForm />
         </Route>
       </Switch>
 
