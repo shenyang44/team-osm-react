@@ -1,19 +1,105 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
-import FAQ from "./components/faq";
 import { NavDropdown } from "react-bootstrap";
+import FAQ from "./pages/faq";
+import axios from "axios";
+import SearchForm from "./components/searchbar";
 
 function App() {
+  const [usernameValid, setUsernameValid] = useState(true);
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [address, setAddress] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [addressInput, setAddressInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [usernameInput, setUsernameInput] = useState("");
+
+  const successCallback = () => {
+    setEmail("");
+    setUsername("");
+    setPassword("");
+    setConfirmPassword("");
+    setAddress("");
+  };
+
+  function handleChange(e) {
+    if (e.target.id === "email") {
+      setEmail(e.target.value);
+    } else if (e.target.id === "password") {
+      setPassword(e.target.value);
+    } else if (e.target.id === "username") {
+      setUsername(e.target.value);
+    } else if (e.target.id === "address") {
+      setAddress(e.target.value);
+    }
+  }
+
+  const checkUsername = () => {
+    axios
+      .get(
+        `https://insta.nextacademy.com/api/v1/users/check_name?username=${username}`
+      )
+      .then(response => {
+        if (response.data.valid) {
+          setUsernameValid(true);
+        } else {
+          setUsernameValid(false);
+        }
+      });
+  };
+
+  const handleSignUp = () => {
+    console.log("hello");
+    setEmailInput(email);
+    setPasswordInput(password);
+    setUsernameInput(username);
+    setAddressInput(address);
+  };
+
+  useEffect(() => {
+    axios({
+      method: "POST",
+      url: "http://127.0.0.1:5000/api/v1/users/sign-up",
+      data: {
+        name: usernameInput,
+        email: emailInput,
+        password: passwordInput,
+        number: 1212345,
+        address: addressInput
+      }
+    })
+      .then(response => {
+        console.log(response);
+        localStorage.setItem("jwt", response.data.auth_token);
+        successCallback();
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, [emailInput]);
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Authorization />
+          <Authorization
+            usernameValid={usernameValid}
+            checkUsername={checkUsername}
+            password={password}
+            address={address}
+            username={username}
+            email={email}
+            confirmPassword={confirmPassword}
+            handleSignUp={handleSignUp}
+            handleChange={handleChange}
+          />
         </Route>
 
         <Route path="/faq">
