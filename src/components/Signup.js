@@ -110,6 +110,15 @@ const SignUp = ({ signUpUser, toggle }) => {
       return <FormFeedback invalid>Sorry! Username is taken</FormFeedback>;
     }
   };
+  
+  const toastSettings = {
+  position: "top-right",
+  autoClose: 5000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true
+};
 
   return (
     <div className="signupmenu">
@@ -194,15 +203,6 @@ const SignUp = ({ signUpUser, toggle }) => {
       </Form>
     </div>
   );
-};
-
-const toastSettings = {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true
 };
 
 export default SignUp;
