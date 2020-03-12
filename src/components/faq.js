@@ -2,13 +2,11 @@ import React from "react";
 import FAQCard from "./FAQCard";
 
 const FAQ = () => {
-    return (
-        <>
+  return (
+    <>
+      <FAQCard />
+    </>
+  );
+};
 
-        <p>fhfhhfhfhf</p>
-        <FAQCard />
-        </>
-    );
-  };
-  
 export default FAQ;

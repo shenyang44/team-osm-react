@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
 import FAQ from "./components/faq";
+import { NavDropdown } from "react-bootstrap";
 
 function App() {
   return (
@@ -32,3 +33,6 @@ function App() {
 }
 
 export default App;
+
+// for now, navlink serve to navigate direct to home without logging in
+/* "go home" link will be gone when login works  */
