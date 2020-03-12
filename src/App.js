@@ -5,10 +5,10 @@ import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
+import { NavDropdown } from "react-bootstrap";
 import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
-
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -16,33 +16,29 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [address, setAddress] = useState('')
-  const [emailInput, setEmailInput] = useState('')
-  const [addressInput, setAddressInput] = useState('')
-  const [passwordInput, setPasswordInput] = useState('')
-  const [usernameInput, setUsernameInput] = useState('')
+  const [address, setAddress] = useState("");
+  const [emailInput, setEmailInput] = useState("");
+  const [addressInput, setAddressInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
+  const [usernameInput, setUsernameInput] = useState("");
 
   const successCallback = () => {
     setEmail("");
     setUsername("");
     setPassword("");
     setConfirmPassword("");
-    setAddress('')
+    setAddress("");
   };
 
-
   function handleChange(e) {
-    if (e.target.id === 'email') {
-      setEmail(e.target.value)
-    }
-    else if (e.target.id === 'password') {
-      setPassword(e.target.value)
-    }
-    else if (e.target.id === 'username') {
-      setUsername(e.target.value)
-    }
-    else if (e.target.id === 'address') {
-      setAddress(e.target.value)
+    if (e.target.id === "email") {
+      setEmail(e.target.value);
+    } else if (e.target.id === "password") {
+      setPassword(e.target.value);
+    } else if (e.target.id === "username") {
+      setUsername(e.target.value);
+    } else if (e.target.id === "address") {
+      setAddress(e.target.value);
     }
   }
 
@@ -60,19 +56,18 @@ function App() {
       });
   };
 
-
   const handleSignUp = () => {
-    console.log('hello')
-    setEmailInput(email)
-    setPasswordInput(password)
-    setUsernameInput(username)
-    setAddressInput(address)
-  }
+    console.log("hello");
+    setEmailInput(email);
+    setPasswordInput(password);
+    setUsernameInput(username);
+    setAddressInput(address);
+  };
 
   useEffect(() => {
     axios({
-      method: 'POST',
-      url: 'http://127.0.0.1:5000/api/v1/users/sign-up',
+      method: "POST",
+      url: "http://127.0.0.1:5000/api/v1/users/sign-up",
       data: {
         name: usernameInput,
         email: emailInput,
@@ -87,14 +82,24 @@ function App() {
         successCallback()
       })
       .catch(error => {
-        console.error(error)
-      })
-  }, [emailInput])
+        console.error(error);
+      });
+  }, [emailInput]);
   return (
     <div className="App">
       <Switch>
         <Route exact path="/">
-          <Authorization usernameValid={usernameValid} checkUsername={checkUsername} password={password} address={address} username={username} email={email} confirmPassword={confirmPassword} handleSignUp={handleSignUp} handleChange={handleChange} />
+          <Authorization
+            usernameValid={usernameValid}
+            checkUsername={checkUsername}
+            password={password}
+            address={address}
+            username={username}
+            email={email}
+            confirmPassword={confirmPassword}
+            handleSignUp={handleSignUp}
+            handleChange={handleChange}
+          />
         </Route>
 
         <Route path="/faq">
@@ -105,13 +110,10 @@ function App() {
           <Home />
         </Route>
 
-        <Route path="/SearchForm" >
+        <Route path="/SearchForm">
           <SearchForm />
         </Route>
-
       </Switch>
-
-
 
       <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
         Go Home .
@@ -121,3 +123,6 @@ function App() {
 }
 
 export default App;
+
+// for now, navlink serve to navigate direct to home without logging in
+/* "go home" link will be gone when login works  */
