@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   Form,
@@ -9,22 +9,52 @@ import {
   FormGroup
 } from "reactstrap";
 import { toast } from "react-toastify";
+// import { Link } from "react-router-dom";
+import "./Signup.css";
 
-const SignUp = ({ signUpUser, toggle }) => {
+const SignUp = ({ signUpUser }) => {
   const [delay, setDelay] = useState(null);
   const [usernameValid, setUsernameValid] = useState(true);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [address, setAddress] = useState('')
 
   const successCallback = () => {
     setEmail("");
     setUsername("");
     setPassword("");
     setConfirmPassword("");
-    toggle();
   };
+
+  useEffect(() => {
+    console.log(email)
+  }, [email])
+
+  const [emailError, setEmailError] = useState([])
+  const signUp = (username, email, password, number, address) => {
+    axios({
+      method: 'POST',
+      url: 'http://192.168.1.70:5000/api/v1/users/create',
+      data: {
+        name: username,
+        email: email,
+        password: password,
+        number: 12345,
+        address: address
+      }
+    })
+      .then(response => {
+        // toastMe();
+        console.log(response.message)
+        successCallback()
+      })
+      .catch(error => {
+        console.error(error.response.data.message)
+        setEmailError(error.response.data.message)
+      })
+  }
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -48,7 +78,7 @@ const SignUp = ({ signUpUser, toggle }) => {
       return toast.error("Username is invalid, please check!", toastSettings);
     }
 
-    signUpUser(username, email, password, successCallback);
+    signUp(username, email, password);
   };
 
   const checkUsername = newUsername => {
@@ -109,89 +139,98 @@ const SignUp = ({ signUpUser, toggle }) => {
     }
   };
 
-  return (
-    <Form onSubmit={handleSubmit}>
-      <FormGroup>
-        <Label>Email</Label>
-        <Input
-          type="text"
-          placeholder="...@email.com"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>Username</Label>
-        <Input
-          type="text"
-          placeholder="min 6 characters"
-          value={username}
-          onChange={e => handleUsernameInput(e)}
-          {...getInputProp()}
-        />
-        {getFormFeedback()}
-      </FormGroup>
-      <FormGroup>
-        <Label>Password</Label>
-        <Input
-          type="password"
-          placeholder="min 6 characters"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>Confirm Password</Label>
-        <Input
-          type="password"
-          placeholder="Retype Password"
-          value={confirmPassword}
-          onChange={e => setConfirmPassword(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>Address</Label>
-        <br />
-        <Input
-          type="Address"
-          placeholder="Address"
-          //   value={confirmPassword}
-          //   onChange={e => setConfirmPassword(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        {/* action="/action_page.php" */}
-        <Label>Blood Group</Label>
-        <br />
-        <Input type="radio" id="A" name="bloodgroup" value="A" />
-        <Label for="A">A</Label>
-
-        <Input type="radio" id="B" name="bloodgroup" value="B" />
-        <Label for="B">B</Label>
-
-        <Input type="radio" id="AB" name="bloodgroup" value="AB" />
-        <Label for="AB">AB</Label>
-
-        <Input type="radio" id="O" name="bloodgroup" value="O" />
-        <Label for="O">O</Label>
-
-        <Input type="radio" id="Unsure" name="bloodgroup" value="Unsure" />
-        <Label for="Unsure">Unsure</Label>
-      </FormGroup>
-      <Button outline color="primary">
-        Sign Up
-      </Button>
-    </Form>
-  );
+  const toastSettings = {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true
 };
 
-const toastSettings = {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true
+  return (
+    <div className="signupmenu">
+      <Form classname="signup" onSubmit={handleSubmit}>
+        <div>
+          {" "}
+          <FormGroup>
+            <Label>Email</Label>
+            <Input
+              type="text"
+              placeholder="...@email.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Username</Label>
+            <Input
+              type="text"
+              placeholder="min 6 characters"
+              value={username}
+              onChange={e => handleUsernameInput(e)}
+              {...getInputProp()}
+            />
+            {getFormFeedback()}
+          </FormGroup>
+          <FormGroup>
+            <Label>Password</Label>
+            <Input
+              type="password"
+              placeholder="min 6 characters"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Confirm Password</Label>
+            <Input
+              type="password"
+              placeholder="Retype Password"
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
+            />
+          </FormGroup>
+        </div>
+        <div>
+          <FormGroup>
+            <Label>Address</Label>
+            <br />
+            <Input
+              type="Address"
+              placeholder="Address"
+              //   value={confirmPassword}
+              //   onChange={e => setConfirmPassword(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            {/* action="/action_page.php" */}
+            <Label>Blood Group</Label>
+            <br />
+            <Input type="radio" id="A" name="bloodgroup" value="A" />
+            <Label for="A">A</Label>
+
+            <Input type="radio" id="B" name="bloodgroup" value="B" />
+            <Label for="B">B</Label>
+
+            <Input type="radio" id="AB" name="bloodgroup" value="AB" />
+            <Label for="AB">AB</Label>
+
+            <Input type="radio" id="O" name="bloodgroup" value="O" />
+            <Label for="O">O</Label>
+
+            <Input type="radio" id="Unsure" name="bloodgroup" value="Unsure" />
+            <Label for="Unsure">Unsure</Label>
+          </FormGroup>
+        </div>
+
+        <Button outline color="danger">
+          Sign Up
+        </Button>
+        {/* <h1>Already a Member?</h1> <Link to="/login">Login</Link> */}
+      </Form>
+    </div>
+  );
 };
 
 export default SignUp;
