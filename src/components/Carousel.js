@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import { Route, Link } from "react-router-dom";
+import SearchForm from "./searchbar";
 
 const CAROUSEL = () => {
   return (

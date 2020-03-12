@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
 import FAQ from "./pages/faq";
+import SearchForm from "./components/searchbar";
 
 function App() {
   return (
@@ -22,7 +23,14 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
+
+        <Route path="/SearchForm" >
+          <SearchForm />
+        </Route>
+
       </Switch>
+
+
 
       <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
         Go Home .
