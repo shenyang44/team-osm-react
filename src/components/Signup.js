@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import {
   Form,
@@ -12,21 +12,49 @@ import { toast } from "react-toastify";
 // import { Link } from "react-router-dom";
 import "./Signup.css";
 
-const SignUp = ({ signUpUser, toggle }) => {
+const SignUp = ({ signUpUser }) => {
   const [delay, setDelay] = useState(null);
   const [usernameValid, setUsernameValid] = useState(true);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [address, setAddress] = useState('')
 
   const successCallback = () => {
     setEmail("");
     setUsername("");
     setPassword("");
     setConfirmPassword("");
-    toggle();
   };
+
+  useEffect(() => {
+    console.log(email)
+  }, [email])
+
+  const [emailError, setEmailError] = useState([])
+  const signUp = (username, email, password, number, address) => {
+    axios({
+      method: 'POST',
+      url: 'http://192.168.1.70:5000/api/v1/users/create',
+      data: {
+        name: username,
+        email: email,
+        password: password,
+        number: 12345,
+        address: address
+      }
+    })
+      .then(response => {
+        // toastMe();
+        console.log(response.message)
+        successCallback()
+      })
+      .catch(error => {
+        console.error(error.response.data.message)
+        setEmailError(error.response.data.message)
+      })
+  }
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -50,7 +78,7 @@ const SignUp = ({ signUpUser, toggle }) => {
       return toast.error("Username is invalid, please check!", toastSettings);
     }
 
-    signUpUser(username, email, password, successCallback);
+    signUp(username, email, password);
   };
 
   const checkUsername = newUsername => {
@@ -110,14 +138,14 @@ const SignUp = ({ signUpUser, toggle }) => {
       return <FormFeedback invalid>Sorry! Username is taken</FormFeedback>;
     }
   };
-  
+
   const toastSettings = {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true
 };
 
   return (
