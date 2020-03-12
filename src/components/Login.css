@@ -1,0 +1,25 @@
+.form-control {
+  background-color: transparent;
+  border-color: #bb2734;
+}
+
+.logininput {
+  background-color: transparent;
+  color: #bb2734;
+}
+
+.maillabel {
+  color: #bb2734;
+}
+
+.passlabel {
+  color: #bb2734;
+}
+
+.btn-primary {
+  background-color: #bb2734;
+}
+
+.newmem {
+  color: #bb2734;
+}

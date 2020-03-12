@@ -9,6 +9,8 @@ import {
   FormGroup
 } from "reactstrap";
 import { toast } from "react-toastify";
+// import { Link } from "react-router-dom";
+import "./Signup.css";
 
 const SignUp = ({ signUpUser }) => {
   const [delay, setDelay] = useState(null);
@@ -137,89 +139,98 @@ const SignUp = ({ signUpUser }) => {
     }
   };
 
-  return (
-    <Form onSubmit={handleSubmit}>
-      <FormGroup>
-        <Label>Email</Label>
-        <Input
-          type="text"
-          placeholder="...@email.com"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>Username</Label>
-        <Input
-          type="text"
-          placeholder="min 6 characters"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          {...getInputProp()}
-        />
-        {getFormFeedback()}
-      </FormGroup>
-      <FormGroup>
-        <Label>Password</Label>
-        <Input
-          type="password"
-          placeholder="min 6 characters"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>Confirm Password</Label>
-        <Input
-          type="password"
-          placeholder="Retype Password"
-          value={confirmPassword}
-          onChange={e => setConfirmPassword(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        <Label>Address</Label>
-        <br />
-        <Input
-          type="Address"
-          placeholder="Address"
-          value={address}
-          onChange={e => setAddress(e.target.value)}
-        />
-      </FormGroup>
-      <FormGroup>
-        {/* action="/action_page.php" */}
-        <Label>Blood Group</Label>
-        <br />
-        {/* <Input type="radio" id="A" name="bloodgroup" value="A" />
-        <Label for="A">A</Label>
-
-        <Input type="radio" id="B" name="bloodgroup" value="B" />
-        <Label for="B">B</Label>
-
-        <Input type="radio" id="AB" name="bloodgroup" value="AB" />
-        <Label for="AB">AB</Label>
-
-        <Input type="radio" id="O" name="bloodgroup" value="O" />
-        <Label for="O">O</Label>
-
-        <Input type="radio" id="Unsure" name="bloodgroup" value="Unsure" />
-        <Label for="Unsure">Unsure</Label> */}
-      </FormGroup>
-      <Button outline color="primary">
-        Sign Up
-      </Button>
-    </Form>
-  );
+  const toastSettings = {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true
 };
 
-const toastSettings = {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true
+  return (
+    <div className="signupmenu">
+      <Form classname="signup" onSubmit={handleSubmit}>
+        <div>
+          {" "}
+          <FormGroup>
+            <Label>Email</Label>
+            <Input
+              type="text"
+              placeholder="...@email.com"
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Username</Label>
+            <Input
+              type="text"
+              placeholder="min 6 characters"
+              value={username}
+              onChange={e => handleUsernameInput(e)}
+              {...getInputProp()}
+            />
+            {getFormFeedback()}
+          </FormGroup>
+          <FormGroup>
+            <Label>Password</Label>
+            <Input
+              type="password"
+              placeholder="min 6 characters"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Confirm Password</Label>
+            <Input
+              type="password"
+              placeholder="Retype Password"
+              value={confirmPassword}
+              onChange={e => setConfirmPassword(e.target.value)}
+            />
+          </FormGroup>
+        </div>
+        <div>
+          <FormGroup>
+            <Label>Address</Label>
+            <br />
+            <Input
+              type="Address"
+              placeholder="Address"
+              //   value={confirmPassword}
+              //   onChange={e => setConfirmPassword(e.target.value)}
+            />
+          </FormGroup>
+          <FormGroup>
+            {/* action="/action_page.php" */}
+            <Label>Blood Group</Label>
+            <br />
+            <Input type="radio" id="A" name="bloodgroup" value="A" />
+            <Label for="A">A</Label>
+
+            <Input type="radio" id="B" name="bloodgroup" value="B" />
+            <Label for="B">B</Label>
+
+            <Input type="radio" id="AB" name="bloodgroup" value="AB" />
+            <Label for="AB">AB</Label>
+
+            <Input type="radio" id="O" name="bloodgroup" value="O" />
+            <Label for="O">O</Label>
+
+            <Input type="radio" id="Unsure" name="bloodgroup" value="Unsure" />
+            <Label for="Unsure">Unsure</Label>
+          </FormGroup>
+        </div>
+
+        <Button outline color="danger">
+          Sign Up
+        </Button>
+        {/* <h1>Already a Member?</h1> <Link to="/login">Login</Link> */}
+      </Form>
+    </div>
+  );
 };
 
 export default SignUp;
