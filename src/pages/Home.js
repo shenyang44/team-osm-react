@@ -1,57 +1,28 @@
-import React, { useState } from "react";
-import "./Home.css";
-import Carousel from "react-bootstrap/Carousel";
-import "bootstrap/dist/css/bootstrap.min.css";
-// import bloodtest from "./blood-tests.png";
+import React from "react";
+import { Link } from "react-router-dom";
+import NAVBAR from "../components/navbar";
 
-const ControlledCarousel = () => {
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(null);
-
-  const handleSelect = (selectedIndex, e) => {
-    setIndex(selectedIndex);
-    setDirection(e.direction);
-  };
-
+const Home = () => {
   return (
-    <div className="Menu">
-      <Carousel
-        activeIndex={index}
-        direction={direction}
-        onSelect={handleSelect}
-      >
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="./img/blood event.png"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src="event" alt="Second slide" />
-
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img className="d-block w-100" src="info" alt="Third slide" />
-
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
-    </div>
+    <>
+      <NAVBAR />
+      <div>
+        <h1>Home</h1>
+        <div>
+          {" "}
+          <Link style={{ color: "#48c5e5" }} tag={Link} to="/home">
+            bloodtest/donate.
+          </Link>
+          <Link style={{ color: "#48c5e5" }} tag={Link} to="/home">
+            events.
+          </Link>
+          <Link style={{ color: "#48c5e5" }} tag={Link} to="/faq">
+            FAQ
+          </Link>
+        </div>
+      </div>
+    </>
   );
 };
 
-export default ControlledCarousel;
+export default Home;
