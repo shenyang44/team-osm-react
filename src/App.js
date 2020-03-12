@@ -7,6 +7,7 @@ import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
 import FAQ from "./pages/faq";
 import axios from "axios";
+import SearchForm from "./components/searchbar";
 
 
 function App() {
@@ -103,7 +104,14 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
+
+        <Route path="/SearchForm" >
+          <SearchForm />
+        </Route>
+
       </Switch>
+
+
 
       <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
         Go Home .
