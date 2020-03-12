@@ -83,7 +83,7 @@ function App() {
     })
       .then(response => {
         console.log(response)
-        localStorage.setItem('jwt', response.data.auth_token)
+        localStorage.setItem('jwt', response.data.access_token)
         successCallback()
       })
       .catch(error => {
