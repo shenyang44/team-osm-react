@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ToggleSwitch from "../components/Switch";
 import Login from "../components/Login";
-import SignUp from "../components/SignUp";
+import SignUp from "../components/Signup";
 
 const Authorization = () => {
   const [isLogin, setIsLogin] = useState(true);
