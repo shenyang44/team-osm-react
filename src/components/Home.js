@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import "./Home.css";
 import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import bloodtest from "./blood-tests.png";
+import bloodtest from "../img/blood-tests.png";
+import bloodevent from "../img/blood event.png";
+import bloodfaq from "../img/bloof info.png";
 
 const ControlledCarousel = () => {
   const [index, setIndex] = useState(0);
@@ -15,7 +17,13 @@ const ControlledCarousel = () => {
 
   return (
     <div className="Menu">
-      <Carousel
+      <img className="bloodi" src={bloodtest} alt="Logo" />
+      <img className="bloodi" src={bloodevent} alt="Logo" />
+      <img className="bloodi" src={bloodfaq} alt="Logo" />
+      <a href="#" class="twitter">
+        <i class="fab fa-whatsapp fa-3x"></i>
+      </a>
+      {/* <Carousel
         activeIndex={index}
         direction={direction}
         onSelect={handleSelect}
@@ -49,7 +57,7 @@ const ControlledCarousel = () => {
             </p>
           </Carousel.Caption>
         </Carousel.Item>
-      </Carousel>
+      </Carousel> */}
     </div>
   );
 };

@@ -166,24 +166,42 @@ const SignUp = ({ signUpUser, toggle }) => {
               //   onChange={e => setConfirmPassword(e.target.value)}
             />
           </FormGroup>
-          <FormGroup>
+          <FormGroup className="bldgroup">
             {/* action="/action_page.php" */}
             <Label>Blood Group</Label>
             <br />
-            <Input type="radio" id="A" name="bloodgroup" value="A" />
-            <Label for="A">A</Label>
+            <div>
+              {" "}
+              <Input type="radio" id="A" name="bloodgroup" value="A" />
+              <Label for="A">A</Label>
+            </div>
+            <div>
+              {" "}
+              <Input type="radio" id="B" name="bloodgroup" value="B" />
+              <Label for="B">B</Label>
+            </div>
 
-            <Input type="radio" id="B" name="bloodgroup" value="B" />
-            <Label for="B">B</Label>
+            <div>
+              {" "}
+              <Input type="radio" id="AB" name="bloodgroup" value="AB" />
+              <Label for="AB">AB</Label>
+            </div>
 
-            <Input type="radio" id="AB" name="bloodgroup" value="AB" />
-            <Label for="AB">AB</Label>
+            <div>
+              <Input type="radio" id="O" name="bloodgroup" value="O" />
+              <Label for="O">O</Label>
+            </div>
 
-            <Input type="radio" id="O" name="bloodgroup" value="O" />
-            <Label for="O">O</Label>
-
-            <Input type="radio" id="Unsure" name="bloodgroup" value="Unsure" />
-            <Label for="Unsure">Unsure</Label>
+            <div>
+              {" "}
+              <Input
+                type="radio"
+                id="Unsure"
+                name="bloodgroup"
+                value="Unsure"
+              />
+              <Label for="Unsure">Unsure</Label>
+            </div>
           </FormGroup>
         </div>
 
