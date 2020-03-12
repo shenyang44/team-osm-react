@@ -146,7 +146,7 @@ const SignUp = ({ signUpUser }) => {
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true
-};
+  };
 
   return (
     <div className="signupmenu">
@@ -199,8 +199,8 @@ const SignUp = ({ signUpUser }) => {
             <Input
               type="Address"
               placeholder="Address"
-              //   value={confirmPassword}
-              //   onChange={e => setConfirmPassword(e.target.value)}
+            //   value={confirmPassword}
+            //   onChange={e => setConfirmPassword(e.target.value)}
             />
           </FormGroup>
           <FormGroup>
