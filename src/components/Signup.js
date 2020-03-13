@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React from "react";
 import {
   Form,
   Label,
@@ -8,112 +7,86 @@ import {
   FormFeedback,
   FormGroup
 } from "reactstrap";
-import { toast } from "react-toastify";
-// import { Link } from "react-router-dom";
 import "./Signup.css";
+import { toast } from "react-toastify";
 
-const SignUp = ({ signUpUser, toggle }) => {
-  const [delay, setDelay] = useState(null);
-  const [usernameValid, setUsernameValid] = useState(true);
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-
-  const successCallback = () => {
-    setEmail("");
-    setUsername("");
-    setPassword("");
-    setConfirmPassword("");
-    toggle();
+const SignUp = ({
+  email,
+  usernameValid,
+  checkUsername,
+  handleChange,
+  handleSignUp,
+  username,
+  address,
+  password,
+  confirmPassword
+}) => {
+  const toastSettings = {
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true
   };
 
   const handleSubmit = e => {
     e.preventDefault();
-    if (!email || !username || !password || !confirmPassword) {
-      return toast.error("All fields must be filled!", toastSettings);
-    }
+    // if (!email || !username || !password || !confirmPassword) {
+    //   return toast.error("All fields must be filled!", toastSettings);
+    // }
 
-    if (password.length < 8) {
-      return toast.error("Password is too short!", toastSettings);
-    }
+    // if (password.length < 8) {
+    //   return toast.error("Password is too short!", toastSettings);
+    // }
 
-    if (password !== confirmPassword) {
-      return toast.error("Passwords are not matching!", toastSettings);
-    }
+    // if (password !== confirmPassword) {
+    //   return toast.error("Passwords are not matching!", toastSettings);
+    // }
 
-    if (username.length <= 6) {
-      return toast.error("Username is too short!", toastSettings);
-    }
+    // if (username.length <= 6) {
+    //   return toast.error("Username is too short!", toastSettings);
+    // }
 
-    if (!usernameValid) {
-      return toast.error("Username is invalid, please check!", toastSettings);
-    }
-
-    signUpUser(username, email, password, successCallback);
+    // if (!usernameValid) {
+    //   return toast.error("Username is invalid, please check!", toastSettings);
+    // }
   };
 
-  const checkUsername = newUsername => {
-    axios
-      .get(
-        `https://insta.nextacademy.com/api/v1/users/check_name?username=${newUsername}`
-      )
-      .then(response => {
-        if (response.data.valid) {
-          setUsernameValid(true);
-        } else {
-          setUsernameValid(false);
-        }
-      });
-  };
+  // const getInputProp = () => {
+  //   if (!username.length) {
+  //     return null;
+  //   }
+  //   if (username.length <= 6) {
+  //     return { invalid: true };
+  //   }
 
-  const handleUsernameInput = e => {
-    clearTimeout(delay);
-    const newUsername = e.target.value;
-    setUsername(newUsername);
+  //   if (usernameValid) {
+  //     return { valid: true };
+  //   } else {
+  //     return { invalid: true };
+  //   }
+  // };
 
-    const newDelay = setTimeout(() => {
-      checkUsername(newUsername);
-    }, 500);
+  // const getFormFeedback = () => {
+  //   if (!username.length) {
+  //     return null;
+  //   }
 
-    setDelay(newDelay);
-  };
+  //   if (username.length <= 6) {
+  //     return <FormFeedback invalid>Must be at least 6 characters</FormFeedback>;
+  //   }
 
-  const getInputProp = () => {
-    if (!username.length) {
-      return null;
-    }
-
-    if (username.length <= 6) {
-      return { invalid: true };
-    }
-
-    if (usernameValid) {
-      return { valid: true };
-    } else {
-      return { invalid: true };
-    }
-  };
-
-  const getFormFeedback = () => {
-    if (!username.length) {
-      return null;
-    }
-
-    if (username.length <= 6) {
-      return <FormFeedback invalid>Must be at least 6 characters</FormFeedback>;
-    }
-
-    if (usernameValid) {
-      return <FormFeedback valid>Sweet! That name is available</FormFeedback>;
-    } else {
-      return <FormFeedback invalid>Sorry! Username is taken</FormFeedback>;
-    }
-  };
+  //   if (usernameValid) {
+  //     return <FormFeedback valid>Sweet! That name is available</FormFeedback>;
+  //   } else {
+  //     return <FormFeedback invalid>Sorry! Username is taken</FormFeedback>;
+  //   }
+  // };
 
   return (
     <div className="signupmenu">
-      <Form classname="signup" onSubmit={handleSubmit}>
+      <Form className="signup" onSubmit={handleSubmit}>
         <div>
           {" "}
           <FormGroup>
@@ -122,7 +95,8 @@ const SignUp = ({ signUpUser, toggle }) => {
               type="text"
               placeholder="...@email.com"
               value={email}
-              onChange={e => setEmail(e.target.value)}
+              onChange={handleChange}
+              id="email"
             />
           </FormGroup>
           <FormGroup>
@@ -131,10 +105,11 @@ const SignUp = ({ signUpUser, toggle }) => {
               type="text"
               placeholder="min 6 characters"
               value={username}
-              onChange={e => handleUsernameInput(e)}
-              {...getInputProp()}
+              onChange={checkUsername}
+              id="username"
+              // {...getInputProp()}
             />
-            {getFormFeedback()}
+            {/* {getFormFeedback()} */}
           </FormGroup>
           <FormGroup>
             <Label>Password</Label>
@@ -142,7 +117,8 @@ const SignUp = ({ signUpUser, toggle }) => {
               type="password"
               placeholder="min 6 characters"
               value={password}
-              onChange={e => setPassword(e.target.value)}
+              onChange={handleChange}
+              id="password"
             />
           </FormGroup>
           <FormGroup>
@@ -151,7 +127,7 @@ const SignUp = ({ signUpUser, toggle }) => {
               type="password"
               placeholder="Retype Password"
               value={confirmPassword}
-              onChange={e => setConfirmPassword(e.target.value)}
+              onChange={handleChange}
             />
           </FormGroup>
         </div>
@@ -162,12 +138,12 @@ const SignUp = ({ signUpUser, toggle }) => {
             <Input
               type="Address"
               placeholder="Address"
-              //   value={confirmPassword}
-              //   onChange={e => setConfirmPassword(e.target.value)}
+              value={address}
+              onChange={handleChange}
+              id="address"
             />
           </FormGroup>
-          <FormGroup className="bldgroup">
-            {/* action="/action_page.php" */}
+          <FormGroup>
             <Label>Blood Group</Label>
             <br />
             <div>
@@ -205,22 +181,13 @@ const SignUp = ({ signUpUser, toggle }) => {
           </FormGroup>
         </div>
 
-        <Button outline color="danger">
+        <Button outline color="danger" onClick={handleSignUp}>
           Sign Up
         </Button>
         {/* <h1>Already a Member?</h1> <Link to="/login">Login</Link> */}
       </Form>
     </div>
   );
-};
-
-const toastSettings = {
-  position: "top-right",
-  autoClose: 5000,
-  hideProgressBar: false,
-  closeOnClick: true,
-  pauseOnHover: true,
-  draggable: true
 };
 
 export default SignUp;
