@@ -1,5 +1,8 @@
-/* .Menu {
-  height: 40vh;
-  width: 80vw;
+.Menu {
+  width: 60vw;
 }
- */
+
+.iconss {
+  display: flex;
+  justify-content: space-evenly;
+}

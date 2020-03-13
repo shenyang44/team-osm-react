@@ -49,12 +49,12 @@ const Login = props => {
           Login
         </Button>
       </form>
-      <div className="alte row">
+      {/* <div className="alte row">
         <p>New Member? </p>{" "}
         <Link className="newmem" to="/signUp">
           Sign Up
         </Link>
-      </div>
+      </div> */}
     </div>
   );
 };

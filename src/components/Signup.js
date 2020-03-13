@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Form,
   Label,
@@ -10,16 +10,25 @@ import {
 import "./Signup.css";
 import { toast } from "react-toastify";
 
-const SignUp = ({ email, usernameValid, checkUsername, handleChange, handleSignUp, username, address, password, confirmPassword }) => {
-
+const SignUp = ({
+  email,
+  usernameValid,
+  checkUsername,
+  handleChange,
+  handleSignUp,
+  username,
+  address,
+  password,
+  confirmPassword
+}) => {
   const toastSettings = {
-    position: 'top-right',
+    position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
     draggable: true
-  }
+  };
 
   const handleSubmit = e => {
     e.preventDefault();
@@ -87,7 +96,7 @@ const SignUp = ({ email, usernameValid, checkUsername, handleChange, handleSignU
               placeholder="...@email.com"
               value={email}
               onChange={handleChange}
-              id='email'
+              id="email"
             />
           </FormGroup>
           <FormGroup>
@@ -97,8 +106,8 @@ const SignUp = ({ email, usernameValid, checkUsername, handleChange, handleSignU
               placeholder="min 6 characters"
               value={username}
               onChange={checkUsername}
-              id='username'
-            // {...getInputProp()}
+              id="username"
+              // {...getInputProp()}
             />
             {/* {getFormFeedback()} */}
           </FormGroup>
@@ -109,7 +118,7 @@ const SignUp = ({ email, usernameValid, checkUsername, handleChange, handleSignU
               placeholder="min 6 characters"
               value={password}
               onChange={handleChange}
-              id='password'
+              id="password"
             />
           </FormGroup>
           <FormGroup>
@@ -131,26 +140,42 @@ const SignUp = ({ email, usernameValid, checkUsername, handleChange, handleSignU
               placeholder="Address"
               value={address}
               onChange={handleChange}
-              id='address'
+              id="address"
             />
           </FormGroup>
           <FormGroup>
             <Label>Blood Group</Label>
             <br />
-            <Input type="radio" id="A" name="bloodgroup" value="A" />
-            <Label for="A">A</Label>
+            <div className="bldgrp">
+              <div>
+                <Input type="radio" id="A" name="bloodgroup" value="A" />
+                <Label for="A">A</Label>
+              </div>
+              <div>
+                <Input type="radio" id="B" name="bloodgroup" value="B" />
+                <Label for="B">B</Label>
+              </div>
 
-            <Input type="radio" id="B" name="bloodgroup" value="B" />
-            <Label for="B">B</Label>
+              <div>
+                <Input type="radio" id="AB" name="bloodgroup" value="AB" />
+                <Label for="AB">AB</Label>
+              </div>
 
-            <Input type="radio" id="AB" name="bloodgroup" value="AB" />
-            <Label for="AB">AB</Label>
+              <div>
+                <Input type="radio" id="O" name="bloodgroup" value="O" />
+                <Label for="O">O</Label>
+              </div>
 
-            <Input type="radio" id="O" name="bloodgroup" value="O" />
-            <Label for="O">O</Label>
-
-            <Input type="radio" id="Unsure" name="bloodgroup" value="Unsure" />
-            <Label for="Unsure">Unsure</Label>
+              <div>
+                <Input
+                  type="radio"
+                  id="Unsure"
+                  name="bloodgroup"
+                  value="Unsure"
+                />
+                <Label for="Unsure">Unsure</Label>
+              </div>
+            </div>
           </FormGroup>
         </div>
 

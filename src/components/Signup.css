@@ -1,4 +1,10 @@
 .signupmenu {
   /* height: 50vh; */
-  width: 50vw;
+  width: 20vw;
+}
+
+.bldgrp {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
