@@ -92,27 +92,26 @@ function App() {
     <div className="App">
       <NAVBAR />
       <div id="container" className="container">
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
-          <Route exact path="/">
-            <Authorization
-              usernameValid={usernameValid}
-              checkUsername={checkUsername}
-              password={password}
-              address={address}
-              username={username}
-              email={email}
-              confirmPassword={confirmPassword}
-              handleSignUp={handleSignUp}
-              handleChange={handleChange}
-            />
-          </Route>
-    
-        <Route path="/bleed">
-          <Login />
+        <Route path="/home">
+          <Home />
         </Route>
+        <Route exact path="/">
+          <Authorization
+            usernameValid={usernameValid}
+            checkUsername={checkUsername}
+            password={password}
+            address={address}
+            username={username}
+            email={email}
+            confirmPassword={confirmPassword}
+            handleSignUp={handleSignUp}
+            handleChange={handleChange}
+          />
+        </Route>
+        <Switch>
+          <Route path="/bleed">
+            <Login />
+          </Route>
 
           <Route path="/faq">
             <FAQ />

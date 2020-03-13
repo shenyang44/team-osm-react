@@ -1,12 +1,12 @@
 import React from "react";
 import FAQCard from "../components/FAQCard";
-import NAVBAR from "../components/navbar";
+import Sidebar from "../components/sidebar";
 
 const FAQ = () => {
   return (
     <>
-      <NAVBAR />
       <FAQCard />
+      <Sidebar />
     </>
   );
 };

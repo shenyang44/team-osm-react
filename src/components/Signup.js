@@ -146,37 +146,35 @@ const SignUp = ({
           <FormGroup>
             <Label>Blood Group</Label>
             <br />
-            <div>
-              {" "}
-              <Input type="radio" id="A" name="bloodgroup" value="A" />
-              <Label for="A">A</Label>
-            </div>
-            <div>
-              {" "}
-              <Input type="radio" id="B" name="bloodgroup" value="B" />
-              <Label for="B">B</Label>
-            </div>
+            <div className="bldgrp">
+              <div>
+                <Input type="radio" id="A" name="bloodgroup" value="A" />
+                <Label for="A">A</Label>
+              </div>
+              <div>
+                <Input type="radio" id="B" name="bloodgroup" value="B" />
+                <Label for="B">B</Label>
+              </div>
 
-            <div>
-              {" "}
-              <Input type="radio" id="AB" name="bloodgroup" value="AB" />
-              <Label for="AB">AB</Label>
-            </div>
+              <div>
+                <Input type="radio" id="AB" name="bloodgroup" value="AB" />
+                <Label for="AB">AB</Label>
+              </div>
 
-            <div>
-              <Input type="radio" id="O" name="bloodgroup" value="O" />
-              <Label for="O">O</Label>
-            </div>
+              <div>
+                <Input type="radio" id="O" name="bloodgroup" value="O" />
+                <Label for="O">O</Label>
+              </div>
 
-            <div>
-              {" "}
-              <Input
-                type="radio"
-                id="Unsure"
-                name="bloodgroup"
-                value="Unsure"
-              />
-              <Label for="Unsure">Unsure</Label>
+              <div>
+                <Input
+                  type="radio"
+                  id="Unsure"
+                  name="bloodgroup"
+                  value="Unsure"
+                />
+                <Label for="Unsure">Unsure</Label>
+              </div>
             </div>
           </FormGroup>
         </div>

@@ -6,7 +6,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="menu">
-      <NAVBAR />
+      {/* <NAVBAR /> */}
       <div className="iconss">
         <div>
           <Link style={{ color: "#bb2734" }} tag={Link} to="/blood">
