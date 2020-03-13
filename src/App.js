@@ -9,6 +9,7 @@ import { NavDropdown } from "react-bootstrap";
 import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
+import Login from "./components/Login";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -67,7 +68,7 @@ function App() {
   useEffect(() => {
     axios({
       method: "POST",
-      url: "http://127.0.0.1:5000/api/v1/users/sign-up",
+      url: "",
       data: {
         name: usernameInput,
         email: emailInput,
@@ -77,16 +78,18 @@ function App() {
       }
     })
       .then(response => {
-        console.log(response)
-        localStorage.setItem('jwt', response.data.access_token)
-        successCallback()
+        console.log(response);
+        localStorage.setItem("jwt", response.data.access_token);
+        successCallback();
       })
       .catch(error => {
         console.error(error);
       });
   }, [emailInput]);
+
   return (
     <div className="App">
+      <p>Sign Up</p>
       <Switch>
         <Route exact path="/">
           <Authorization
@@ -100,6 +103,9 @@ function App() {
             handleSignUp={handleSignUp}
             handleChange={handleChange}
           />
+        </Route>
+        <Route path="/bleed">
+          <Login />
         </Route>
 
         <Route path="/faq">
