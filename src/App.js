@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
+import NAVBAR from "./components/navbar";
 import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
@@ -109,10 +110,6 @@ function App() {
 
         <Route path="/faq">
           <FAQ />
-        </Route>
-
-        <Route path="/home">
-          <Home />
         </Route>
 
         <Route path="/SearchForm">
