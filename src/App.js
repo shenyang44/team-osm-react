@@ -90,6 +90,7 @@ function App() {
 
   return (
     <div className="App">
+      
       <NAVBAR />
       <div id="container" className="container">
         <Route path="/home">

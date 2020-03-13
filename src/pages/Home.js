@@ -6,6 +6,7 @@ import "./Home.css";
 const Home = () => {
   return (
     <div className="menu">
+    
       {/* <NAVBAR /> */}
       <div className="iconss">
         <div>
