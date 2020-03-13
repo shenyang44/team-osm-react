@@ -89,7 +89,6 @@ function App() {
 
   return (
     <div className="App">
-      <p>Sign Up</p>
       <Switch>
         <Route exact path="/">
           <Authorization
@@ -121,7 +120,7 @@ function App() {
         </Route>
       </Switch>
 
-      <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
+      <NavLink style={{ color: "#bb2734" }} tag={Link} to="/home">
         Go Home .
       </NavLink>
     </div>
