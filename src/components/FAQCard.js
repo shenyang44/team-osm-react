@@ -9,7 +9,7 @@ const FAQCard = () => {
       </center>
       <div style={{ width: "40%" }}>
         <Card>
-          <Card.Header>
+          <Card.Header id="DoDont">
             <h5 style={{ color: "black" }}>
               Do's and Dont's before taking a blood test
             </h5>
@@ -43,7 +43,7 @@ const FAQCard = () => {
         </Card>
         <br />
         <Card>
-          <Card.Header>
+          <Card.Header id="Common">
             <h5 style={{ color: "black" }}>Common Misconceptions</h5>
           </Card.Header>
           <Card.Body>
@@ -93,7 +93,7 @@ const FAQCard = () => {
         </Card>
         <br />
         <Card>
-          <Card.Header>
+          <Card.Header id="BD">
             <h5 style={{ color: "black" }}>Blood Donation Types</h5>
           </Card.Header>
           <Card.Body>
@@ -207,7 +207,7 @@ const FAQCard = () => {
         </Card>
         <br />
         <Card>
-          <Card.Header>
+          <Card.Header id="BC">
             <h5 style={{ color: "black" }}>Blood Components</h5>
           </Card.Header>
           <Card.Body>
