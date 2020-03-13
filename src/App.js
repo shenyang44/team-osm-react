@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
+import NAVBAR from "./components/navbar";
 import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
@@ -89,41 +90,43 @@ function App() {
 
   return (
     <div className="App">
-      <p>Sign Up</p>
-      <Switch>
-        <Route exact path="/">
-          <Authorization
-            usernameValid={usernameValid}
-            checkUsername={checkUsername}
-            password={password}
-            address={address}
-            username={username}
-            email={email}
-            confirmPassword={confirmPassword}
-            handleSignUp={handleSignUp}
-            handleChange={handleChange}
-          />
-        </Route>
+      <NAVBAR />
+      <div id="container" className="container">
+        <Switch>
+          <Route path="/home">
+            <Home />
+          </Route>
+          <Route exact path="/">
+            <Authorization
+              usernameValid={usernameValid}
+              checkUsername={checkUsername}
+              password={password}
+              address={address}
+              username={username}
+              email={email}
+              confirmPassword={confirmPassword}
+              handleSignUp={handleSignUp}
+              handleChange={handleChange}
+            />
+          </Route>
+    
         <Route path="/bleed">
           <Login />
         </Route>
 
-        <Route path="/faq">
-          <FAQ />
-        </Route>
+          <Route path="/faq">
+            <FAQ />
+          </Route>
 
-        <Route path="/home">
-          <Home />
-        </Route>
+          <Route path="/SearchForm">
+            <SearchForm />
+          </Route>
+        </Switch>
 
-        <Route path="/SearchForm">
-          <SearchForm />
-        </Route>
-      </Switch>
-
-      <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
-        Go Home .
-      </NavLink>
+        <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
+          Go Home .
+        </NavLink>
+      </div>
     </div>
   );
 }
