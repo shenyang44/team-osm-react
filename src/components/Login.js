@@ -4,6 +4,7 @@ import { Label } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./Login.css";
 // import SignUp from "./components/Signup";
+import { motion } from "framer-motion";
 
 const Login = props => {
   const [email, setEmail] = useState("");
@@ -18,7 +19,12 @@ const Login = props => {
   }
 
   return (
-    <div className="Login">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="Login"
+    >
       <form onSubmit={handleSubmit}>
         <FormGroup controlId="email" bsSize="large">
           <Label className="maillabel">Email</Label>
@@ -55,7 +61,7 @@ const Login = props => {
           Sign Up
         </Link>
       </div> */}
-    </div>
+    </motion.div>
   );
 };
 

@@ -3,6 +3,21 @@
 }
 
 .iconss {
+  height: 80vh;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
+  /* position: fixed; */
+}
+
+.iconn {
+  color: #bb2734;
+  transition: transform 1s;
+}
+
+.iconn:hover {
+  color: black;
+  transform: scale(1.5);
+  left: -50px;
 }

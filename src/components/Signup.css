@@ -1,4 +1,15 @@
 .signupmenu {
-  /* height: 50vh; */
-  width: 20vw;
+  width: 25vw;
+  justify-content: center;
+}
+
+.bloodgrp {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.signupbtn {
+  display: flex;
+  justify-content: center;
 }

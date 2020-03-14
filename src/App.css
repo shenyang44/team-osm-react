@@ -18,3 +18,9 @@
   justify-content: center;
   color: #bb2734;
 }
+
+.switchh {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

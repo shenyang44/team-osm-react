@@ -1,17 +1,17 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { Button, Nav, Form, NavDropdown, FormControl } from "react-bootstrap";
-
+import "./navbar.css";
 const NAVBAR = () => {
   return (
     <>
-      <Navbar bg="light" expand="lg">
+      <Navbar className="navbar" expand="lg">
         <Navbar.Brand href="#home">Blardy</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="/home">Home</Nav.Link>
+            {/* <Nav.Link href="#link">Link</Nav.Link> */}
             {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -24,6 +24,10 @@ const NAVBAR = () => {
               </NavDropdown.Item>
             </NavDropdown> */}
           </Nav>
+          <Form inline>
+            {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
+            <Button variant="outline-primary">Update</Button>
+          </Form>
           <Form inline>
             {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
             <Button variant="outline-secondary">Logout</Button>
