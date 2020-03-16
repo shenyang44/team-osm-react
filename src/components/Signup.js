@@ -9,6 +9,18 @@ import {
 } from "reactstrap";
 import "./Signup.css";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
+
+const pageTransit = {
+  in: {
+    opacity: 1,
+    x: 0
+  },
+  out: {
+    opacity: 0,
+    x: "-100%"
+  }
+};
 
 const SignUp = ({
   email,
@@ -85,7 +97,13 @@ const SignUp = ({
   // };
 
   return (
-    <div className="signupmenu">
+    <motion.div
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransit}
+      className="signupmenu"
+    >
       <Form className="signup" onSubmit={handleSubmit}>
         <div>
           {" "}
@@ -145,46 +163,62 @@ const SignUp = ({
           </FormGroup>
           <FormGroup>
             <Label>Blood Group</Label>
+            <p>Optional*</p>
             <br />
-            <div className="bldgrp">
+            <div className="bloodgrp">
               <div>
-                <Input type="radio" id="A" name="bloodgroup" value="A" />
-                <Label for="A">A</Label>
+                <Input type="radio" id="A+" name="bloodgroup" value="A+" />
+                <Label for="A+">A+</Label>
               </div>
               <div>
-                <Input type="radio" id="B" name="bloodgroup" value="B" />
-                <Label for="B">B</Label>
+                <Input type="radio" id="B+" name="bloodgroup" value="B+" />
+                <Label for="B+">B+</Label>
               </div>
-
               <div>
-                <Input type="radio" id="AB" name="bloodgroup" value="AB" />
-                <Label for="AB">AB</Label>
+                <Input type="radio" id="AB+" name="bloodgroup" value="AB+" />
+                <Label for="AB+">AB+</Label>
               </div>
-
               <div>
-                <Input type="radio" id="O" name="bloodgroup" value="O" />
-                <Label for="O">O</Label>
+                <Input type="radio" id="O+" name="bloodgroup" value="O+" />
+                <Label for="O+">O+</Label>
               </div>
-
+            </div>
+            <div className="bloodgrp">
               <div>
-                <Input
-                  type="radio"
-                  id="Unsure"
-                  name="bloodgroup"
-                  value="Unsure"
-                />
-                <Label for="Unsure">Unsure</Label>
+                <Input type="radio" id="A-" name="bloodgroup" value="A-" />
+                <Label for="A-">A-</Label>
               </div>
+              <div>
+                <Input type="radio" id="B-" name="bloodgroup" value="B-" />
+                <Label for="B-">B-</Label>
+              </div>
+              <div>
+                <Input type="radio" id="AB-" name="bloodgroup" value="AB-" />
+                <Label for="AB-">AB-</Label>
+              </div>
+              <div>
+                <Input type="radio" id="O-" name="bloodgroup" value="O-" />
+                <Label for="O-">O-</Label>
+              </div>
+            </div>
+            <div>
+              <Input
+                type="radio"
+                id="Unsure"
+                name="bloodgroup"
+                value="Unsure"
+              />
+              <Label for="Unsure">Unsure</Label>
             </div>
           </FormGroup>
         </div>
-
-        <Button outline color="danger" onClick={handleSignUp}>
-          Sign Up
-        </Button>
-        {/* <h1>Already a Member?</h1> <Link to="/login">Login</Link> */}
+        <div className="signupbtn">
+          <Button color="danger" block onClick={handleSignUp}>
+            Sign Up
+          </Button>
+        </div>
       </Form>
-    </div>
+    </motion.div>
   );
 };
 

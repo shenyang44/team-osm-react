@@ -11,6 +11,7 @@ import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
+import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -90,42 +91,41 @@ function App() {
 
   return (
     <div className="App">
-      <NAVBAR />
-      <div id="container" className="container">
+      <AnimatePresence>
+        <div className="switchh">
+          <Switch>
+            <Route exact path="/">
+              <Authorization
+                usernameValid={usernameValid}
+                checkUsername={checkUsername}
+                password={password}
+                address={address}
+                username={username}
+                email={email}
+                confirmPassword={confirmPassword}
+                handleSignUp={handleSignUp}
+                handleChange={handleChange}
+              />
+            </Route>
+          </Switch>
+        </div>
+
         <Route path="/home">
           <Home />
         </Route>
-        <Route exact path="/">
-          <Authorization
-            usernameValid={usernameValid}
-            checkUsername={checkUsername}
-            password={password}
-            address={address}
-            username={username}
-            email={email}
-            confirmPassword={confirmPassword}
-            handleSignUp={handleSignUp}
-            handleChange={handleChange}
-          />
+        <Route path="/bleed">
+          <Login />
         </Route>
-        <Switch>
-          <Route path="/bleed">
-            <Login />
-          </Route>
-
-          <Route path="/faq">
-            <FAQ />
-          </Route>
-
-          <Route path="/SearchForm">
-            <SearchForm />
-          </Route>
-        </Switch>
-
-        <NavLink style={{ color: "#48c5e5" }} tag={Link} to="/home">
+        <Route path="/SearchForm">
+          <SearchForm />
+        </Route>
+        <Route path="/faq">
+          <FAQ />
+        </Route>
+        <NavLink style={{ color: "#bb2734" }} tag={Link} to="/home">
           Go Home .
         </NavLink>
-      </div>
+      </AnimatePresence>
     </div>
   );
 }
