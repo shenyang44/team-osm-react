@@ -28,7 +28,9 @@ const Home = () => {
         variants={pageTransit}
         // transition={pageTransition}
         className="iconss"
-      >
+      >    
+      {/* <NAVBAR /> */}
+      <div className="iconss">
         <div>
           <Link className="iconn" tag={Link} to="/blood">
             <i class="fas fa-vial fa-4x"></i>
