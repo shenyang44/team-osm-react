@@ -9,7 +9,7 @@ const FAQCard = () => {
       </center>
       <div style={{ width: "40%" }}>
         <Card>
-          <Card.Header>
+          <Card.Header id="DoDont">
             <h5 style={{ color: "black" }}>
               Do's and Dont's before taking a blood test
             </h5>
@@ -43,7 +43,7 @@ const FAQCard = () => {
         </Card>
         <br />
         <Card>
-          <Card.Header>
+          <Card.Header id="Common">
             <h5 style={{ color: "black" }}>Common Misconceptions</h5>
           </Card.Header>
           <Card.Body>
@@ -93,7 +93,7 @@ const FAQCard = () => {
         </Card>
         <br />
         <Card>
-          <Card.Header>
+          <Card.Header id="BD">
             <h5 style={{ color: "black" }}>Blood Donation Types</h5>
           </Card.Header>
           <Card.Body>
@@ -207,7 +207,7 @@ const FAQCard = () => {
         </Card>
         <br />
         <Card>
-          <Card.Header>
+          <Card.Header id="BC">
             <h5 style={{ color: "black" }}>Blood Components</h5>
           </Card.Header>
           <Card.Body>
@@ -250,8 +250,6 @@ const FAQCard = () => {
               <br />
               Whole blood can be donated at any Red Cross blood drive or blood
               center.
-              <br />
-              <br />
             </Card.Text>
             <Card.Title style={{ color: "black", fontSize: "Medium" }}>
               Red Cells
@@ -290,12 +288,10 @@ const FAQCard = () => {
               acute blood loss resulting from trauma. They can also be used to
               treat blood disorders such as sickle cell disease.
               <br />
-              <br />
             </Card.Text>
             <Card.Title style={{ color: "black", fontSize: "Small" }}>
               Prestorage Leukocyte-Reduced Red Blood Cells
             </Card.Title>
-            <br />
             <Card.Text style={{ color: "black", fontSize: "small" }}>
               Leukocyte-reduced RBCs are prepared by removing leukocytes (white
               blood cells) by filtration shortly after donation. This is done
@@ -305,15 +301,229 @@ const FAQCard = () => {
               reactions can occur during the initial transfusion or during any
               future transfusions.
             </Card.Text>
-            <br />
             <Card.Title style={{ color: "black", fontSize: "Small" }}>
               Donating Red Blood Cells
             </Card.Title>
-            <br />
             <Card.Text style={{ color: "black", fontSize: "small" }}>
               The Red Cross calls RBC donations “Power Red.” By donating Power
               Red, you double your impact by contributing two units of red cells
               in just one donation.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Medium" }}>
+              Platelets
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              Platelets, or thrombocytes, are small, colorless cell fragments in
+              our blood whose main function is to stick to the lining of blood
+              vessels and help stop or prevent bleeding. Platelets are made in
+              our bone marrow.
+              <br />
+              <br />
+              Color: Colorless
+              <br />
+              <br />
+              Shelf Life: 5 days
+              <br />
+              <br />
+              Storage Conditions: Room temperature with constant agitation to
+              prevent clumping
+              <br />
+              <br />
+              Key Uses: Cancer treatments, Organ transplants, Surgery
+              <br />
+              <br />
+              Platelets can be prepared by using a centrifuge to separate the
+              platelet-rich plasma from donated whole blood. Platelets from
+              several different donors are then combined to make one tranfusable
+              unit. Alternately, platelets can be obtained using an apheresis
+              machine which draws blood from the donor’s arm, separates the
+              blood into its components, retains some of the platelets, and
+              returns the remainder of the blood to the donor. Using this
+              process, one donor can contribute about four to six times as many
+              platelets as a unit of platelets obtained from a whole blood
+              donation.
+              <br />
+              <br />
+              Platelets are stored at room temperature for up to 5 days. They
+              must receive constant gentle agitation to prevent them from
+              clumping.
+              <br />
+              <br />
+              Platelets are most often used during cancer treatment as well as
+              surgical procedures such as organ transplant, in order to treat a
+              condition called thrombocytopenia, in which there is a shortage of
+              platelets. They are also used to treat platelet function
+              abnormalities.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Small" }}>
+              Donating Platelets
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              Since platelets must be used within 5 days of donation, there is a
+              constant need for platelet donors.{" "}
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Medium" }}>
+              Plasma
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              Plasma is the liquid portion of blood; our red and white blood
+              cells and platelets are suspended in plasma as they move
+              throughout our bodies.
+              <br />
+              <br />
+              Color: Yellowish
+              <br />
+              <br />
+              Shelf Life: 1 year
+              <br />
+              <br />
+              Storage Conditions: Frozen
+              <br />
+              <br />
+              Key Uses: Burn patients, Shock, Bleeding disorders
+              <br />
+              <br />
+              Blood plasma serves several important functions in our bodies,
+              despite being about 92% water. (Plasma also contains 7% vital
+              proteins such as albumin, gamma globulin and anti-hemophilic
+              factor, and 1% mineral salts, sugars, fats, hormones and
+              vitamins.) It helps us maintain a satisfactory blood pressure and
+              volume, and supplies critical proteins for blood clotting and
+              immunity. It also carries electrolytes such as sodium and
+              potassium to our muscles and helps to maintain a proper pH
+              (acid-base) balance in the body, which is critical to cell
+              function.
+              <br />
+              <br />
+              Plasma is obtained by separating the liquid portion of blood from
+              the cells. Plasma is frozen within 24 hours of being donated in
+              order to preserve the valuable clotting factors. It is then stored
+              for up to one year, and thawed when needed.
+              <br />
+              <br />
+              Plasma is commonly transfused to trauma, burn and shock patients,
+              as well as people with severe liver disease or multiple clotting
+              factor deficiencies.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Small" }}>
+              Plasma Derivaties
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              In some cases, patients need plasma derivatives instead. These are
+              concentrates of specific plasma proteins obtained through a
+              process known as fractionation. The derivatives are treated with
+              heat and/or solvent detergent to kill certain viruses like those
+              that cause HIV, hepatitis B, and hepatitis C.
+              <br />
+              <br />
+              Plasma derivatives include:
+              <br />
+              <br />
+              Factor VIII Concentrate
+              <br />
+              <br />
+              Factor IX Concentrate
+              <br />
+              <br />
+              Anti-Inhibitor Coagulation Complex (AICC)
+              <br />
+              <br />
+              Albumin
+              <br />
+              <br />
+              Immune Globulins, including Rh Immune Globulin
+              <br />
+              <br />
+              Anti-Thrombin III Concentrate
+              <br />
+              <br />
+              Alpha 1-Proteinase Inhibitor Concentrate
+              <br />
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Small" }}>
+              Donating AB Plasma
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              When collecting specifically plasma, the Red Cross is seeking
+              AB-type donors. AB plasma is collected at select Red Cross
+              Donation Centers only.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Medium" }}>
+              Cryo
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              Cryoprecipitated Antihemophilic Factor (Cryo) is a portion of
+              plasma rich in clotting factors, including Factor VIII and
+              fibrinogen. These clotting factors reduce blood loss by helping to
+              slow or stop bleeding due to illness or injury.
+              <br />
+              <br />
+              Color: White
+              <br />
+              <br />
+              Shelf Life: 1 year
+              <br />
+              <br />
+              Storage Conditions: Frozen
+              <br />
+              <br />
+              Key Uses: Hemophilia, Von Willebrand disease (most common
+              hereditary coagulation abnormality), Rich source of Fibrinogen
+              <br />
+              <br />
+              Cryo is prepared by freezing and then slowly thawing frozen
+              plasma. The precipitate is collected and then pooled with
+              contributions from other donors to reach a sufficient volume for
+              transfusion. It can be stored, frozen, for up to a year.
+              <br />
+              <br />
+              Cryo is used to prevent or control bleeding in people whose own
+              blood does not clot properly. This includes patients with
+              hereditary conditions such as hemophilia and von Willebrands
+              disease. Cryo is also a source of fibrinogen for patients who
+              cannot produce the necessary amount of this important clotting
+              protein on their own.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Small" }}>
+              Donating Cryoprecipitated AHF
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              Cryo is prepared from donated plasma.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Medium" }}>
+              White Cells & Granulocytes
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              White blood cells, or leukocytes, are one of the body’s defenses
+              against disease: some destroy bacteria and others create
+              antibodies against bacteria and viruses or fight malignant
+              disease. But while our own white cells help us stay healthy, they
+              can be dangerous to someone who receives donated blood. That’s
+              because leukocytes may carry viruses that cause immune suppression
+              and release toxic substances in the recipient. To avoid these
+              negative reactions, leukocytes are often removed from transfusable
+              blood components, a process called leuko-reduction.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Medium" }}>
+              Granulocytes
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              That doesn’t necessarily mean your white cells can’t be used to
+              help patients in need! Granulocytes are a type of white cell that
+              protects against infection by surrounding and destroying invading
+              bacteria and viruses. They can be used to treat infections that
+              don’t respond to antibiotics. Granulocytes are collected by an
+              automated process called apheresis and must be transfused into the
+              patient within 24 hours of being donated.
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "Small" }}>
+              Donating Granulocytes
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              Since granulocyte must be used within 24 hours, donations are
+              taken on an as-needed basis. To be eligible to donate
+              granulocytes, you must have donated platelets through the Red
+              Cross within 30 days.
             </Card.Text>
           </Card.Body>
         </Card>
