@@ -91,6 +91,7 @@ function App() {
 
   return (
     <div className="App">
+      <NAVBAR />
       <AnimatePresence>
         <div className="switchh">
           <Switch>

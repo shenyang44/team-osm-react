@@ -17,7 +17,7 @@ const NAVBAR = () => {
   return (
     <motion.div initial="out" animate="in" exit="out" variants={pageTransit}>
       <Navbar className="navbar" expand="lg">
-        <Navbar.Brand href="#home">Blardy</Navbar.Brand>
+        <Navbar.Brand href="/home">Blardy</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
@@ -37,11 +37,11 @@ const NAVBAR = () => {
           </Nav>
           <Form inline>
             {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
-            <Button variant="outline-primary">Update</Button>
+            <Button variant="danger">Profile</Button>
           </Form>
           <Form inline>
             {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
-            <Button variant="outline-secondary">Logout</Button>
+            <Button variant="danger">Login</Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>

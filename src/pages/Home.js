@@ -20,7 +20,6 @@ const pageTransit = {
 const Home = () => {
   return (
     <div className="menu">
-      <NAVBAR />
       <motion.div
         initial="out"
         animate="in"

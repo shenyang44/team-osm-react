@@ -18,7 +18,6 @@ const Switch = ({ isOn, handleToggle }) => {
           className="react-switch-label"
           htmlFor={`react-switch-new`}
         >
-          login
           <span className={`react-switch-button`} />
         </label>
       </div>
