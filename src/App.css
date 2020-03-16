@@ -1,5 +1,4 @@
 .App {
-  background-color: #e9303f;
   background-image: linear-gradient(
     white,
     rgb(224, 224, 224),
@@ -7,10 +6,6 @@
     rgb(137, 137, 137)
   );
   min-height: 100vh;
-  /* color: #bb2734;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
 #container {

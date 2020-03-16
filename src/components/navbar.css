@@ -4,5 +4,5 @@
     rgb(245, 105, 105),
     rgb(138, 0, 0)
   ); */
-  background-color: rgb(255, 113, 113);
+  border: solid 0.5px rgb(138, 0, 0);
 }

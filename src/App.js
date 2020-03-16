@@ -6,12 +6,12 @@ import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
-import { NavDropdown } from "react-bootstrap";
 import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
 import { AnimatePresence, motion } from "framer-motion";
+import User from "./components/Profile";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -91,14 +91,15 @@ function App() {
 
   return (
     <div className="App">
-<<<<<<< HEAD
-      <NAVBAR />
-=======
->>>>>>> f16bb961d3ea556307d3125c9d621ffe4cf7dac1
       <AnimatePresence>
-        <div className="switchh">
-          <Switch>
-            <Route exact path="/">
+        <NAVBAR />
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/user">
+          <div className="switchh">
+            <Switch>
+              {/* <Route exact path="/"> */}
               <Authorization
                 usernameValid={usernameValid}
                 checkUsername={checkUsername}
@@ -110,15 +111,15 @@ function App() {
                 handleSignUp={handleSignUp}
                 handleChange={handleChange}
               />
-            </Route>
-          </Switch>
-        </div>
-
-        <Route path="/home">
-          <Home />
+              {/* </Route> */}
+            </Switch>
+          </div>
         </Route>
         <Route path="/bleed">
           <Login />
+        </Route>
+        <Route path="/me">
+          <User />
         </Route>
         <Route path="/SearchForm">
           <SearchForm />
@@ -126,15 +127,9 @@ function App() {
         <Route path="/faq">
           <FAQ />
         </Route>
-        <NavLink style={{ color: "#bb2734" }} tag={Link} to="/home">
-          Go Home .
-        </NavLink>
       </AnimatePresence>
     </div>
   );
 }
 
 export default App;
-
-// for now, navlink serve to navigate direct to home without logging in
-/* "go home" link will be gone when login works  */

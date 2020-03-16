@@ -164,10 +164,6 @@ const SignUp = ({
           <FormGroup>
             <Label>Blood Group</Label>
             <p>Optional*</p>
-<<<<<<< HEAD
-=======
-            <br />
->>>>>>> f16bb961d3ea556307d3125c9d621ffe4cf7dac1
             <div className="bloodgrp">
               <div>
                 <Input type="radio" id="A+" name="bloodgroup" value="A+" />
