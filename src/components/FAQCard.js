@@ -2,10 +2,30 @@ import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
 
 const FAQCard = () => {
+  const [searchInfo, setSearchInfo] = useState();
+
+  const handleChange = e => {
+    let searchthing = e.target.value;
+    setSearchInfo(searchthing);
+  };
+  const sendToSearch = e => {
+    e.preventDefault();
+    window.open(`https:///www.google.com/search?q=${searchInfo}`);
+  };
+
   return (
     <>
       <center>
         <h1>FAQ</h1>
+        <form onSubmit={sendToSearch}>
+          <input
+            value={searchInfo}
+            onChange={e => {
+              handleChange(e);
+            }}
+          ></input>
+          <button type="submit">Search</button>
+        </form>
       </center>
       <div style={{ width: "40%" }}>
         <Card>

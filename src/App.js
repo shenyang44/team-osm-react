@@ -91,7 +91,10 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <NAVBAR />
+=======
+>>>>>>> f16bb961d3ea556307d3125c9d621ffe4cf7dac1
       <AnimatePresence>
         <div className="switchh">
           <Switch>

@@ -6,6 +6,7 @@ const Switch = ({ isOn, handleToggle }) => {
     <>
       <div className="toggler">
         <input
+          placeholder="Log In"
           checked={isOn}
           onChange={handleToggle}
           className="react-switch-checkbox"
@@ -19,6 +20,7 @@ const Switch = ({ isOn, handleToggle }) => {
           htmlFor={`react-switch-new`}
         >
           <span className={`react-switch-button`} />
+          <span style={{ marginLeft: "50px" }}></span>
         </label>
       </div>
     </>
