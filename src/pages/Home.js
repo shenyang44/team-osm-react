@@ -19,17 +19,15 @@ const pageTransit = {
 
 const Home = () => {
   return (
-    <div className="menu">
-      <NAVBAR />
+    <div className="menu"><NAVBAR />
       <motion.div
         initial="out"
         animate="in"
         exit="out"
         variants={pageTransit}
         // transition={pageTransition}
-        className="iconss"
-      >    
-      {/* <NAVBAR /> */}
+        className="iconss">    
+        {/* <NAVBAR /> */}
       <div className="iconss">
         <div>
           <Link className="iconn" tag={Link} to="/blood">
@@ -51,8 +49,8 @@ const Home = () => {
             <i class="fas fa-search-location fa-4x"></i>
           </Link>
         </div>
-      </motion.div>
-    </div>
+      </motion.div></div>
+      
   );
 };
 
