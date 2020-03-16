@@ -6,6 +6,17 @@ import "./Login.css";
 // import SignUp from "./components/Signup";
 import { motion } from "framer-motion";
 
+const pageTransit = {
+  in: {
+    opacity: 1,
+    x: 0
+  },
+  out: {
+    opacity: 0,
+    x: "-100%"
+  }
+};
+
 const Login = props => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -20,9 +31,10 @@ const Login = props => {
 
   return (
     <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransit}
       className="Login"
     >
       <form onSubmit={handleSubmit}>
@@ -55,12 +67,6 @@ const Login = props => {
           Login
         </Button>
       </form>
-      {/* <div className="alte row">
-        <p>New Member? </p>{" "}
-        <Link className="newmem" to="/signUp">
-          Sign Up
-        </Link>
-      </div> */}
     </motion.div>
   );
 };

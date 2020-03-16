@@ -2,9 +2,20 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import { Button, Nav, Form, NavDropdown, FormControl } from "react-bootstrap";
 import "./navbar.css";
+import { motion } from "framer-motion";
+
+const pageTransit = {
+  in: {
+    opacity: 1
+  },
+  out: {
+    opacity: 0
+  }
+};
+
 const NAVBAR = () => {
   return (
-    <>
+    <motion.div initial="out" animate="in" exit="out" variants={pageTransit}>
       <Navbar className="navbar" expand="lg">
         <Navbar.Brand href="#home">Blardy</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -34,7 +45,7 @@ const NAVBAR = () => {
           </Form>
         </Navbar.Collapse>
       </Navbar>
-    </>
+    </motion.div>
   );
 };
 

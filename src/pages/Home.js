@@ -2,12 +2,33 @@ import React from "react";
 import { Link } from "react-router-dom";
 import NAVBAR from "../components/navbar";
 import "./Home.css";
+import { motion } from "framer-motion";
+
+const pageTransit = {
+  in: {
+    opacity: 1
+  },
+  out: {
+    opacity: 0
+  }
+};
+
+// const pageTransition = {
+//   transition: "linear"
+// };
 
 const Home = () => {
   return (
     <div className="menu">
       <NAVBAR />
-      <div className="iconss">
+      <motion.div
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageTransit}
+        // transition={pageTransition}
+        className="iconss"
+      >
         <div>
           <Link className="iconn" tag={Link} to="/blood">
             <i class="fas fa-vial fa-4x"></i>
@@ -28,7 +49,7 @@ const Home = () => {
             <i class="fas fa-search-location fa-4x"></i>
           </Link>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };
