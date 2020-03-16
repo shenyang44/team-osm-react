@@ -1,11 +1,11 @@
 .App {
-  background-image: linear-gradient(
+  height: 150vh;
+  background: linear-gradient(
     white,
     rgb(224, 224, 224),
     rgb(224, 224, 224),
     rgb(137, 137, 137)
   );
-  min-height: 100vh;
 }
 
 #container {

@@ -25,6 +25,9 @@ const NAVBAR = () => {
           <Nav className="mr-auto">
             <Nav.Link href="/home">Home</Nav.Link>
           </Nav>
+          <Nav className="mr-auto">
+            <Nav.Link href="/faq">FAQ</Nav.Link>
+          </Nav>
           <Form inline>
             <Button variant="outline-danger">
               <NavLink tag={Link} to="/me">
