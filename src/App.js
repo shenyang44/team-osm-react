@@ -11,6 +11,7 @@ import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
+import PROFILE from "./pages/ProfilePage";
 import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
@@ -122,6 +123,10 @@ function App() {
         <Route path="/faq">
           <FAQ />
         </Route>
+        <Route path="/profile">
+          <PROFILE />
+        </Route>
+
         <NavLink style={{ color: "#bb2734" }} tag={Link} to="/home">
           Go Home .
         </NavLink>

@@ -547,6 +547,220 @@ const FAQCard = () => {
             </Card.Text>
           </Card.Body>
         </Card>
+        <br />
+        <Card>
+          <Card.Header id="BDProcess">
+            <h5 style={{ color: "black" }}>
+              How does the blood donation process take place?
+            </h5>
+          </Card.Header>
+          <Card.Body>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              1. You will first fill up a blood donation registration form or
+              card
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              2. Have your body weight weighed and recorded
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              3. Have a blood test to identify your blood group and haemoglobin
+              level
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              4. A short Q&A with Medical Officer/nurse to review blood donation
+              criteria
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              5. Blood donation process begins and lasts for about 10 to 15
+              minutes
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              6. After completing the donation, you can take a rest on the bed
+              for about 10 minutes
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              7. Sometimes, you’re also given a light refreshment!
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <br />
+        <Card>
+          <Card.Header id="BDSave">
+            <h5 style={{ color: "black" }}>
+              Whom can I help with my blood donation?
+            </h5>
+          </Card.Header>
+          <Card.Body>
+            <Card.Title style={{ color: "black", fontSize: "small" }}>
+              Your blood can help make a difference for others.
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Fire victims
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Thalassaemia patients
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Dengue patients
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -People who need to undergo surgeries or organ transplant
+              procedures
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Accident victims
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Mothers who have premature childbirth
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Cancer patients
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Leukemia patients
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Heart attack patients
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Haemophilia patients
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <br />
+        <Card>
+          <Card.Header id="BDSave">
+            <h5 style={{ color: "black" }}>
+              Whom can I help with my blood donation?
+            </h5>
+          </Card.Header>
+          <Card.Body>
+            <Card.Title style={{ color: "black", fontSize: "small" }}>
+              To participate in the blood donation, there are a few criterias
+              that you will have to fufill:
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Aged 18 - 60 years old (written permission from parents is
+              required for donors aged 17 and below)
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Body weight at least 45 kg
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Haemoglobin level at least 12.5g/dl
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Good physical and mental health with no serious or chronic
+              medical illness
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Not on long term medications
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -No alcohol intake within the last 24 hours of donation
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Have taken a proper meal prior to donation
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Have had more than 5 hours of sleep during the night before
+              donation
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Have been staying in malaysia for at least 1 year (for
+              non-citizens of Malaysia)
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "small" }}>
+              You CANNOT participate in blood donation if you have:
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -More than 6 months of residence in England, Scotland, or Ireland
+              from 1980 to 1996
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -More than 6 months of residence in Europe from 1980 onwards
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -A professional sex-related job
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Drug abuse history
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Multiple sexual partners
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Same gender sexual activity
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Diabetes or insulin treatments
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Hepatitis B history
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Hepatitis C history
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -HIV/AIDS diagnosis
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Pregnancy or menstruating
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Less than 1 year since last childbirth/breastfeeding
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Less than 6 months since last tattoo/piercing
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Less than 7 days since last intake of antibiotics or vaccination
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Less than 1 week since last illness (like fever or cold)
+            </Card.Text>
+          </Card.Body>
+        </Card>
+        <br />
+        <Card>
+          <Card.Header id="BDSave">
+            <h5 style={{ color: "black" }}>
+              What do I need to bring for a blood donation event?
+            </h5>
+          </Card.Header>
+          <Card.Body>
+            <Card.Title style={{ color: "black", fontSize: "medium" }}>
+              For Malaysian Citizens
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -MyKad/Armforce Number/Police Number
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Driving license
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Working pass with Identity card number and photograph
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Student pass with IC number and photograph
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Blood donors book (only for repeating donors)
+            </Card.Text>
+            <Card.Title style={{ color: "black", fontSize: "medium" }}>
+              For Non-Malaysian Citizens
+            </Card.Title>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Passport
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Work permit with passport number and photograph
+            </Card.Text>
+            <Card.Text style={{ color: "black", fontSize: "small" }}>
+              -Student pass with passport number and photograph
+            </Card.Text>
+          </Card.Body>
+        </Card>
       </div>
     </>
   );

@@ -10,6 +10,12 @@ import {
 import "./Signup.css";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion";
+import {
+  DropdownButton,
+  Dropdown,
+  FormControl,
+  InputGroup
+} from "react-bootstrap";
 
 const pageTransit = {
   in: {
@@ -162,54 +168,26 @@ const SignUp = ({
             />
           </FormGroup>
           <FormGroup>
-            <Label>Blood Group</Label>
-            <p>Optional*</p>
-            <br />
-            <div className="bloodgrp">
-              <div>
-                <Input type="radio" id="A+" name="bloodgroup" value="A+" />
-                <Label for="A+">A+</Label>
-              </div>
-              <div>
-                <Input type="radio" id="B+" name="bloodgroup" value="B+" />
-                <Label for="B+">B+</Label>
-              </div>
-              <div>
-                <Input type="radio" id="AB+" name="bloodgroup" value="AB+" />
-                <Label for="AB+">AB+</Label>
-              </div>
-              <div>
-                <Input type="radio" id="O+" name="bloodgroup" value="O+" />
-                <Label for="O+">O+</Label>
-              </div>
-            </div>
-            <div className="bloodgrp">
-              <div>
-                <Input type="radio" id="A-" name="bloodgroup" value="A-" />
-                <Label for="A-">A-</Label>
-              </div>
-              <div>
-                <Input type="radio" id="B-" name="bloodgroup" value="B-" />
-                <Label for="B-">B-</Label>
-              </div>
-              <div>
-                <Input type="radio" id="AB-" name="bloodgroup" value="AB-" />
-                <Label for="AB-">AB-</Label>
-              </div>
-              <div>
-                <Input type="radio" id="O-" name="bloodgroup" value="O-" />
-                <Label for="O-">O-</Label>
-              </div>
-            </div>
-            <div>
-              <Input
-                type="radio"
-                id="Unsure"
-                name="bloodgroup"
-                value="Unsure"
-              />
-              <Label for="Unsure">Unsure</Label>
-            </div>
+            <InputGroup className="mb-3">
+              <DropdownButton
+                as={InputGroup.Prepend}
+                variant="outline-secondary"
+                title="BloodGroup"
+                id="input-group-dropdown-1"
+              >
+                <Dropdown.Item href="#">A +</Dropdown.Item>
+                <Dropdown.Item href="#">A -</Dropdown.Item>
+                <Dropdown.Item href="#">B +</Dropdown.Item>
+                <Dropdown.Item href="#">B -</Dropdown.Item>
+                <Dropdown.Item href="#">O +</Dropdown.Item>
+                <Dropdown.Item href="#">O -</Dropdown.Item>
+                <Dropdown.Item href="#">AB +</Dropdown.Item>
+                <Dropdown.Item href="#">AB +</Dropdown.Item>
+                <Dropdown.Item href="#">Unspecified</Dropdown.Item>
+                <Dropdown.Divider />
+              </DropdownButton>
+              <FormControl aria-describedby="basic-addon1" />
+            </InputGroup>
           </FormGroup>
         </div>
         <div className="signupbtn">
