@@ -6,6 +6,7 @@ const FAQ = () => {
   return (
     <>
       <FAQCard />
+
       <Sidebar />
     </>
   );

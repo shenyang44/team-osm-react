@@ -11,6 +11,7 @@ import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
+import PROFILE from "./pages/ProfilePage";
 import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
@@ -104,9 +105,10 @@ function App() {
   return (
     <div className="App">
       <AnimatePresence>
+        <NAVBAR />
         <div className="switchh">
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/login">
               <Authorization
                 usernameValid={usernameValid}
                 checkUsername={checkUsername}
@@ -134,9 +136,11 @@ function App() {
         <Route path="/faq">
           <FAQ />
         </Route>
-        <NavLink style={{ color: "#bb2734" }} tag={Link} to="/home">
-          Go Home .
-        </NavLink>
+
+        {/* <Route path="/me">
+          <xxxxx /> put your profile pafe here
+        </Route> */}
+
       </AnimatePresence>
     </div>
   );
