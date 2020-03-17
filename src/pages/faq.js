@@ -1,13 +1,14 @@
 import React from "react";
 import FAQCard from "../components/FAQCard";
 import Sidebar from "../components/sidebar";
+import "./faq.css";
 
 const FAQ = () => {
   return (
-    <>
-      <FAQCard />
+    <div className="row">
       <Sidebar />
-    </>
+      <FAQCard />
+    </div>
   );
 };
 
