@@ -13,6 +13,7 @@ import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
 import PROFILE from "./pages/ProfilePage";
 import { AnimatePresence, motion } from "framer-motion";
+import TABLE from "./components/Table";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -125,10 +126,9 @@ function App() {
           <FAQ />
         </Route>
 
-        {/* <Route path="/me">
-          <xxxxx /> put your profile pafe here
-        </Route> */}
-
+        <Route path="/me">
+          <TABLE />
+        </Route>
       </AnimatePresence>
     </div>
   );
