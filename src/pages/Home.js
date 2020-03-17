@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import NAVBAR from "../components/navbar";
 import "./Home.css";
 import { motion } from "framer-motion";
+import HOME from "../components/HomeCard";
 
 const pageTransit = {
   in: {
@@ -29,26 +30,7 @@ const Home = () => {
         // transition={pageTransition}
         className="iconss"
       >
-        <div>
-          <Link className="iconn" tag={Link} to="/blood">
-            <i class="fas fa-vial fa-4x"></i>
-          </Link>
-        </div>
-        <div>
-          <Link className="iconn" tag={Link} to="/event">
-            <i class="far fa-calendar-alt fa-4x"></i>
-          </Link>
-        </div>
-        <div>
-          <Link className="iconn" tag={Link} to="/faq">
-            <i class="fas fa-info-circle fa-4x"></i>
-          </Link>
-        </div>
-        <div>
-          <Link className="iconn" tag={Link} to="/SearchForm">
-            <i class="fas fa-search-location fa-4x"></i>
-          </Link>
-        </div>
+        <HOME />
       </motion.div>
     </div>
   );
