@@ -17,31 +17,17 @@ const NAVBAR = () => {
   return (
     <motion.div initial="out" animate="in" exit="out" variants={pageTransit}>
       <Navbar className="navbar" expand="lg">
-        <Navbar.Brand href="#home">Blardy</Navbar.Brand>
+        <Navbar.Brand href="/">Blardy</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="/home">Home</Nav.Link>
-            {/* <Nav.Link href="#link">Link</Nav.Link> */}
-            {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Separated link
-              </NavDropdown.Item>
-            </NavDropdown> */}
+            <Nav.Link href="/faq">FAQ</Nav.Link>
+            <Nav.Link href="/login">Login</Nav.Link>
+            <Nav.Link href="/me">Profile</Nav.Link>
           </Nav>
           <Form inline>
-            {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
-            <Button variant="outline-primary">Update</Button>
-          </Form>
-          <Form inline>
-            {/* <FormControl type="text" placeholder="Search" className="mr-sm-2" /> */}
-            <Button variant="outline-secondary">Logout</Button>
+            <Button variant="outline-secondary">xxxxxx</Button>
           </Form>
         </Navbar.Collapse>
       </Navbar>

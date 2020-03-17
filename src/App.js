@@ -93,9 +93,10 @@ function App() {
   return (
     <div className="App">
       <AnimatePresence>
+        <NAVBAR />
         <div className="switchh">
           <Switch>
-            <Route exact path="/">
+            <Route exact path="/login">
               <Authorization
                 usernameValid={usernameValid}
                 checkUsername={checkUsername}
@@ -123,13 +124,11 @@ function App() {
         <Route path="/faq">
           <FAQ />
         </Route>
-        <Route path="/profile">
-          <PROFILE />
-        </Route>
 
-        <NavLink style={{ color: "#bb2734" }} tag={Link} to="/home">
-          Go Home .
-        </NavLink>
+        {/* <Route path="/me">
+          <xxxxx /> put your profile pafe here
+        </Route> */}
+
       </AnimatePresence>
     </div>
   );

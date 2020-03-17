@@ -21,7 +21,6 @@ const pageTransit = {
 const Home = () => {
   return (
     <div className="menu">
-      <NAVBAR />
       <motion.div
         initial="out"
         animate="in"
@@ -30,7 +29,9 @@ const Home = () => {
         // transition={pageTransition}
         className="iconss"
       >
+
         <HOME />
+
       </motion.div>
     </div>
   );
