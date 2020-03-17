@@ -11,6 +11,7 @@ import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
+import PROFILE from "./pages/ProfilePage";
 import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
@@ -123,9 +124,11 @@ function App() {
         <Route path="/faq">
           <FAQ />
         </Route>
+
         {/* <Route path="/me">
           <xxxxx /> put your profile pafe here
         </Route> */}
+
       </AnimatePresence>
     </div>
   );
