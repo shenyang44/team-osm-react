@@ -1,8 +1,16 @@
 import React from "react";
-import { Card, Button, CardTitle, CardText, Row, Col } from "reactstrap";
-import { Route, Switch } from "react-router-dom";
-import { NavLink } from "reactstrap";
+import {
+  Card,
+  Button,
+  CardTitle,
+  CardText,
+  Row,
+  Col,
+  CardImg,
+  CardImgOverlay
+} from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
+// import "../pages/img/blood-donation.png";
 
 const HOME = () => {
   return (
@@ -16,23 +24,34 @@ const HOME = () => {
       <div>
         <Row>
           <Col sm="6">
-            <Card body style={{ minHeight: "350px", minWidth: "350px" }}>
-              <CardTitle>
-                <i class="fas fa-vial fa-4x"></i> Blood
-              </CardTitle>
-              <CardText>
-                With supporting text below as a natural lead-in to additional
-                content.
-              </CardText>
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <br />
-              <Button tag={Link} to="/blood">
-                >Go somewhere
-              </Button>
+            <Card
+              // inverse
+              body
+              style={{ minHeight: "350px", minWidth: "350px" }}
+            >
+              <CardImg
+                width="100%"
+                src="../pages/img/blood-donation.png"
+                alt="Card image cap"
+              />
+              <CardImgOverlay>
+                <CardTitle>
+                  <i class="fas fa-vial fa-4x"></i> Blood
+                </CardTitle>
+                <CardText>
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </CardText>
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <br />
+                <Button tag={Link} to="/blood">
+                  Go somewhere
+                </Button>
+              </CardImgOverlay>
             </Card>
           </Col>
           <Col sm="6">
@@ -101,7 +120,6 @@ const HOME = () => {
           </Col>
         </Row>
       </div>
-      ;
     </>
   );
 };
