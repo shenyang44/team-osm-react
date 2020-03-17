@@ -7,8 +7,10 @@
     rgb(137, 137, 137)
   );
   min-height: 100vh;
-  font-size: calc(10px + 2vmin);
-  color: #bb2734;
+  /* color: #bb2734;
+  display: flex;
+  justify-content: center;
+  align-items: center; */
 }
 
 #container {
@@ -17,4 +19,9 @@
   align-items: center;
   justify-content: center;
   color: #bb2734;
+}
+
+.switchh {
+  display: flex;
+  justify-content: center;
 }
