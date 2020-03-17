@@ -20,6 +20,8 @@ function App() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [address, setAddress] = useState("");
+  const [bloodType, setBloodType] = useState('')
+  const [bloodTypeInput, setBloodTypeInput] = useState('')
   const [emailInput, setEmailInput] = useState("");
   const [addressInput, setAddressInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
@@ -31,17 +33,24 @@ function App() {
     setPassword("");
     setConfirmPassword("");
     setAddress("");
+    setBloodType('')
   };
 
   function handleChange(e) {
     if (e.target.id === "email") {
       setEmail(e.target.value);
-    } else if (e.target.id === "password") {
+    }
+    else if (e.target.id === "password") {
       setPassword(e.target.value);
-    } else if (e.target.id === "username") {
+    }
+    else if (e.target.id === "username") {
       setUsername(e.target.value);
-    } else if (e.target.id === "address") {
+    }
+    else if (e.target.id === "address") {
       setAddress(e.target.value);
+    }
+    else {
+      setBloodType(e.target.value)
     }
   }
 
@@ -60,23 +69,26 @@ function App() {
   };
 
   const handleSignUp = () => {
-    console.log("hello");
     setEmailInput(email);
     setPasswordInput(password);
     setUsernameInput(username);
     setAddressInput(address);
+    setBloodTypeInput(bloodType)
+    console.log(bloodType)
   };
 
+  // User Sign Up
   useEffect(() => {
     axios({
       method: "POST",
-      url: "",
+      url: "https://team-osm.herokuapp.com/api/v1/users",
       data: {
         name: usernameInput,
         email: emailInput,
         password: passwordInput,
         number: 1212345,
-        address: addressInput
+        address: addressInput,
+        bloodType: bloodTypeInput
       }
     })
       .then(response => {

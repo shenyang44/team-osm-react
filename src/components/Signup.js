@@ -31,7 +31,8 @@ const SignUp = ({
   username,
   address,
   password,
-  confirmPassword
+  confirmPassword,
+  bloodType
 }) => {
   const toastSettings = {
     position: "top-right",
@@ -44,25 +45,6 @@ const SignUp = ({
 
   const handleSubmit = e => {
     e.preventDefault();
-    // if (!email || !username || !password || !confirmPassword) {
-    //   return toast.error("All fields must be filled!", toastSettings);
-    // }
-
-    // if (password.length < 8) {
-    //   return toast.error("Password is too short!", toastSettings);
-    // }
-
-    // if (password !== confirmPassword) {
-    //   return toast.error("Passwords are not matching!", toastSettings);
-    // }
-
-    // if (username.length <= 6) {
-    //   return toast.error("Username is too short!", toastSettings);
-    // }
-
-    // if (!usernameValid) {
-    //   return toast.error("Username is invalid, please check!", toastSettings);
-    // }
   };
 
   // const getInputProp = () => {
@@ -125,7 +107,7 @@ const SignUp = ({
               value={username}
               onChange={checkUsername}
               id="username"
-              // {...getInputProp()}
+            // {...getInputProp()}
             />
             {/* {getFormFeedback()} */}
           </FormGroup>
