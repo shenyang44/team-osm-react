@@ -1,34 +1,41 @@
 import React from "react";
-import { Table } from "reactstrap";
+import { Table, Button } from "reactstrap";
 
 const TABLE = props => {
   return (
-    <Table bordered id="Table" className="w-50">
-      <tbody>
-        <tr>
-          <td style={{ width: "20%", border: "1px solid black" }}>Name</td>
-          <td style={{ width: "20%", border: "1px solid black" }}></td>
-        </tr>
-        <tr>
-          <td style={{ width: "20%", border: "1px solid black" }}>Password</td>
-          <td style={{ width: "20%", border: "1px solid black" }}></td>
-        </tr>
-        <tr>
-          <td style={{ width: "20%", border: "1px solid black" }}>Email</td>
-          <td style={{ width: "20%", border: "1px solid black" }}></td>
-        </tr>
-        <tr>
-          <td style={{ width: "20%", border: "1px solid black" }}>Address</td>
-          <td style={{ width: "20%", border: "1px solid black" }}></td>
-        </tr>
-        <tr>
-          <td style={{ width: "20%", border: "1px solid black" }}>
-            Blood Group
-          </td>
-          <td style={{ width: "20%", border: "1px solid black" }}></td>
-        </tr>
-      </tbody>
-    </Table>
+    <div className="tbcontainer">
+      <Table bordered id="Table" className="w-50">
+        <tbody>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>Name</td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              logic for logged in user
+            </td>
+          </tr>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>Email</td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              logic for logged in email
+            </td>
+          </tr>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>Address</td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              logic for logged in address
+            </td>
+          </tr>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              Blood Group
+            </td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              reflect input here
+            </td>
+          </tr>
+        </tbody>
+        <Button variant="outline-secondary">xxxxxx</Button>
+      </Table>
+    </div>
   );
 };
 
