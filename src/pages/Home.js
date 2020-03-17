@@ -26,31 +26,33 @@ const Home = () => {
         exit="out"
         variants={pageTransit}
         // transition={pageTransition}
-        className="iconss">    
+        className="iconss">
         {/* <NAVBAR /> */}
-      <div className="iconss">
-        <div>
-          <Link className="iconn" tag={Link} to="/blood">
-            <i class="fas fa-vial fa-4x"></i>
-          </Link>
+        <div className="iconss">
+          <div>
+            <Link className="iconn" tag={Link} to="/blood">
+              <i class="fas fa-vial fa-4x"></i>
+            </Link>
+          </div>
+          <div>
+            <Link className="iconn" tag={Link} to="/event">
+              <i class="far fa-calendar-alt fa-4x"></i>
+            </Link>
+          </div>
+          <div>
+            <Link className="iconn" tag={Link} to="/faq">
+              <i class="fas fa-info-circle fa-4x"></i>
+            </Link>
+          </div>
+          <div>
+            <Link className="iconn" tag={Link} to="/SearchForm">
+              <i class="fas fa-search-location fa-4x"></i>
+            </Link>
+          </div>
         </div>
-        <div>
-          <Link className="iconn" tag={Link} to="/event">
-            <i class="far fa-calendar-alt fa-4x"></i>
-          </Link>
-        </div>
-        <div>
-          <Link className="iconn" tag={Link} to="/faq">
-            <i class="fas fa-info-circle fa-4x"></i>
-          </Link>
-        </div>
-        <div>
-          <Link className="iconn" tag={Link} to="/SearchForm">
-            <i class="fas fa-search-location fa-4x"></i>
-          </Link>
-        </div>
-      </motion.div></div>
-      
+      </motion.div>
+    </div>
+
   );
 };
 
