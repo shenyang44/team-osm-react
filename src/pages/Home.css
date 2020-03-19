@@ -3,10 +3,10 @@
 }
 
 .iconss {
-  height: 80vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-items: center;
   /* position: fixed; */
 }
@@ -20,4 +20,9 @@
   color: black;
   transform: scale(1.5);
   left: -50px;
+}
+
+.cardcontain {
+  height: 800vh;
+  width: 80vw;
 }

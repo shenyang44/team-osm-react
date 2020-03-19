@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import NAVBAR from "../components/navbar";
 import "./Home.css";
 import { motion } from "framer-motion";
+import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from "reactstrap";
 import HOME from "../components/HomeCard";
+
 
 const pageTransit = {
   in: {
@@ -29,9 +29,83 @@ const Home = () => {
         // transition={pageTransition}
         className="iconss"
       >
+        <div className="cardcontain">
+          <Card className="col-md-10 col-sm-10 col-xs-10" inverse>
+            <CardImg
+              width="100%"
+              src="/assets/318x270.svg"
+              alt="Card image cap"
+            />
+            <CardImgOverlay>
+              <CardTitle>Card Title</CardTitle>
+              <CardText>
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </CardText>
+              <CardText>
+                <small className="text-muted">Last updated 3 mins ago</small>
+              </CardText>
+            </CardImgOverlay>
+          </Card>
+          <Card className="col-md-10 col-sm-10 col-xs-10" inverse>
+            <CardImg
+              width="100%"
+              src="/assets/318x270.svg"
+              alt="Card image cap"
+            />
+            <CardImgOverlay>
+              <CardTitle>Card Title</CardTitle>
+              <CardText>
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </CardText>
+              <CardText>
+                <small className="text-muted">Last updated 3 mins ago</small>
+              </CardText>
+            </CardImgOverlay>
+          </Card>
+          <Card className="col-md-10 col-sm-10 col-xs-10" inverse>
+            <CardImg
+              width="100%"
+              src="/assets/318x270.svg"
+              alt="Card image cap"
+            />
+            <CardImgOverlay>
+              <CardTitle>Card Title</CardTitle>
+              <CardText>
+                This is a wider card with supporting text below as a natural
+                lead-in to additional content. This content is a little bit
+                longer.
+              </CardText>
+              <CardText>
+                <small className="text-muted">Last updated 3 mins ago</small>
+              </CardText>
+            </CardImgOverlay>
+          </Card>
+        </div>
 
-        <HOME />
-
+        {/* <div>
+          <Link className="iconn" tag={Link} to="/blood">
+            <i class="fas fa-vial fa-4x"></i>
+          </Link>
+        </div>
+        <div>
+          <Link className="iconn" tag={Link} to="/event">
+            <i class="far fa-calendar-alt fa-4x"></i>
+          </Link>
+        </div>
+        <div>
+          <Link className="iconn" tag={Link} to="/faq">
+            <i class="fas fa-info-circle fa-4x"></i>
+          </Link>
+        </div>
+        <div>
+          <Link className="iconn" tag={Link} to="/SearchForm">
+            <i class="fas fa-search-location fa-4x"></i>
+          </Link>
+        </div> */}
       </motion.div>
     </div>
   );

@@ -6,14 +6,15 @@ import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
 import { NavLink } from "reactstrap";
 import { NavLink as Link } from "react-router-dom";
-import { NavDropdown } from "react-bootstrap";
 import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
 import PROFILE from "./pages/ProfilePage";
 import { AnimatePresence, motion } from "framer-motion";
+import User from "./components/Profile";
 import TABLE from "./components/Table";
+
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -115,6 +116,12 @@ function App() {
     <div className="App">
       <AnimatePresence>
         <NAVBAR />
+        <Route path="/home">
+          <Home />
+        </Route>
+        <Route path="/user">
+         
+              {/* <Route exact path="/"> */}
         <div className="switchh">
           <Switch>
             <Route exact path="/login">
@@ -129,15 +136,15 @@ function App() {
                 handleSignUp={handleSignUp}
                 handleChange={handleChange}
               />
-            </Route>
-          </Switch>
-        </div>
-
-        <Route path="/home">
-          <Home />
+              {/* </Route> */}
+            </Switch>
+          </div>
         </Route>
         <Route path="/bleed">
           <Login />
+        </Route>
+        <Route path="/me">
+          <User />
         </Route>
         <Route path="/SearchForm">
           <SearchForm />
@@ -145,7 +152,6 @@ function App() {
         <Route path="/faq">
           <FAQ />
         </Route>
-
         <Route path="/me">
           <TABLE />
         </Route>
@@ -155,6 +161,3 @@ function App() {
 }
 
 export default App;
-
-// for now, navlink serve to navigate direct to home without logging in
-/* "go home" link will be gone when login works  */
