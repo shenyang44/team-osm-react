@@ -119,9 +119,8 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/user">
-         
-              {/* <Route exact path="/"> */}
+        {/* <Route path="/user">
+        </Route> */}
         <div className="switchh">
           <Switch>
             <Route exact path="/login">
@@ -136,10 +135,10 @@ function App() {
                 handleSignUp={handleSignUp}
                 handleChange={handleChange}
               />
-              {/* </Route> */}
-            </Switch>
-          </div>
-        </Route>
+            </Route>
+          </Switch>
+        </div>
+
         <Route path="/bleed">
           <Login />
         </Route>

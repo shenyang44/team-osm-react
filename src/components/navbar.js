@@ -38,7 +38,7 @@ const NAVBAR = () => {
           </Form>
           <Form inline>
             <Button variant="outline-danger">
-              <NavLink tag={Link} to="/user">
+              <NavLink tag={Link} to="/login">
                 Login
               </NavLink>
             </Button>
