@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Form,
   Label,
@@ -28,17 +28,9 @@ const pageTransit = {
   }
 };
 
-const SignUp = ({
-  email,
-  usernameValid,
-  checkUsername,
-  handleChange,
-  handleSignUp,
-  username,
-  address,
-  password,
-  confirmPassword
-}) => {
+const SignUp = ({ props }) => {
+  console.log(props.email)
+  console.log(props.handleSignUp)
   const toastSettings = {
     position: "top-right",
     autoClose: 5000,
@@ -50,25 +42,6 @@ const SignUp = ({
 
   const handleSubmit = e => {
     e.preventDefault();
-    // if (!email || !username || !password || !confirmPassword) {
-    //   return toast.error("All fields must be filled!", toastSettings);
-    // }
-
-    // if (password.length < 8) {
-    //   return toast.error("Password is too short!", toastSettings);
-    // }
-
-    // if (password !== confirmPassword) {
-    //   return toast.error("Passwords are not matching!", toastSettings);
-    // }
-
-    // if (username.length <= 6) {
-    //   return toast.error("Username is too short!", toastSettings);
-    // }
-
-    // if (!usernameValid) {
-    //   return toast.error("Username is invalid, please check!", toastSettings);
-    // }
   };
 
   // const getInputProp = () => {
@@ -118,8 +91,8 @@ const SignUp = ({
             <Input
               type="text"
               placeholder="...@email.com"
-              value={email}
-              onChange={handleChange}
+              value={props.email}
+              onChange={props.handleChange}
               id="email"
             />
           </FormGroup>
@@ -128,10 +101,10 @@ const SignUp = ({
             <Input
               type="text"
               placeholder="min 6 characters"
-              value={username}
-              onChange={checkUsername}
+              value={props.username}
+              onChange={props.checkUsername}
               id="username"
-              // {...getInputProp()}
+            // {...getInputProp()}
             />
             {/* {getFormFeedback()} */}
           </FormGroup>
@@ -140,8 +113,8 @@ const SignUp = ({
             <Input
               type="password"
               placeholder="min 6 characters"
-              value={password}
-              onChange={handleChange}
+              value={props.password}
+              onChange={props.handleChange}
               id="password"
             />
           </FormGroup>
@@ -150,8 +123,8 @@ const SignUp = ({
             <Input
               type="password"
               placeholder="Retype Password"
-              value={confirmPassword}
-              onChange={handleChange}
+              value={props.confirmPassword}
+              onChange={props.handleChange}
             />
           </FormGroup>
         </div>
@@ -162,8 +135,8 @@ const SignUp = ({
             <Input
               type="Address"
               placeholder="Address"
-              value={address}
-              onChange={handleChange}
+              value={props.address}
+              onChange={props.handleChange}
               id="address"
             />
           </FormGroup>
@@ -191,7 +164,7 @@ const SignUp = ({
           </FormGroup>
         </div>
         <div className="signupbtn">
-          <Button color="danger" block onClick={handleSignUp}>
+          <Button color="danger" onClick={props.handleSignUp} block>
             Sign Up
           </Button>
         </div>

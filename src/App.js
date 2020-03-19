@@ -17,15 +17,18 @@ import TABLE from "./components/Table";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("email");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [address, setAddress] = useState("");
+  const [bloodType, setBloodType] = useState('')
+  const [bloodTypeInput, setBloodTypeInput] = useState('')
   const [emailInput, setEmailInput] = useState("");
   const [addressInput, setAddressInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('jwt'))
 
   const successCallback = () => {
     setEmail("");
@@ -33,17 +36,24 @@ function App() {
     setPassword("");
     setConfirmPassword("");
     setAddress("");
+    setBloodType('')
   };
 
   function handleChange(e) {
     if (e.target.id === "email") {
       setEmail(e.target.value);
-    } else if (e.target.id === "password") {
+    }
+    else if (e.target.id === "password") {
       setPassword(e.target.value);
-    } else if (e.target.id === "username") {
+    }
+    else if (e.target.id === "username") {
       setUsername(e.target.value);
-    } else if (e.target.id === "address") {
+    }
+    else if (e.target.id === "address") {
       setAddress(e.target.value);
+    }
+    else {
+      setBloodType(e.target.value)
     }
   }
 
@@ -62,35 +72,45 @@ function App() {
   };
 
   const handleSignUp = () => {
-    console.log("hello");
+    console.log('working');
     setEmailInput(email);
     setPasswordInput(password);
     setUsernameInput(username);
     setAddressInput(address);
+    setBloodTypeInput(bloodType)
   };
 
+  // User Sign Up
   useEffect(() => {
-    axios({
-      method: "POST",
-      url: "",
-      data: {
-        name: usernameInput,
-        email: emailInput,
-        password: passwordInput,
-        number: 1212345,
-        address: addressInput
-      }
-    })
-      .then(response => {
-        console.log(response);
-        localStorage.setItem("jwt", response.data.access_token);
-        successCallback();
+    if (emailInput !== '') {
+      axios({
+        method: "POST",
+        url: "https://team-osm.herokuapp.com/api/v1/users/sign-up",
+        data: {
+          name: usernameInput,
+          email: emailInput,
+          password: passwordInput,
+          number: 123123123,
+          address: addressInput,
+          bloodType: bloodTypeInput
+        }
       })
-      .catch(error => {
-        console.error(error);
-      });
+        .then(response => {
+          console.log(response);
+          localStorage.setItem("jwt", response.data.access_token);
+          successCallback();
+          setLoggedIn(localStorage.getItem('jwt') !== null)
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
   }, [emailInput]);
 
+  useEffect(() => {
+    console.log(localStorage.getItem('jwt'))
+    console.log(loggedIn)
+  }, [loggedIn])
   return (
     <div className="App">
       <AnimatePresence>
