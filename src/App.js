@@ -16,7 +16,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("email");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
@@ -27,6 +27,7 @@ function App() {
   const [addressInput, setAddressInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('jwt'))
 
   const successCallback = () => {
     setEmail("");
@@ -70,38 +71,45 @@ function App() {
   };
 
   const handleSignUp = () => {
+    console.log('working');
     setEmailInput(email);
     setPasswordInput(password);
     setUsernameInput(username);
     setAddressInput(address);
     setBloodTypeInput(bloodType)
-    console.log(bloodType)
   };
 
   // User Sign Up
   useEffect(() => {
-    axios({
-      method: "POST",
-      url: "https://team-osm.herokuapp.com/api/v1/users",
-      data: {
-        name: usernameInput,
-        email: emailInput,
-        password: passwordInput,
-        number: 1212345,
-        address: addressInput,
-        bloodType: bloodTypeInput
-      }
-    })
-      .then(response => {
-        console.log(response);
-        localStorage.setItem("jwt", response.data.access_token);
-        successCallback();
+    if (emailInput !== '') {
+      axios({
+        method: "POST",
+        url: "https://team-osm.herokuapp.com/api/v1/users/sign-up",
+        data: {
+          name: usernameInput,
+          email: emailInput,
+          password: passwordInput,
+          number: 123123123,
+          address: addressInput,
+          bloodType: bloodTypeInput
+        }
       })
-      .catch(error => {
-        console.error(error);
-      });
+        .then(response => {
+          console.log(response);
+          localStorage.setItem("jwt", response.data.access_token);
+          successCallback();
+          setLoggedIn(localStorage.getItem('jwt') !== null)
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
   }, [emailInput]);
 
+  useEffect(() => {
+    console.log(localStorage.getItem('jwt'))
+    console.log(loggedIn)
+  }, [loggedIn])
   return (
     <div className="App">
       <AnimatePresence>
