@@ -2,6 +2,8 @@ import React from "react";
 import "./Home.css";
 import { motion } from "framer-motion";
 import { Card, CardTitle, CardText, CardImg, CardImgOverlay } from "reactstrap";
+import HOME from "../components/HomeCard";
+
 
 const pageTransit = {
   in: {

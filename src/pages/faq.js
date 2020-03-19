@@ -6,6 +6,8 @@ import "./faq.css";
 const FAQ = () => {
   return (
     <div className="row">
+      <FAQCard />
+
       <Sidebar />
       <FAQCard />
     </div>
