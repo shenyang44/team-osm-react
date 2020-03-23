@@ -37,7 +37,7 @@ const NAVBAR = () => {
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/me">
+            <NavLink className="navtabs" href="/profile">
               Profile
             </NavLink>
           </Form>

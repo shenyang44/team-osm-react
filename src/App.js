@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import TABLE from "./components/Profile";
 import Example from ".//components/Start";
 import Ericdraft from ".//components/ericdrafts";
+import Profile from "./pages/ProfilePage";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -132,6 +133,9 @@ function App() {
         </div>
         <Route path="/bleed">
           <Login />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
         <Route path="/SearchForm">
           <SearchForm />

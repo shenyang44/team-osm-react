@@ -8,19 +8,16 @@ import {
   FormFeedback,
   FormGroup
 } from "reactstrap";
-import TABLE from "../components/Profile";
+import ProfTable from "../components/Table";
 
-const PROFILE = () => {
+const Profile = () => {
   return (
     <>
       <h1>My Profile</h1>
-      <div>
-        <TABLE />
-      </div>
-      <br />
+      <ProfTable />
       <Button color="danger">Edit Profile</Button>
     </>
   );
 };
 
-export default PROFILE;
+export default Profile;
