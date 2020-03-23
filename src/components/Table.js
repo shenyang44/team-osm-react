@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
 
-const TABLE = props => {
+const ProfTable = props => {
   return (
     <div className="tbcontainer">
       <Table bordered id="Table" className="w-50">
@@ -39,4 +39,4 @@ const TABLE = props => {
   );
 };
 
-export default TABLE;
+export default ProfTable;
