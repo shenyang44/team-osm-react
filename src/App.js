@@ -4,16 +4,12 @@ import { Route, Switch } from "react-router-dom";
 import NAVBAR from "./components/navbar";
 import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
-import { NavLink } from "reactstrap";
-import { NavLink as Link } from "react-router-dom";
 import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
-import PROFILE from "./pages/ProfilePage";
 import { AnimatePresence, motion } from "framer-motion";
-import User from "./components/Profile";
-import TABLE from "./components/Table";
+import Profile from './pages/ProfilePage';
 
 
 function App() {
@@ -119,8 +115,6 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        {/* <Route path="/user">
-        </Route> */}
         <div className="switchh">
           <Switch>
             <Route exact path="/login">
@@ -142,17 +136,14 @@ function App() {
         <Route path="/bleed">
           <Login />
         </Route>
-        <Route path="/me">
-          <User />
+        <Route path="/profile">
+          <Profile />
         </Route>
         <Route path="/SearchForm">
           <SearchForm />
         </Route>
         <Route path="/faq">
           <FAQ />
-        </Route>
-        <Route path="/me">
-          <TABLE />
         </Route>
       </AnimatePresence>
     </div>
