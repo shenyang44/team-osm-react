@@ -3,7 +3,7 @@ import ToggleSwitch from "../components/Switch";
 import Login from "../components/Login";
 import SignUp from "../components/Signup";
 
-const Authorization = props => {
+const Authorization = (props) => {
   const [isLogin, setIsLogin] = useState(true);
   return (
     <div>

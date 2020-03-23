@@ -12,10 +12,6 @@ const pageTransit = {
   }
 };
 
-// const pageTransition = {
-//   transition: "linear"
-// };
-
 const Home = () => {
   return (
     <div className="menu">
