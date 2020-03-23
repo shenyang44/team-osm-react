@@ -18,7 +18,6 @@ const Sidebar = () => {
   return (
     <>
       <StyledSidebar>
-        <h2>Navigation</h2>
         <h5 style={{ color: "black" }}>
           <a href="#DoDont">Do's and Dont's</a>
         </h5>

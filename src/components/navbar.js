@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import { Button, Nav, Form, NavDropdown, FormControl } from "react-bootstrap";
+import { Nav, Form, NavbarBrand, NavLink } from "react-bootstrap";
 import "./navbar.css";
 import { motion } from "framer-motion";
 
@@ -15,19 +15,36 @@ const pageTransit = {
 
 const NAVBAR = () => {
   return (
-    <motion.div initial="out" animate="in" exit="out" variants={pageTransit}>
-      <Navbar className="navbar" expand="lg">
-        <Navbar.Brand href="/">Blardy</Navbar.Brand>
+    <motion.div
+      className="navbar"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransit}
+    >
+      <Navbar expand="lg">
+        <NavbarBrand href="/home">Blardy/LogoHere</NavbarBrand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-            <Nav.Link href="/faq">FAQ</Nav.Link>
-            <Nav.Link href="/login">Login</Nav.Link>
-            <Nav.Link href="/me">Profile</Nav.Link>
-          </Nav>
-          <Form inline>
-            <Button variant="outline-secondary">xxxxxx</Button>
+          <Form>
+            <NavLink className="navtabs" href="/faq">
+              FAQ
+            </NavLink>
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/another">
+              anotherFAQ
+            </NavLink>
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/profile">
+              Profile
+            </NavLink>
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/login">
+              Login
+            </NavLink>
           </Form>
         </Navbar.Collapse>
       </Navbar>

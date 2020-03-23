@@ -1,7 +1,7 @@
 import React from "react";
 import { Table, Button } from "reactstrap";
 
-const TABLE = props => {
+const ProfTable = props => {
   return (
     <center>
       <div className="tbcontainer" style={{ paddingTop: "100px" }}>
@@ -44,4 +44,4 @@ const TABLE = props => {
   );
 };
 
-export default TABLE;
+export default ProfTable;

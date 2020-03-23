@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Card from "react-bootstrap/Card";
+import "./faqcard.css";
 
 const FAQCard = () => {
   const [searchInfo, setSearchInfo] = useState();
@@ -27,7 +28,7 @@ const FAQCard = () => {
           <button type="submit">Search</button>
         </form>
       </center>
-      <div style={{ width: "40%" }}>
+      <div className="cardstack" style={{ width: "60%" }}>
         <Card>
           <Card.Header id="DoDont">
             <h5 style={{ color: "black" }}>
