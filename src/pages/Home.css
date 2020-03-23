@@ -6,23 +6,20 @@
   height: 100vh;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-evenly; */
   align-items: center;
-  /* position: fixed; */
-}
-
-.iconn {
-  color: #bb2734;
-  transition: transform 1s;
-}
-
-.iconn:hover {
-  color: black;
-  transform: scale(1.5);
-  left: -50px;
 }
 
 .cardcontain {
-  height: 800vh;
+  height: 80vh;
   width: 80vw;
+}
+
+.ccard {
+  min-width: 300px;
+  min-height: 300px;
+  color: rgb(247, 37, 37);
+}
+
+.ccardd {
+  opacity: 50;
 }

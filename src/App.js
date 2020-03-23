@@ -9,8 +9,10 @@ import axios from "axios";
 import SearchForm from "./components/searchbar";
 import Login from "./components/Login";
 import { AnimatePresence, motion } from "framer-motion";
-import Profile from './pages/ProfilePage';
-
+import TABLE from "./components/Profile";
+import Example from ".//components/Start";
+import Ericdraft from ".//components/ericdrafts";
+import Profile from "./pages/ProfilePage";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -19,13 +21,13 @@ function App() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [address, setAddress] = useState("");
-  const [bloodType, setBloodType] = useState('')
-  const [bloodTypeInput, setBloodTypeInput] = useState('')
+  const [bloodType, setBloodType] = useState("");
+  const [bloodTypeInput, setBloodTypeInput] = useState("");
   const [emailInput, setEmailInput] = useState("");
   const [addressInput, setAddressInput] = useState("");
   const [passwordInput, setPasswordInput] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
-  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('jwt'))
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt"));
 
   const successCallback = () => {
     setEmail("");
@@ -33,24 +35,20 @@ function App() {
     setPassword("");
     setConfirmPassword("");
     setAddress("");
-    setBloodType('')
+    setBloodType("");
   };
 
   function handleChange(e) {
     if (e.target.id === "email") {
       setEmail(e.target.value);
-    }
-    else if (e.target.id === "password") {
+    } else if (e.target.id === "password") {
       setPassword(e.target.value);
-    }
-    else if (e.target.id === "username") {
+    } else if (e.target.id === "username") {
       setUsername(e.target.value);
-    }
-    else if (e.target.id === "address") {
+    } else if (e.target.id === "address") {
       setAddress(e.target.value);
-    }
-    else {
-      setBloodType(e.target.value)
+    } else {
+      setBloodType(e.target.value);
     }
   }
 
@@ -69,17 +67,17 @@ function App() {
   };
 
   const handleSignUp = () => {
-    console.log('working');
+    console.log("working");
     setEmailInput(email);
     setPasswordInput(password);
     setUsernameInput(username);
     setAddressInput(address);
-    setBloodTypeInput(bloodType)
+    setBloodTypeInput(bloodType);
   };
 
   // User Sign Up
   useEffect(() => {
-    if (emailInput !== '') {
+    if (emailInput !== "") {
       axios({
         method: "POST",
         url: "https://team-osm.herokuapp.com/api/v1/users/sign-up",
@@ -96,7 +94,7 @@ function App() {
           console.log(response);
           localStorage.setItem("jwt", response.data.access_token);
           successCallback();
-          setLoggedIn(localStorage.getItem('jwt') !== null)
+          setLoggedIn(localStorage.getItem("jwt") !== null);
         })
         .catch(error => {
           console.error(error);
@@ -105,13 +103,14 @@ function App() {
   }, [emailInput]);
 
   useEffect(() => {
-    console.log(localStorage.getItem('jwt'))
-    console.log(loggedIn)
-  }, [loggedIn])
+    console.log(localStorage.getItem("jwt"));
+    console.log(loggedIn);
+  }, [loggedIn]);
   return (
     <div className="App">
       <AnimatePresence>
         <NAVBAR />
+        <Example />
         <Route path="/home">
           <Home />
         </Route>
@@ -132,7 +131,6 @@ function App() {
             </Route>
           </Switch>
         </div>
-
         <Route path="/bleed">
           <Login />
         </Route>
@@ -144,6 +142,12 @@ function App() {
         </Route>
         <Route path="/faq">
           <FAQ />
+        </Route>
+        <Route path="/me">
+          <TABLE />
+        </Route>
+        <Route path="/another">
+          <Ericdraft />
         </Route>
       </AnimatePresence>
     </div>

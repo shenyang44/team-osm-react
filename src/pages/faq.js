@@ -9,10 +9,10 @@ const FAQ = () => {
   return (
     <Container>
       <Row>
-        <Col md='3'>
+        <Col md="3">
           <Sidebar />
         </Col>
-        <Col md='9'>
+        <Col md="9">
           <FAQCard />
         </Col>
       </Row>

@@ -29,8 +29,8 @@ const pageTransit = {
 };
 
 const SignUp = ({ props }) => {
-  console.log(props.email)
-  console.log(props.handleSignUp)
+  console.log(props.email);
+  console.log(props.handleSignUp);
   const toastSettings = {
     position: "top-right",
     autoClose: 5000,
@@ -104,7 +104,7 @@ const SignUp = ({ props }) => {
               value={props.username}
               onChange={props.checkUsername}
               id="username"
-            // {...getInputProp()}
+              // {...getInputProp()}
             />
             {/* {getFormFeedback()} */}
           </FormGroup>

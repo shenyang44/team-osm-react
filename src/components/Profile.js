@@ -1,34 +1,42 @@
 import React from "react";
-import { motion } from "framer-motion";
+import { Table, Button } from "reactstrap";
 
-const pageTransit = {
-  in: {
-    opacity: 1
-  },
-  out: {
-    opacity: 0
-  }
-};
-
-// const pageTransition = {
-//   transition: "linear"
-// };
-
-const User = () => {
+const TABLE = props => {
   return (
-    <div className="menu">
-      <motion.div
-        initial="out"
-        animate="in"
-        exit="out"
-        variants={pageTransit}
-        // transition={pageTransition}
-        className="iconss"
-      >
-        <h1>hdhdhdhhhdhd</h1>
-      </motion.div>
+    <div className="tbcontainer">
+      <Table bordered id="Table" className="w-50">
+        <tbody>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>Name</td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              logic for logged in user
+            </td>
+          </tr>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>Email</td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              logic for logged in email
+            </td>
+          </tr>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>Address</td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              logic for logged in address
+            </td>
+          </tr>
+          <tr>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              Blood Group
+            </td>
+            <td style={{ width: "20%", border: "1px solid black" }}>
+              reflect input here
+            </td>
+          </tr>
+        </tbody>
+      </Table>
+      <Button variant="outline-secondary">xxxxxx</Button>
     </div>
   );
 };
 
-export default User;
+export default TABLE;

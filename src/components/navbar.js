@@ -1,10 +1,8 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
-import { Button, Nav, Form, NavDropdown, FormControl } from "react-bootstrap";
+import { Nav, Form, NavbarBrand, NavLink } from "react-bootstrap";
 import "./navbar.css";
 import { motion } from "framer-motion";
-import { NavLink } from "reactstrap";
-import { NavLink as Link } from "react-router-dom";
 
 const pageTransit = {
   in: {
@@ -17,31 +15,36 @@ const pageTransit = {
 
 const NAVBAR = () => {
   return (
-    <motion.div initial="out" animate="in" exit="out" variants={pageTransit}>
-      <Navbar className="navbar" expand="lg">
-        <Navbar.Brand href="/home">Blardy</Navbar.Brand>
+    <motion.div
+      className="navbar"
+      initial="out"
+      animate="in"
+      exit="out"
+      variants={pageTransit}
+    >
+      <Navbar expand="lg">
+        <NavbarBrand href="/home">Blardy/LogoHere</NavbarBrand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link href="/home">Home</Nav.Link>
-
-          </Nav>
-          <Nav className="mr-auto">
-            <Nav.Link href="/faq">FAQ</Nav.Link>
-          </Nav>
-          <Form inline>
-            <Button variant="outline-danger">
-              <NavLink tag={Link} to="/profile">
-                Profile
-              </NavLink>
-            </Button>
+          <Form>
+            <NavLink className="navtabs" href="/faq">
+              FAQ
+            </NavLink>
           </Form>
-          <Form inline>
-            <Button variant="outline-danger">
-              <NavLink tag={Link} to="/login">
-                Login
-              </NavLink>
-            </Button>
+          <Form>
+            <NavLink className="navtabs" href="/another">
+              anotherFAQ
+            </NavLink>
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/profile">
+              Profile
+            </NavLink>
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/login">
+              Login
+            </NavLink>
           </Form>
         </Navbar.Collapse>
       </Navbar>
