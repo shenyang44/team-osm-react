@@ -14,6 +14,7 @@ import Login from "./components/Login";
 import PROFILE from "./pages/ProfilePage";
 import { AnimatePresence, motion } from "framer-motion";
 import TABLE from "./components/Table";
+import SERACHBARV2 from "./components/searchbarv2";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -124,6 +125,9 @@ function App() {
         </Route>
         <Route path="/faq">
           <FAQ />
+        </Route>
+        <Route path="/search">
+          <SERACHBARV2 />
         </Route>
 
         <Route path="/me">

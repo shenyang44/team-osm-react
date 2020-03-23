@@ -31,7 +31,7 @@ const HOME = () => {
               <br />
               <br />
               <Button tag={Link} to="/blood">
-                >Go somewhere
+                Go to
               </Button>
             </Card>
           </Col>
@@ -51,7 +51,7 @@ const HOME = () => {
               <br />
               <br />
               <Button tag={Link} to="/event">
-                Go somewhere
+                Go to
               </Button>
             </Card>
           </Col>
@@ -74,7 +74,7 @@ const HOME = () => {
               <br />
               <br />
               <Button tag={Link} to="/faq">
-                Go somewhere
+                Go to
               </Button>
             </Card>
           </Col>
@@ -95,7 +95,7 @@ const HOME = () => {
               <br />
               <br />
               <Button tag={Link} to="/SearchForm">
-                Go somewhere
+                Go to
               </Button>
             </Card>
           </Col>
