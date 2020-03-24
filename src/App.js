@@ -110,7 +110,7 @@ function App() {
     <div className="App">
       <AnimatePresence>
         <NAVBAR />
-        <Example />
+
         <Route path="/home">
           <Home />
         </Route>
@@ -149,6 +149,7 @@ function App() {
         <Route path="/another">
           <Ericdraft />
         </Route>
+        <Example />
       </AnimatePresence>
     </div>
   );

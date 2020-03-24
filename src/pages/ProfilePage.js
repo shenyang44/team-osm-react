@@ -12,11 +12,13 @@ import ProfTable from "../components/Table";
 
 const Profile = () => {
   return (
-    <>
+    <div className="container" center>
       <h1>My Profile</h1>
       <ProfTable />
-      <Button color="danger">Edit Profile</Button>
-    </>
+      <div className="btncontainer" center>
+        <Button color="danger">Edit Profile</Button>
+      </div>
+    </div>
   );
 };
 

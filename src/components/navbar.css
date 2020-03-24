@@ -2,11 +2,14 @@
   display: flex;
 }
 
+.navtog {
+  margin-right: auto;
+}
+
 .navtabs {
   /* display: inline;
   color: yellow;
   background-color: blue; */
-
   border: none;
   color: rgb(174, 4, 4);
   padding: 10px 20px;

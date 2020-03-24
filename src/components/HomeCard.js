@@ -26,23 +26,25 @@ const HOME = () => {
                 src="img/blood-donation.jpg"
                 alt="Card image cap"
               />
-              <CardImgOverlay>
-                <CardTitle>
-                  <i class="fas fa-vial fa-4x"></i> Blood
-                </CardTitle>
-                <CardText>
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </CardText>
-                {/* <br />
+              <CardImgOverlay className="coverlay">
+                <div>
+                  <CardTitle>
+                    <i class="fas fa-vial fa-4x"></i> Blood
+                  </CardTitle>
+                  <CardText>
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </CardText>
+                  {/* <br />
                 <br />
                 <br />
                 <br />
                 <br />
                 <br /> */}
-                <Button tag={Link} to="/blood">
-                  Go somewhere
-                </Button>
+                  <Button tag={Link} to="/blood">
+                    Go somewhere
+                  </Button>
+                </div>
               </CardImgOverlay>
             </Card>
           </Col>
@@ -54,7 +56,7 @@ const HOME = () => {
                 src="img/hero-hand.jpg"
                 alt="Card image cap"
               />
-              <CardImgOverlay>
+              <CardImgOverlay className="coverlay">
                 <CardTitle>
                   <i class="far fa-calendar-alt fa-4x"></i> Event
                 </CardTitle>
@@ -85,7 +87,7 @@ const HOME = () => {
                 src="img/blood-donor.jpg"
                 alt="Card image cap"
               />
-              <CardImgOverlay>
+              <CardImgOverlay className="coverlay">
                 <CardTitle>
                   <i class="fas fa-info-circle fa-4x"></i> FAQ
                 </CardTitle>
@@ -113,7 +115,7 @@ const HOME = () => {
                 src="img/blood-donor.jpg"
                 alt="Card image cap"
               />
-              <CardImgOverlay>
+              <CardImgOverlay className="coverlay">
                 <CardTitle>
                   <i class="fas fa-search-location fa-4x"></i> Locater
                 </CardTitle>
