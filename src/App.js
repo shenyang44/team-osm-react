@@ -47,7 +47,12 @@ function App() {
       setUsername(e.target.value);
     } else if (e.target.id === "address") {
       setAddress(e.target.value);
-    } else {
+
+    }
+    else if (e.target.id == 'rePass') {
+      setConfirmPassword(e.target.value)
+    }
+    else {
       setBloodType(e.target.value);
     }
   }
