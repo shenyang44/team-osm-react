@@ -7,9 +7,7 @@ import Home from "./pages/Home";
 import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
-import Login from "./components/Login";
 import { AnimatePresence, motion } from "framer-motion";
-import TABLE from "./components/Profile";
 import Example from ".//components/Start";
 import Ericdraft from ".//components/ericdrafts";
 import Profile from "./pages/ProfilePage";
@@ -141,24 +139,17 @@ function App() {
                 handleSignUp={handleSignUp}
                 handleChange={handleChange}
               />}
-
             </Route>
           </Switch>
         </div>
-        <Route path="/bleed">
-          <Login />
-        </Route>
         <Route path="/profile">
-          <Profile />
+          <Profile loggedIn={loggedIn} />
         </Route>
         <Route path="/SearchForm">
           <SearchForm />
         </Route>
         <Route path="/faq">
           <FAQ />
-        </Route>
-        <Route path="/me">
-          <TABLE />
         </Route>
         <Route path="/another">
           <Ericdraft />
