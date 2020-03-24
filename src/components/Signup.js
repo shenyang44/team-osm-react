@@ -29,8 +29,6 @@ const pageTransit = {
 };
 
 const SignUp = ({ props }) => {
-  console.log(props.email);
-  console.log(props.handleSignUp);
   const toastSettings = {
     position: "top-right",
     autoClose: 5000,

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import NAVBAR from "./components/navbar";
 import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
@@ -47,7 +47,6 @@ function App() {
       setUsername(e.target.value);
     } else if (e.target.id === "address") {
       setAddress(e.target.value);
-
     }
     else if (e.target.id == 'rePass') {
       setConfirmPassword(e.target.value)
@@ -58,17 +57,18 @@ function App() {
   }
 
   const checkUsername = () => {
-    axios
-      .get(
-        `https://insta.nextacademy.com/api/v1/users/check_name?username=${username}`
-      )
-      .then(response => {
-        if (response.data.valid) {
-          setUsernameValid(true);
-        } else {
-          setUsernameValid(false);
-        }
-      });
+    console.log('temporary function')
+    // axios
+    //   .get(
+    //     `https://insta.nextacademy.com/api/v1/users/check_name?username=${username}`
+    //   )
+    //   .then(response => {
+    //     if (response.data.valid) {
+    //       setUsernameValid(true);
+    //     } else {
+    //       setUsernameValid(false);
+    //     }
+    //   });
   };
 
   const handleSignUp = () => {
@@ -90,7 +90,7 @@ function App() {
           name: usernameInput,
           email: emailInput,
           password: passwordInput,
-          number: 123123123,
+          number: '012345',
           address: addressInput,
           bloodType: bloodTypeInput
         }
@@ -100,6 +100,7 @@ function App() {
           localStorage.setItem("jwt", response.data.access_token);
           successCallback();
           setLoggedIn(localStorage.getItem("jwt") !== null);
+
         })
         .catch(error => {
           console.error(error);
@@ -111,10 +112,17 @@ function App() {
     console.log(localStorage.getItem("jwt"));
     console.log(loggedIn);
   }, [loggedIn]);
+
+  //Logout function 
+  function logout() {
+    localStorage.removeItem('jwt')
+    setLoggedIn(false)
+  }
+
   return (
     <div className="App">
       <AnimatePresence>
-        <NAVBAR />
+        <NAVBAR loggedIn={loggedIn} logout={logout} />
         <Example />
         <Route path="/home">
           <Home />
@@ -122,7 +130,7 @@ function App() {
         <div className="switchh">
           <Switch>
             <Route exact path="/login">
-              <Authorization
+              {loggedIn ? <Redirect to='/profile' /> : <Authorization
                 usernameValid={usernameValid}
                 checkUsername={checkUsername}
                 password={password}
@@ -132,7 +140,8 @@ function App() {
                 confirmPassword={confirmPassword}
                 handleSignUp={handleSignUp}
                 handleChange={handleChange}
-              />
+              />}
+
             </Route>
           </Switch>
         </div>
