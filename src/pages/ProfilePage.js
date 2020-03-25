@@ -29,14 +29,15 @@ const Profile = ({ loggedIn }) => {
   }, [])
   return (
     <>
-      {
-        loggedIn ? <><h1>My Profile</h1>
+      {loggedIn ? (
+        <>
+          <h1>My Profile</h1>
           <ProfTable />
-          <Button color="danger">Edit Profile</Button></> : <div>
-            soz, but no access for you.
-      </div>
-      }
-
+          <Button color="danger">Edit Profile</Button>
+        </>
+      ) : (
+        <div>soz, but no access for you.</div>
+      )}
     </>
   );
 };

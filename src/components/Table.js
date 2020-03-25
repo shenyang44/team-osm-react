@@ -64,7 +64,6 @@ const ProfTable = props => {
             </td>
           </tr>
         </tbody>
-        <Button variant="outline-secondary">xxxxxx</Button>
       </Table>
       <button onClick={callAx}>
         asicapo
