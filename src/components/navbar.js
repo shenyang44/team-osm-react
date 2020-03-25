@@ -14,7 +14,7 @@ const pageTransit = {
   }
 };
 
-const NAVBAR = () => {
+const NAVBAR = (props) => {
   return (
     <motion.div
       className="navbar"
@@ -43,9 +43,9 @@ const NAVBAR = () => {
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/login">
+            {props.loggedIn ? <NavLink className='navtabs' href='' onClick={props.logout}>Logout</NavLink> : <NavLink className="navtabs" href="/login">
               Login
-            </NavLink>
+            </NavLink>}
           </Form>
         </Navbar.Collapse>
       </Navbar>

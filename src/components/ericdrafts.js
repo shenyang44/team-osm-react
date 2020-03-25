@@ -9,43 +9,9 @@ import {
 } from "reactstrap";
 
 const Ericdraft = () => (
-  // <>
-  //   <div>
-  //     <Button color="primary" id="toggler" style={{ marginBottom: "1rem" }}>
-  //       Do's and Dont's before taking a blood test
-  //     </Button>
-  //     <UncontrolledCollapse toggler="#toggler">
-  //       <Card>
-  //         <CardBody>
-  //           Consume iron-rich foods starting a week or two before you donate
-  //         </CardBody>
-  //       </Card>
-  //       <Card>
-  //         <CardBody>
-  //           Take plenty of fluids on and after the day of the donation
-  //         </CardBody>
-  //       </Card>
-  //     </UncontrolledCollapse>
-  //   </div>
-  //   <div>
-  //     <Button color="primary" id="toggler2" style={{ marginBottom: "1rem" }}>
-  //       Toggle
-  //     </Button>
-  //     <UncontrolledCollapse toggler="#toggler2">
-  //       <Card>
-  //         <CardBody>
-  //           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-  //           magni, voluptas debitis similique porro a molestias consequuntur
-  //           earum odio officiis natus, amet hic, iste sed dignissimos esse fuga!
-  //           Minus, alias.
-  //         </CardBody>
-  //       </Card>
-  //     </UncontrolledCollapse>
-  //   </div>
-  // </>
-  <>
+  <div className="faqcontainer">
     <div>
-      <Button color="primary" id="toggler" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler" style={{ marginBottom: "1rem" }}>
         Do's and Dont's before taking a blood test
       </Button>
       <UncontrolledCollapse toggler="#toggler">
@@ -86,7 +52,7 @@ const Ericdraft = () => (
       </UncontrolledCollapse>
     </div>
     <div>
-      <Button color="primary" id="toggler2" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler2" style={{ marginBottom: "1rem" }}>
         Common Misconceptions
       </Button>
       <UncontrolledCollapse toggler="#toggler2">
@@ -151,7 +117,7 @@ const Ericdraft = () => (
       </UncontrolledCollapse>
     </div>
     <div>
-      <Button color="primary" id="toggler3" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler3" style={{ marginBottom: "1rem" }}>
         Blood Donation Types
       </Button>
       <UncontrolledCollapse toggler="#toggler3">
@@ -279,7 +245,7 @@ const Ericdraft = () => (
       </UncontrolledCollapse>
     </div>
     <div>
-      <Button color="primary" id="toggler4" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler4" style={{ marginBottom: "1rem" }}>
         Blood Components
       </Button>
       <UncontrolledCollapse toggler="#toggler4">
@@ -633,7 +599,7 @@ const Ericdraft = () => (
       </UncontrolledCollapse>
     </div>
     <div>
-      <Button color="primary" id="toggler5" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler5" style={{ marginBottom: "1rem" }}>
         How does the blood donation process take place?
       </Button>
       <UncontrolledCollapse toggler="#toggler5">
@@ -665,7 +631,7 @@ const Ericdraft = () => (
       </UncontrolledCollapse>
     </div>
     <div>
-      <Button color="primary" id="toggler6" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler6" style={{ marginBottom: "1rem" }}>
         Whom can I help with my blood donation?
       </Button>
       <UncontrolledCollapse toggler="#toggler6">
@@ -687,7 +653,7 @@ const Ericdraft = () => (
       </UncontrolledCollapse>
     </div>
     <div>
-      <Button color="primary" id="toggler7" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler7" style={{ marginBottom: "1rem" }}>
         What do I need to bring for a blood donation event?
       </Button>
       <UncontrolledCollapse toggler="#toggler7">
@@ -718,7 +684,7 @@ const Ericdraft = () => (
       </UncontrolledCollapse>
     </div>
     <div>
-      <Button color="primary" id="toggler8" style={{ marginBottom: "1rem" }}>
+      <Button color="danger" id="toggler8" style={{ marginBottom: "1rem" }}>
         Blood Donation Fufilments
       </Button>
       <UncontrolledCollapse toggler="#toggler8">
@@ -781,7 +747,7 @@ const Ericdraft = () => (
         </Card>
       </UncontrolledCollapse>
     </div>
-  </>
+  </div>
 );
 
 export default Ericdraft;

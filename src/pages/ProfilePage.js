@@ -10,15 +10,19 @@ import {
 } from "reactstrap";
 import ProfTable from "../components/Table";
 
-const Profile = () => {
+const Profile = ({ loggedIn }) => {
   return (
-    <div className="container" center>
-      <h1>My Profile</h1>
-      <ProfTable />
-      <div className="btncontainer" center>
-        <Button color="danger">Edit Profile</Button>
-      </div>
-    </div>
+    <>
+      {loggedIn ? (
+        <>
+          <h1>My Profile</h1>
+          <ProfTable />
+          <Button color="danger">Edit Profile</Button>
+        </>
+      ) : (
+        <div>soz, but no access for you.</div>
+      )}
+    </>
   );
 };
 

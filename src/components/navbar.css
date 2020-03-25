@@ -1,9 +1,5 @@
-.navbar {
-  display: flex;
-}
-
 .navtog {
-  margin-right: auto;
+  margin-left: auto;
 }
 
 .navtabs {
