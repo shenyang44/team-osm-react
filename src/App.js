@@ -36,6 +36,7 @@ function App() {
     setBloodType("");
   };
 
+  console.log(localStorage.getItem('jwt'))
   function handleChange(e) {
     if (e.target.id === "email") {
       setEmail(e.target.value);
@@ -68,7 +69,6 @@ function App() {
   };
 
   const handleSignUp = () => {
-    console.log("working");
     setEmailInput(email);
     setPasswordInput(password);
     setUsernameInput(username);
@@ -78,7 +78,7 @@ function App() {
 
   // User Sign Up
   useEffect(() => {
-    if (emailInput !== "") {
+    if ((emailInput !== "") && (usernameInput !== '')) {
       axios({
         method: "POST",
         url: "https://team-osm.herokuapp.com/api/v1/users/sign-up",
@@ -86,7 +86,7 @@ function App() {
           name: usernameInput,
           email: emailInput,
           password: passwordInput,
-          number: "012345",
+          number: '012210',
           address: addressInput,
           bloodType: bloodTypeInput
         }
@@ -103,12 +103,29 @@ function App() {
     }
   }, [emailInput]);
 
+  //Login axios call
   useEffect(() => {
-    console.log(localStorage.getItem("jwt"));
-    console.log(loggedIn);
-  }, [loggedIn]);
-
-  //Logout function
+    if (emailInput !== "") {
+      axios({
+        method: "POST",
+        url: "https://team-osm.herokuapp.com/api/v1/users/login",
+        data: {
+          email: emailInput,
+          password: passwordInput
+        }
+      })
+        .then(response => {
+          console.log(response);
+          localStorage.setItem("jwt", response.data.access_token);
+          successCallback();
+          setLoggedIn(localStorage.getItem("jwt") !== null);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [emailInput]);
+  //Logout function 
   function logout() {
     localStorage.removeItem("jwt");
     setLoggedIn(false);
