@@ -9,7 +9,7 @@ const ProfTable = props => {
   const [email, setEmail] = useState('unavailable')
   const [blood, setBlood] = useState('Blood input in form not working')
 
-  function callAx() {
+  useEffect(() => {
     axios({
       method: "GET",
       url: "https://team-osm.herokuapp.com/api/v1/users/show",
@@ -21,11 +21,14 @@ const ProfTable = props => {
         console.log(response);
         setAddress(response.data.address)
         setNumber(response.data.number)
+        setName(response.data.name)
+        setEmail(response.data.email)
+        setBlood(response.data.blood)
       })
       .catch(error => {
         console.error(error);
       });
-  }
+  }, [])
 
   return (
     <div className="tbcontainer">
@@ -65,9 +68,6 @@ const ProfTable = props => {
           </tr>
         </tbody>
       </Table>
-      <button onClick={callAx}>
-        asicapo
-      </button>
     </div>
   );
 };
