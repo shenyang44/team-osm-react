@@ -45,17 +45,15 @@ function App() {
       setUsername(e.target.value);
     } else if (e.target.id === "address") {
       setAddress(e.target.value);
-    }
-    else if (e.target.id == 'rePass') {
-      setConfirmPassword(e.target.value)
-    }
-    else {
+    } else if (e.target.id == "rePass") {
+      setConfirmPassword(e.target.value);
+    } else {
       setBloodType(e.target.value);
     }
   }
 
   const checkUsername = () => {
-    console.log('temporary function')
+    console.log("temporary function");
     // axios
     //   .get(
     //     `https://insta.nextacademy.com/api/v1/users/check_name?username=${username}`
@@ -88,7 +86,7 @@ function App() {
           name: usernameInput,
           email: emailInput,
           password: passwordInput,
-          number: '012345',
+          number: "012345",
           address: addressInput,
           bloodType: bloodTypeInput
         }
@@ -98,7 +96,6 @@ function App() {
           localStorage.setItem("jwt", response.data.access_token);
           successCallback();
           setLoggedIn(localStorage.getItem("jwt") !== null);
-
         })
         .catch(error => {
           console.error(error);
@@ -111,10 +108,10 @@ function App() {
     console.log(loggedIn);
   }, [loggedIn]);
 
-  //Logout function 
+  //Logout function
   function logout() {
-    localStorage.removeItem('jwt')
-    setLoggedIn(false)
+    localStorage.removeItem("jwt");
+    setLoggedIn(false);
   }
 
   return (
@@ -128,17 +125,21 @@ function App() {
         <div className="switchh">
           <Switch>
             <Route exact path="/login">
-              {loggedIn ? <Redirect to='/profile' /> : <Authorization
-                usernameValid={usernameValid}
-                checkUsername={checkUsername}
-                password={password}
-                address={address}
-                username={username}
-                email={email}
-                confirmPassword={confirmPassword}
-                handleSignUp={handleSignUp}
-                handleChange={handleChange}
-              />}
+              {loggedIn ? (
+                <Redirect to="/profile" />
+              ) : (
+                <Authorization
+                  usernameValid={usernameValid}
+                  checkUsername={checkUsername}
+                  password={password}
+                  address={address}
+                  username={username}
+                  email={email}
+                  confirmPassword={confirmPassword}
+                  handleSignUp={handleSignUp}
+                  handleChange={handleChange}
+                />
+              )}
             </Route>
           </Switch>
         </div>

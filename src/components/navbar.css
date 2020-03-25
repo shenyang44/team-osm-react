@@ -1,12 +1,11 @@
-.navbar {
-  display: flex;
+.navtog {
+  margin-left: auto;
 }
 
 .navtabs {
   /* display: inline;
   color: yellow;
   background-color: blue; */
-
   border: none;
   color: rgb(174, 4, 4);
   padding: 10px 20px;
@@ -19,5 +18,5 @@
 .navtabs:hover {
   border-radius: 30px;
   color: white;
-  background-color: rgb(198, 45, 45);
+  background-color: rgb(240, 58, 58);
 }
