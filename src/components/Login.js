@@ -15,11 +15,10 @@ const pageTransit = {
   }
 };
 
-const Login = props => {
+const Login = ({ props }) => {
   // function validateForm() {
   //   return email.length > 0 && password.length > 0;
   // }
-
   function handleSubmit(event) {
     event.preventDefault();
   }
