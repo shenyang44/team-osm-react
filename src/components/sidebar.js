@@ -30,6 +30,15 @@ const Sidebar = () => {
         <h5 style={{ color: "black" }}>
           <a href="#BC">Blood Components</a>
         </h5>
+        <h5 style={{ color: "black" }}>
+          <a href="#BDProcess">Blood Donation Process</a>
+        </h5>
+        <h5 style={{ color: "black" }}>
+          <a href="#BDSave">Whom do I help with my blood</a>
+        </h5>
+        <h5 style={{ color: "black" }}>
+          <a href="#BDBring">What to bring</a>
+        </h5>
       </StyledSidebar>
     </>
   );

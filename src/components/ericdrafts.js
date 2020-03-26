@@ -7,6 +7,7 @@ import {
   CardText,
   CardTitle
 } from "reactstrap";
+import "../components/ericdraft.css";
 
 const Ericdraft = () => (
   <div className="faqcontainer">
