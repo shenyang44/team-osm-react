@@ -52,6 +52,7 @@ const Ericdraft = () => (
         </Card>
       </UncontrolledCollapse>
     </div>
+    <br />
     <div>
       <Button color="danger" id="toggler2" style={{ marginBottom: "1rem" }}>
         Common Misconceptions
@@ -117,18 +118,19 @@ const Ericdraft = () => (
         </Card>
       </UncontrolledCollapse>
     </div>
+    <br />
     <div>
       <Button color="danger" id="toggler3" style={{ marginBottom: "1rem" }}>
         Blood Donation Types
       </Button>
       <UncontrolledCollapse toggler="#toggler3">
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Whole Blood Donation
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Whole blood is the most flexible type of donation. It can be
             transfused in its original form, or used to help multiple people
             when separated into its specific components of red cells, plasma and
@@ -146,15 +148,15 @@ const Ericdraft = () => (
             <br />
             <br />
             Ideal Blood Types: All blood types
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Power Red Donation
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             During a Power Red donation, you give a concentrated dose of red
             cells, the part of your blood used every day for those needing
             transfusions as part of their care. This type of donation uses an
@@ -179,15 +181,15 @@ const Ericdraft = () => (
             <br />
             Ideal blood types: O positive, O negative, A negative, and B
             negative
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Platelet Donation
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Platelets are tiny cells in your blood that form clots and stop
             bleeding. Platelets are most often used by cancer patients and
             others facing life-threatening illnesses and injuries. In a platelet
@@ -212,15 +214,15 @@ const Ericdraft = () => (
             <br />
             Ideal blood types: A positive, A negative, B positive, O positive,
             AB positive and AB negative
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Plasma Donation
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             During an AB Elite donation, you give plasma, a part of your blood
             used to treat patients in emergency situations. AB plasma can be
             given to anyone regardless of their blood type. Plasma is collected
@@ -241,22 +243,23 @@ const Ericdraft = () => (
             <br />
             <br />
             Ideal blood types: AB positive, AB negative
-          </CardText>
+          </CardBody>
         </Card>
       </UncontrolledCollapse>
     </div>
+    <br />
     <div>
       <Button color="danger" id="toggler4" style={{ marginBottom: "1rem" }}>
         Blood Components
       </Button>
       <UncontrolledCollapse toggler="#toggler4">
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Whole Blood
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Whole blood contains red cells, white cells, and platelets (~45% of
             volume) suspended in blood plasma (~55% of volume).
             <br />
@@ -292,15 +295,15 @@ const Ericdraft = () => (
             <br />
             Whole blood can be donated at any Red Cross blood drive or blood
             center.
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Red Cells
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Red blood cells (RBCs), or erythrocytes, give blood its distinctive
             color. Produced in our bone marrow, they carry oxygen from our lungs
             to the rest of our bodies and take carbon dioxide back to our lungs
@@ -334,13 +337,13 @@ const Ericdraft = () => (
             blood loss resulting from trauma. They can also be used to treat
             blood disorders such as sickle cell disease.
             <br />
-          </CardText>{" "}
-          <CardTitle
+          </CardBody>{" "}
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Prestorage Leukocyte-Reduced Red Blood Cells
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Leukocyte-reduced RBCs are prepared by removing leukocytes (white
             blood cells) by filtration shortly after donation. This is done
             before the RBCs are stored because over time the leukocytes can
@@ -348,25 +351,25 @@ const Ericdraft = () => (
             negative reactions in the patient who receives them. These reactions
             can occur during the initial transfusion or during any future
             transfusions.
-          </CardText>
-          <CardTitle
+          </CardBody>
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Donating Red Blood Cells
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             The Red Cross calls RBC donations “Power Red.” By donating Power
             Red, you double your impact by contributing two units of red cells
             in just one donation.
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Platelets
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Platelets, or thrombocytes, are small, colorless cell fragments in
             our blood whose main function is to stick to the lining of blood
             vessels and help stop or prevent bleeding. Platelets are made in our
@@ -406,24 +409,24 @@ const Ericdraft = () => (
             condition called thrombocytopenia, in which there is a shortage of
             platelets. They are also used to treat platelet function
             abnormalities.
-          </CardText>
-          <CardTitle
+          </CardBody>
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Donating Platelets
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Since platelets must be used within 5 days of donation, there is a
             constant need for platelet donors.
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Plasma
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Plasma is the liquid portion of blood; our red and white blood cells
             and platelets are suspended in plasma as they move throughout our
             bodies.
@@ -461,13 +464,13 @@ const Ericdraft = () => (
             Plasma is commonly transfused to trauma, burn and shock patients, as
             well as people with severe liver disease or multiple clotting factor
             deficiencies.
-          </CardText>
-          <CardTitle
+          </CardBody>
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Plasma Derivaties
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             In some cases, patients need plasma derivatives instead. These are
             concentrates of specific plasma proteins obtained through a process
             known as fractionation. The derivatives are treated with heat and/or
@@ -498,25 +501,25 @@ const Ericdraft = () => (
             <br />
             Alpha 1-Proteinase Inhibitor Concentrate
             <br />
-          </CardText>
-          <CardTitle
+          </CardBody>
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Donating AB Plasma
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             When collecting specifically plasma, the Red Cross is seeking
             AB-type donors. AB plasma is collected at select Red Cross Donation
             Centers only.
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             Cryo
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Cryoprecipitated Antihemophilic Factor (Cryo) is a portion of plasma
             rich in clotting factors, including Factor VIII and fibrinogen.
             These clotting factors reduce blood loss by helping to slow or stop
@@ -547,21 +550,21 @@ const Ericdraft = () => (
             conditions such as hemophilia and von Willebrands disease. Cryo is
             also a source of fibrinogen for patients who cannot produce the
             necessary amount of this important clotting protein on their own.
-          </CardText>
-          <CardTitle
+          </CardBody>
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Donating Cryoprecipitated AHF
-          </CardTitle>
+          </CardBody>
           <CardText>Cryo is prepared from donated plasma.</CardText>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             White Cells & Granulocytes
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             White blood cells, or leukocytes, are one of the body’s defenses
             against disease: some destroy bacteria and others create antibodies
             against bacteria and viruses or fight malignant disease. But while
@@ -571,13 +574,13 @@ const Ericdraft = () => (
             substances in the recipient. To avoid these negative reactions,
             leukocytes are often removed from transfusable blood components, a
             process called leuko-reduction.
-          </CardText>
-          <CardTitle
+          </CardBody>
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Granulocytes
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             That doesn’t necessarily mean your white cells can’t be used to help
             patients in need! Granulocytes are a type of white cell that
             protects against infection by surrounding and destroying invading
@@ -585,166 +588,170 @@ const Ericdraft = () => (
             don’t respond to antibiotics. Granulocytes are collected by an
             automated process called apheresis and must be transfused into the
             patient within 24 hours of being donated.
-          </CardText>
-          <CardTitle
+          </CardBody>
+          <CardBody
             style={{ color: "black", fontSize: "Medium", fontWeight: "bold" }}
           >
             Donating Granulocytes
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             Since granulocyte must be used within 24 hours, donations are taken
             on an as-needed basis. To be eligible to donate granulocytes, you
             must have donated platelets through the Red Cross within 30 days.
-          </CardText>
+          </CardBody>
         </Card>
       </UncontrolledCollapse>
     </div>
+    <br />
     <div>
       <Button color="danger" id="toggler5" style={{ marginBottom: "1rem" }}>
         How does the blood donation process take place?
       </Button>
       <UncontrolledCollapse toggler="#toggler5">
         <Card>
-          <CardText>
+          <CardBody>
             1. You will first fill up a blood donation registration form or card
-          </CardText>
-          <CardText>2. Have your body weight weighed and recorded</CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>2. Have your body weight weighed and recorded</CardBody>
+          <CardBody>
             3. Have a blood test to identify your blood group and haemoglobin
             level
-          </CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>
             4. A short Q&A with Medical Officer/nurse to review blood donation
             criteria
-          </CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>
             5. Blood donation process begins and lasts for about 10 to 15
             minutes
-          </CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>
             6. After completing the donation, you can take a rest on the bed for
             about 10 minutes
-          </CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>
             7. Sometimes, you’re also given a light refreshment!
-          </CardText>
+          </CardBody>
         </Card>
       </UncontrolledCollapse>
     </div>
+    <br />
     <div>
       <Button color="danger" id="toggler6" style={{ marginBottom: "1rem" }}>
         Whom can I help with my blood donation?
       </Button>
       <UncontrolledCollapse toggler="#toggler6">
         <Card>
-          <CardText>Your blood can help make a difference for others.</CardText>
-          <CardText>-Fire victims</CardText>
-          <CardText>-Thalassaemia patients</CardText>
-          <CardText>-Dengue patients</CardText>
-          <CardText>
+          <CardBody>Your blood can help make a difference for others.</CardBody>
+          <CardBody>-Fire victims</CardBody>
+          <CardBody>-Thalassaemia patients</CardBody>
+          <CardBody>-Dengue patients</CardBody>
+          <CardBody>
             -People who need to undergo surgeries or organ transplant procedures
-          </CardText>
-          <CardText>-Accident victims</CardText>
-          <CardText>-Mothers who have premature childbirth</CardText>
-          <CardText>-Cancer patients</CardText>
-          <CardText>-Leukemia patients</CardText>
-          <CardText>-Heart attack patients</CardText>
-          <CardText>-Haemophilia patients</CardText>
+          </CardBody>
+          <CardBody>-Accident victims</CardBody>
+          <CardBody>-Mothers who have premature childbirth</CardBody>
+          <CardBody>-Cancer patients</CardBody>
+          <CardBody>-Leukemia patients</CardBody>
+          <CardBody>-Heart attack patients</CardBody>
+          <CardBody>-Haemophilia patients</CardBody>
         </Card>
       </UncontrolledCollapse>
     </div>
+    <br />
     <div>
       <Button color="danger" id="toggler7" style={{ marginBottom: "1rem" }}>
         What do I need to bring for a blood donation event?
       </Button>
       <UncontrolledCollapse toggler="#toggler7">
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             For Malaysian Citizens
-          </CardTitle>
-          <CardText>-MyKad/Armforce Number/Police Number</CardText>
-          <CardText>-Driving license</CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>-MyKad/Armforce Number/Police Number</CardBody>
+          <CardBody>-Driving license</CardBody>
+          <CardBody>
             -Working pass with Identity card number and photograph
-          </CardText>
-          <CardText>-Student pass with IC number and photograph</CardText>
-          <CardText>-Blood donors book (only for repeating donors)</CardText>
+          </CardBody>
+          <CardBody>-Student pass with IC number and photograph</CardBody>
+          <CardBody>-Blood donors book (only for repeating donors)</CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             For Non-Malaysian Citizens
-          </CardTitle>
-          <CardText>-Passport</CardText>
-          <CardText>-Work permit with passport number and photograph</CardText>
-          <CardText>-Student pass with passport number and photograph</CardText>
+          </CardBody>
+          <CardBody>-Passport</CardBody>
+          <CardBody>-Work permit with passport number and photograph</CardBody>
+          <CardBody>-Student pass with passport number and photograph</CardBody>
         </Card>
       </UncontrolledCollapse>
     </div>
+    <br />
     <div>
       <Button color="danger" id="toggler8" style={{ marginBottom: "1rem" }}>
         Blood Donation Fufilments
       </Button>
       <UncontrolledCollapse toggler="#toggler8">
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             To participate in the blood donation, there are a few criterias that
             you will have to fufill:
-          </CardTitle>
-          <CardText>
+          </CardBody>
+          <CardBody>
             -Aged 18 - 60 years old (written permission from parents is required
             for donors aged 17 and below)
-          </CardText>
-          <CardText>-Body weight at least 45 kg</CardText>
-          <CardText>-Haemoglobin level at least 12.5g/dl</CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>-Body weight at least 45 kg</CardBody>
+          <CardBody>-Haemoglobin level at least 12.5g/dl</CardBody>
+          <CardBody>
             -Good physical and mental health with no serious or chronic medical
             illness
-          </CardText>
-          <CardText>-Not on long term medications</CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>-Not on long term medications</CardBody>
+          <CardBody>
             -No alcohol intake within the last 24 hours of donation
-          </CardText>
-          <CardText>-Have taken a proper meal prior to donation</CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>-Have taken a proper meal prior to donation</CardBody>
+          <CardBody>
             -Have had more than 5 hours of sleep during the night before
             donation
-          </CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>
             -Have been staying in malaysia for at least 1 year (for non-citizens
             of Malaysia)
-          </CardText>
+          </CardBody>
         </Card>
         <Card>
-          <CardTitle
+          <CardBody
             style={{ color: "black", fontSize: "Large", fontWeight: "bold" }}
           >
             You CANNOT participate in blood donation if you have:
-          </CardTitle>
-          <CardText>-A professional sex-related job</CardText>
-          <CardText>-Drug abuse history</CardText>
-          <CardText>-Multiple sexual partners</CardText>
-          <CardText>-Same gender sexual activity</CardText>
-          <CardText>-Diabetes or insulin treatments</CardText>
-          <CardText>-Hepatitis B history</CardText>
-          <CardText>-Hepatitis C history</CardText>
-          <CardText>-HIV/AIDS diagnosis</CardText>
-          <CardText>-Pregnancy or menstruating</CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>-A professional sex-related job</CardBody>
+          <CardBody>-Drug abuse history</CardBody>
+          <CardBody>-Multiple sexual partners</CardBody>
+          <CardBody>-Same gender sexual activity</CardBody>
+          <CardBody>-Diabetes or insulin treatments</CardBody>
+          <CardBody>-Hepatitis B history</CardBody>
+          <CardBody>-Hepatitis C history</CardBody>
+          <CardBody>-HIV/AIDS diagnosis</CardBody>
+          <CardBody>-Pregnancy or menstruating</CardBody>
+          <CardBody>
             -Less than 1 year since last childbirth/breastfeeding
-          </CardText>
-          <CardText>-Less than 6 months since last tattoo/piercing</CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>-Less than 6 months since last tattoo/piercing</CardBody>
+          <CardBody>
             -Less than 7 days since last intake of antibiotics or vaccination
-          </CardText>
-          <CardText>
+          </CardBody>
+          <CardBody>
             -Less than 1 week since last illness (like fever or cold)
-          </CardText>
+          </CardBody>
         </Card>
       </UncontrolledCollapse>
     </div>
