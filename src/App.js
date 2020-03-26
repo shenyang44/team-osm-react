@@ -11,6 +11,9 @@ import { AnimatePresence, motion } from "framer-motion";
 import Example from ".//components/Start";
 import Ericdraft from ".//components/ericdrafts";
 import Profile from "./pages/ProfilePage";
+import Blood from "./components/blood";
+import Donate from "./components/donate";
+import Contact from "./components/contact";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -26,6 +29,7 @@ function App() {
   const [passwordInput, setPasswordInput] = useState("");
   const [usernameInput, setUsernameInput] = useState("");
   const [loggedIn, setLoggedIn] = useState(localStorage.getItem("jwt"));
+  const [number, setNumber] = useState("");
 
   const successCallback = () => {
     setEmail("");
@@ -48,6 +52,8 @@ function App() {
       setAddress(e.target.value);
     } else if (e.target.id == "rePass") {
       setConfirmPassword(e.target.value);
+    } else if (e.target.id == "number") {
+      setNumber(e.target.value);
     } else {
       setBloodType(e.target.value);
     }
@@ -86,7 +92,7 @@ function App() {
           name: usernameInput,
           email: emailInput,
           password: passwordInput,
-          number: "012210",
+          number: number,
           address: addressInput,
           bloodType: bloodTypeInput
         }
@@ -136,7 +142,7 @@ function App() {
       <AnimatePresence>
         <NAVBAR loggedIn={loggedIn} logout={logout} />
         <Example />
-        <Route path="/home">
+        <Route exact path="/">
           <Home />
         </Route>
         <div className="switchh">
@@ -172,10 +178,16 @@ function App() {
         <Route path="/faq">
           <Ericdraft />
         </Route>
-        <Route path="/contact">{/* smtg */}</Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
         <Route path="/plans">{/* smtg */}</Route>
-        <Route path="/blood">{/* smtg */}</Route>
-        <Route path="/donate">{/* smtg */}</Route>
+        <Route path="/blood">
+          <Blood />
+        </Route>
+        <Route path="/donate">
+          <Donate />
+        </Route>
       </AnimatePresence>
     </div>
   );
