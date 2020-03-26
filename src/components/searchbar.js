@@ -3,7 +3,7 @@ import axios from "axios";
 import { GoogleMap, LoadScript } from '@react-google-maps/api'
 
 const SearchForm = (props) => {
-  const [event, setEvent] = useState("");
+  const [event, setEvent] = useState([]);
 
   useEffect(() => {
     axios
@@ -37,15 +37,19 @@ const SearchForm = (props) => {
           }}
         />
       </LoadScript >
-
       <h4>Events</h4>
-      <p>Event name :
-      </p>
-      <p>Description :</p>
-      <p>Location :</p>
-      <p>Time :</p>
-      <p>Date :</p>
-      <p>Establishment:</p>
+      {event.map((events) => (
+
+        <>
+          <hr />
+          <p>Event name : {events.event_name}</p>
+          <p>Description : {events.description}</p>
+          <p>Location : {events.location}</p>
+          <p>Time : {events.time}</p>
+          <p>Date : {events.date}</p>
+          <p>Establishment : {events.establishment.name}</p>
+        </>
+      ))}
 
     </>
   );
