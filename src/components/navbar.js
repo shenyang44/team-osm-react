@@ -24,7 +24,7 @@ const NAVBAR = (props) => {
       variants={pageTransit}
     >
       <Navbar expand="lg">
-        <NavbarBrand href="/home">Blardy</NavbarBrand>
+        <NavbarBrand href="/">Blardy</NavbarBrand>
         <Navbar.Toggle className="navtog" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Form>

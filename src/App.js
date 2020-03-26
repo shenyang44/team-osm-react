@@ -136,7 +136,7 @@ function App() {
       <AnimatePresence>
         <NAVBAR loggedIn={loggedIn} logout={logout} />
         <Example />
-        <Route path="/home">
+        <Route path="/">
           <Home />
         </Route>
         <div className="switchh">
@@ -145,18 +145,18 @@ function App() {
               {loggedIn ? (
                 <Redirect to="/profile" />
               ) : (
-                <Authorization
-                  usernameValid={usernameValid}
-                  checkUsername={checkUsername}
-                  password={password}
-                  address={address}
-                  username={username}
-                  email={email}
-                  confirmPassword={confirmPassword}
-                  handleSignUp={handleSignUp}
-                  handleChange={handleChange}
-                />
-              )}
+                  <Authorization
+                    usernameValid={usernameValid}
+                    checkUsername={checkUsername}
+                    password={password}
+                    address={address}
+                    username={username}
+                    email={email}
+                    confirmPassword={confirmPassword}
+                    handleSignUp={handleSignUp}
+                    handleChange={handleChange}
+                  />
+                )}
             </Route>
           </Switch>
         </div>
