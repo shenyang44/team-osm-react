@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 import {
   Form,
   Label,
@@ -9,13 +8,20 @@ import {
   FormGroup
 } from "reactstrap";
 import ProfTable from "../components/Table";
+import axios from 'axios';
 
-const Profile = () => {
+const Profile = ({ loggedIn }) => {
+
   return (
     <>
-      <h1>My Profile</h1>
-      <ProfTable />
-      <Button color="danger">Edit Profile</Button>
+      {
+        loggedIn ? <><h1>My Profile</h1>
+          <ProfTable />
+          <Button color="danger">Edit Profile</Button></> : <div>
+            soz, but no access for you.
+      </div>
+      }
+
     </>
   );
 };

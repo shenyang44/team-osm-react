@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Button, FormGroup, FormControl } from "react-bootstrap";
 import { Label } from "reactstrap";
-import { Link } from "react-router-dom";
 import "./Login.css";
-// import SignUp from "./components/Signup";
 import { motion } from "framer-motion";
 
 const pageTransit = {
@@ -17,14 +15,10 @@ const pageTransit = {
   }
 };
 
-const Login = props => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  function validateForm() {
-    return email.length > 0 && password.length > 0;
-  }
-
+const Login = ({ props }) => {
+  // function validateForm() {
+  //   return email.length > 0 && password.length > 0;
+  // }
   function handleSubmit(event) {
     event.preventDefault();
   }
@@ -44,16 +38,18 @@ const Login = props => {
             className="logininput"
             autoFocus
             type="email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+            value={props.email}
+            onChange={props.handleChange}
+            id='email'
           />
         </FormGroup>
         <FormGroup controlId="password" bsSize="large">
           <Label className="passlabel">Password</Label>
           <FormControl
-            value={password}
-            onChange={e => setPassword(e.target.value)}
+            value={props.password}
+            onChange={props.handleChange}
             type="password"
+            id='password'
           />
         </FormGroup>
         <Button
@@ -61,8 +57,9 @@ const Login = props => {
           className="btnlogin"
           block
           bsSize="large"
-          disabled={!validateForm()}
+          // disabled={!validateForm()}
           type="submit"
+          onClick={props.handleSignUp}
         >
           Login
         </Button>

@@ -29,8 +29,6 @@ const pageTransit = {
 };
 
 const SignUp = ({ props }) => {
-  console.log(props.email);
-  console.log(props.handleSignUp);
   const toastSettings = {
     position: "top-right",
     autoClose: 5000,
@@ -89,7 +87,7 @@ const SignUp = ({ props }) => {
           <FormGroup>
             <Label>Email</Label>
             <Input
-              type="text"
+              type="email"
               placeholder="...@email.com"
               value={props.email}
               onChange={props.handleChange}
@@ -102,9 +100,9 @@ const SignUp = ({ props }) => {
               type="text"
               placeholder="min 6 characters"
               value={props.username}
-              onChange={props.checkUsername}
+              onChange={props.handleChange}
               id="username"
-              // {...getInputProp()}
+            // {...getInputProp()}
             />
             {/* {getFormFeedback()} */}
           </FormGroup>
@@ -125,6 +123,7 @@ const SignUp = ({ props }) => {
               placeholder="Retype Password"
               value={props.confirmPassword}
               onChange={props.handleChange}
+              id='rePass'
             />
           </FormGroup>
         </div>

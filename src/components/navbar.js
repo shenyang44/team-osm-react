@@ -3,6 +3,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { Nav, Form, NavbarBrand, NavLink } from "react-bootstrap";
 import "./navbar.css";
 import { motion } from "framer-motion";
+// import Img from "react";
 
 const pageTransit = {
   in: {
@@ -13,7 +14,7 @@ const pageTransit = {
   }
 };
 
-const NAVBAR = () => {
+const NAVBAR = (props) => {
   return (
     <motion.div
       className="navbar"
@@ -23,8 +24,8 @@ const NAVBAR = () => {
       variants={pageTransit}
     >
       <Navbar expand="lg">
-        <NavbarBrand href="/home">Blardy/LogoHere</NavbarBrand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <NavbarBrand href="/home">Blardy</NavbarBrand>
+        <Navbar.Toggle className="navtog" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Form>
             <NavLink className="navtabs" href="/faq">
@@ -42,9 +43,9 @@ const NAVBAR = () => {
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/login">
+            {props.loggedIn ? <NavLink className='navtabs' href='' onClick={props.logout}>Logout</NavLink> : <NavLink className="navtabs" href="/login">
               Login
-            </NavLink>
+            </NavLink>}
           </Form>
         </Navbar.Collapse>
       </Navbar>

@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import NAVBAR from "./components/navbar";
 import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
 import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
-import Login from "./components/Login";
 import { AnimatePresence, motion } from "framer-motion";
-import TABLE from "./components/Profile";
 import Example from ".//components/Start";
 import Ericdraft from ".//components/ericdrafts";
 import Profile from "./pages/ProfilePage";
@@ -38,6 +36,7 @@ function App() {
     setBloodType("");
   };
 
+  console.log(localStorage.getItem('jwt'))
   function handleChange(e) {
     if (e.target.id === "email") {
       setEmail(e.target.value);
@@ -47,27 +46,29 @@ function App() {
       setUsername(e.target.value);
     } else if (e.target.id === "address") {
       setAddress(e.target.value);
+    } else if (e.target.id == "rePass") {
+      setConfirmPassword(e.target.value);
     } else {
       setBloodType(e.target.value);
     }
   }
 
   const checkUsername = () => {
-    axios
-      .get(
-        `https://insta.nextacademy.com/api/v1/users/check_name?username=${username}`
-      )
-      .then(response => {
-        if (response.data.valid) {
-          setUsernameValid(true);
-        } else {
-          setUsernameValid(false);
-        }
-      });
+    console.log("temporary function");
+    // axios
+    //   .get(
+    //     `https://insta.nextacademy.com/api/v1/users/check_name?username=${username}`
+    //   )
+    //   .then(response => {
+    //     if (response.data.valid) {
+    //       setUsernameValid(true);
+    //     } else {
+    //       setUsernameValid(false);
+    //     }
+    //   });
   };
 
   const handleSignUp = () => {
-    console.log("working");
     setEmailInput(email);
     setPasswordInput(password);
     setUsernameInput(username);
@@ -77,7 +78,7 @@ function App() {
 
   // User Sign Up
   useEffect(() => {
-    if (emailInput !== "") {
+    if ((emailInput !== "") && (usernameInput !== '')) {
       axios({
         method: "POST",
         url: "https://team-osm.herokuapp.com/api/v1/users/sign-up",
@@ -85,7 +86,7 @@ function App() {
           name: usernameInput,
           email: emailInput,
           password: passwordInput,
-          number: 123123123,
+          number: '012210',
           address: addressInput,
           bloodType: bloodTypeInput
         }
@@ -102,14 +103,38 @@ function App() {
     }
   }, [emailInput]);
 
+  //Login axios call
   useEffect(() => {
-    console.log(localStorage.getItem("jwt"));
-    console.log(loggedIn);
-  }, [loggedIn]);
+    if (emailInput !== "") {
+      axios({
+        method: "POST",
+        url: "https://team-osm.herokuapp.com/api/v1/users/login",
+        data: {
+          email: emailInput,
+          password: passwordInput
+        }
+      })
+        .then(response => {
+          console.log(response);
+          localStorage.setItem("jwt", response.data.access_token);
+          successCallback();
+          setLoggedIn(localStorage.getItem("jwt") !== null);
+        })
+        .catch(error => {
+          console.error(error);
+        });
+    }
+  }, [emailInput]);
+  //Logout function 
+  function logout() {
+    localStorage.removeItem("jwt");
+    setLoggedIn(false);
+  }
+
   return (
     <div className="App">
       <AnimatePresence>
-        <NAVBAR />
+        <NAVBAR loggedIn={loggedIn} logout={logout} />
         <Example />
         <Route path="/home">
           <Home />
@@ -117,34 +142,32 @@ function App() {
         <div className="switchh">
           <Switch>
             <Route exact path="/login">
-              <Authorization
-                usernameValid={usernameValid}
-                checkUsername={checkUsername}
-                password={password}
-                address={address}
-                username={username}
-                email={email}
-                confirmPassword={confirmPassword}
-                handleSignUp={handleSignUp}
-                handleChange={handleChange}
-              />
+              {loggedIn ? (
+                <Redirect to="/profile" />
+              ) : (
+                <Authorization
+                  usernameValid={usernameValid}
+                  checkUsername={checkUsername}
+                  password={password}
+                  address={address}
+                  username={username}
+                  email={email}
+                  confirmPassword={confirmPassword}
+                  handleSignUp={handleSignUp}
+                  handleChange={handleChange}
+                />
+              )}
             </Route>
           </Switch>
         </div>
-        <Route path="/bleed">
-          <Login />
-        </Route>
         <Route path="/profile">
-          <Profile />
+          <Profile loggedIn={loggedIn} />
         </Route>
         <Route path="/SearchForm">
           <SearchForm />
         </Route>
         <Route path="/faq">
           <FAQ />
-        </Route>
-        <Route path="/me">
-          <TABLE />
         </Route>
         <Route path="/another">
           <Ericdraft />
