@@ -36,7 +36,7 @@ function App() {
     setBloodType("");
   };
 
-  console.log(localStorage.getItem('jwt'))
+  console.log(localStorage.getItem("jwt"));
   function handleChange(e) {
     if (e.target.id === "email") {
       setEmail(e.target.value);
@@ -78,7 +78,7 @@ function App() {
 
   // User Sign Up
   useEffect(() => {
-    if ((emailInput !== "") && (usernameInput !== '')) {
+    if (emailInput !== "" && usernameInput !== "") {
       axios({
         method: "POST",
         url: "https://team-osm.herokuapp.com/api/v1/users/sign-up",
@@ -86,7 +86,7 @@ function App() {
           name: usernameInput,
           email: emailInput,
           password: passwordInput,
-          number: '012210',
+          number: "012210",
           address: addressInput,
           bloodType: bloodTypeInput
         }
@@ -125,7 +125,7 @@ function App() {
         });
     }
   }, [emailInput]);
-  //Logout function 
+  //Logout function
   function logout() {
     localStorage.removeItem("jwt");
     setLoggedIn(false);
@@ -166,12 +166,16 @@ function App() {
         <Route path="/SearchForm">
           <SearchForm />
         </Route>
-        <Route path="/faq">
+        <Route path="/anotherfaq">
           <FAQ />
         </Route>
-        <Route path="/another">
+        <Route path="/faq">
           <Ericdraft />
         </Route>
+        <Route path="/contact">{/* smtg */}</Route>
+        <Route path="/plans">{/* smtg */}</Route>
+        <Route path="/blood">{/* smtg */}</Route>
+        <Route path="/donate">{/* smtg */}</Route>
       </AnimatePresence>
     </div>
   );

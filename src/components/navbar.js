@@ -14,7 +14,7 @@ const pageTransit = {
   }
 };
 
-const NAVBAR = (props) => {
+const NAVBAR = props => {
   return (
     <motion.div
       className="navbar"
@@ -27,14 +27,29 @@ const NAVBAR = (props) => {
         <NavbarBrand href="/home">Blardy</NavbarBrand>
         <Navbar.Toggle className="navtog" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
+          {/* <Form>
+            <NavLink className="navtabs" href="/faq">
+              FAQ
+            </NavLink> temporary comment it out
+          </Form> */}
           <Form>
             <NavLink className="navtabs" href="/faq">
               FAQ
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/another">
-              anotherFAQ
+            <NavLink className="navtabs" href="/blood">
+              About Blood
+            </NavLink>
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/donate">
+              About Donations
+            </NavLink>
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/plans">
+              In Progress
             </NavLink>
           </Form>
           <Form>
@@ -43,9 +58,20 @@ const NAVBAR = (props) => {
             </NavLink>
           </Form>
           <Form>
-            {props.loggedIn ? <NavLink className='navtabs' href='' onClick={props.logout}>Logout</NavLink> : <NavLink className="navtabs" href="/login">
-              Login
-            </NavLink>}
+            {props.loggedIn ? (
+              <NavLink className="navtabs" href="" onClick={props.logout}>
+                Logout
+              </NavLink>
+            ) : (
+              <NavLink className="navtabs" href="/login">
+                Get Started
+              </NavLink>
+            )}
+          </Form>
+          <Form>
+            <NavLink className="navtabs" href="/contact">
+              Contact Us
+            </NavLink>
           </Form>
         </Navbar.Collapse>
       </Navbar>
