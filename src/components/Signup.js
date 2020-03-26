@@ -132,11 +132,22 @@ const SignUp = ({ props }) => {
             <Label>Address</Label>
             <br />
             <Input
-              type="Address"
+              type="address"
               placeholder="Address"
               value={props.address}
               onChange={props.handleChange}
               id="address"
+            />
+          </FormGroup>
+          <FormGroup>
+            <Label>Phone Number</Label>
+            <br />
+            <Input
+              type="number"
+              placeholder="012-3456789"
+              value={props.number}
+              onChange={props.handleChange}
+              id="number"
             />
           </FormGroup>
           <FormGroup>
