@@ -35,7 +35,7 @@ const HOME = () => {
                       <i class="fas fa-vial fa-4x"></i>Blood Info
                     </CardTitle>
                     <CardText>
-                      General information on blood and their properties
+                      General information on blood & their properties
                     </CardText>
                   </div>
                 </CardImgOverlay>
@@ -48,6 +48,7 @@ const HOME = () => {
                 <CardImg
                   className="ccardd"
                   width="100%"
+                  height="100%"
                   src="img/hero-hand.jpg"
                   alt="Card image cap"
                 />
@@ -69,23 +70,22 @@ const HOME = () => {
         <br />
         <Row>
           <Col sm="6">
-            <a href="/faq">
+            <a href="/donate">
               <Card className="ccard" body>
                 <CardImg
                   className="ccardd"
                   width="100%"
+                  height="100%"
                   src="img/blood-donor.jpg"
                   alt="Card image cap"
                 />
                 <CardImgOverlay className="coverlay">
                   <div>
                     <CardTitle>
-                      <i class="fas fa-info-circle fa-4x"></i> FAQ
+                      <i class="fas fa-info-circle fa-4x"></i> About Donation
                     </CardTitle>
-                    <CardText>
-                      With supporting text below as a natural lead-in to
-                      additional content.
-                    </CardText>
+                    <CardText>General information on donating blood.</CardText>
+                    <CardText>The criterias, the process, ...</CardText>
                   </div>
                 </CardImgOverlay>
               </Card>
@@ -97,6 +97,7 @@ const HOME = () => {
                 <CardImg
                   className="ccardd"
                   width="100%"
+                  height="100%"
                   src="img/blood-donor.jpg"
                   alt="Card image cap"
                 />
