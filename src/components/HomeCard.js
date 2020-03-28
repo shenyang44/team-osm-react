@@ -9,6 +9,7 @@ import {
   CardImg,
   CardImgOverlay
 } from "reactstrap";
+import { NavLink } from "react-bootstrap";
 import { NavLink as Link } from "react-router-dom";
 import "../pages/Home.css";
 
@@ -19,103 +20,100 @@ const HOME = () => {
       <div className="cardcontain">
         <Row>
           <Col sm="6">
-            <Card className="ccard" body>
-              <CardImg
-                className="ccardd"
-                width="100%"
-                src="img/blood-donation.jpg"
-                alt="Card image cap"
-              />
-              <CardImgOverlay className="coverlay">
-                <div>
-                  <CardTitle>
-                    <i class="fas fa-vial fa-4x"></i> Blood
-                  </CardTitle>
-                  <CardText>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </CardText>
-                  <Button tag={Link} to="/blood">
-                    Go somewhere
-                  </Button>
-                </div>
-              </CardImgOverlay>
-            </Card>
+            <a href="/blood">
+              <Card className="ccard" body>
+                <CardImg
+                  className="ccardd"
+                  width="100%"
+                  height="100%"
+                  src="img/blood-cells.jpg"
+                  alt="Card image cap"
+                />
+                <CardImgOverlay className="coverlay">
+                  <div>
+                    <CardTitle>
+                      <i class="fas fa-vial fa-4x"></i>Blood Info
+                    </CardTitle>
+                    <CardText>
+                      General information on blood & their properties
+                    </CardText>
+                  </div>
+                </CardImgOverlay>
+              </Card>
+            </a>
           </Col>
           <Col sm="6">
-            <Card className="ccard" body>
-              <CardImg
-                className="ccardd"
-                width="100%"
-                src="img/hero-hand.jpg"
-                alt="Card image cap"
-              />
-              <CardImgOverlay className="coverlay">
-                <div>
-                  <CardTitle>
-                    <i class="far fa-calendar-alt fa-4x"></i> Event
-                  </CardTitle>
-                  <CardText>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </CardText>
-                  <Button tag={Link} to="/event">
-                    Go somewhere
-                  </Button>
-                </div>
-              </CardImgOverlay>
-            </Card>
+            <a href="/donate">
+              <Card className="ccard" body>
+                <CardImg
+                  className="ccardd"
+                  width="100%"
+                  height="100%"
+                  src="img/hero-hand.jpg"
+                  alt="Card image cap"
+                />
+                <CardImgOverlay className="coverlay">
+                  <div>
+                    <CardTitle>
+                      <i class="far fa-calendar-alt fa-4x"></i> Event
+                    </CardTitle>
+                    <CardText>
+                      With supporting text below as a natural lead-in to
+                      additional content.
+                    </CardText>
+                  </div>
+                </CardImgOverlay>
+              </Card>
+            </a>
           </Col>
         </Row>
         <br />
         <Row>
           <Col sm="6">
-            <Card className="ccard" body>
-              <CardImg
-                className="ccardd"
-                width="100%"
-                src="img/blood-donor.jpg"
-                alt="Card image cap"
-              />
-              <CardImgOverlay className="coverlay">
-                <div>
-                  <CardTitle>
-                    <i class="fas fa-info-circle fa-4x"></i> FAQ
-                  </CardTitle>
-                  <CardText>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </CardText>
-                  <Button tag={Link} to="/faq">
-                    Go somewhere
-                  </Button>
-                </div>
-              </CardImgOverlay>
-            </Card>
+            <a href="/donate">
+              <Card className="ccard" body>
+                <CardImg
+                  className="ccardd"
+                  width="100%"
+                  height="100%"
+                  src="img/blood-donor.jpg"
+                  alt="Card image cap"
+                />
+                <CardImgOverlay className="coverlay">
+                  <div>
+                    <CardTitle>
+                      <i class="fas fa-info-circle fa-4x"></i> About Donation
+                    </CardTitle>
+                    <CardText>General information on donating blood.</CardText>
+                    <CardText>The criterias, the process, ...</CardText>
+                  </div>
+                </CardImgOverlay>
+              </Card>
+            </a>
           </Col>
           <Col sm="6">
-            <Card className="ccard" body>
-              <CardImg
-                className="ccardd"
-                width="100%"
-                src="img/blood-donor.jpg"
-                alt="Card image cap"
-              />
-              <CardImgOverlay className="coverlay">
-                <div>
-                  <CardTitle>
-                    <i class="fas fa-search-location fa-4x"></i> Locater
-                  </CardTitle>
-                  <CardText>
-                    With supporting text below as a natural lead-in to
-                    additional content.
-                  </CardText>
-                  <Button tag={Link} to="/SearchForm">
-                    Go somewhere
-                  </Button>
-                </div>
-              </CardImgOverlay>
-            </Card>
+            <a href="SearchForm">
+              <Card className="ccard" body>
+                <CardImg
+                  className="ccardd"
+                  width="100%"
+                  height="100%"
+                  src="img/blood-donor.jpg"
+                  alt="Card image cap"
+                />
+                <CardImgOverlay className="coverlay">
+                  <div>
+                    <CardTitle>
+                      <i class="fas fa-search-location fa-4x"></i> Locater
+                    </CardTitle>
+                    <CardText>
+                      With supporting text below as a natural lead-in to
+                      additional content.
+                    </CardText>
+                  </div>
+                </CardImgOverlay>
+              </Card>
+            </a>
           </Col>
         </Row>
       </div>

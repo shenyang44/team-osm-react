@@ -24,19 +24,9 @@ const NAVBAR = props => {
       variants={pageTransit}
     >
       <Navbar expand="lg">
-        <NavbarBrand href="/">Blardy</NavbarBrand>
+        <NavbarBrand href="/">Bloodi</NavbarBrand>
         <Navbar.Toggle className="navtog" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          {/* <Form>
-            <NavLink className="navtabs" href="/faq">
-              FAQ
-            </NavLink> temporary comment it out
-          </Form> */}
-          <Form>
-            <NavLink className="navtabs" href="/faq">
-              FAQ
-            </NavLink>
-          </Form>
           <Form>
             <NavLink className="navtabs" href="/blood">
               About Blood
