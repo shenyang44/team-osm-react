@@ -28,38 +28,38 @@ const NAVBAR = props => {
         <Navbar.Toggle className="navtog" aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Form>
-            <NavLink className="navtabs" href="/blood">
+            <NavLink className="btn" href="/blood">
               About Blood
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/donate">
+            <NavLink className="btn" href="/donate">
               About Donations
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/plans">
+            <NavLink className="btn" href="/plans">
               In Progress
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/profile">
+            <NavLink className="btn" href="/profile">
               Profile
             </NavLink>
           </Form>
           <Form>
             {props.loggedIn ? (
-              <NavLink className="navtabs" href="" onClick={props.logout}>
+              <NavLink className="btn" href="" onClick={props.logout}>
                 Logout
               </NavLink>
             ) : (
-              <NavLink className="navtabs" href="/login">
+              <NavLink className="btn" href="/login">
                 Get Started
               </NavLink>
             )}
           </Form>
           <Form>
-            <NavLink className="navtabs" href="/contact">
+            <NavLink className="btn" href="/contact">
               Contact Us
             </NavLink>
           </Form>
