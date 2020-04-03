@@ -21,9 +21,7 @@ const Events = () => {
     return (
         <div>
             Please halp
-            
             {events.map(event => (
-                
                 <div>
                     =======
                     <br>
