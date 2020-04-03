@@ -38,8 +38,8 @@ const NAVBAR = props => {
             </NavLink>
           </Form>
           <Form>
-            <NavLink className="btn" href="/plans">
-              In Progress
+            <NavLink className="btn" href="/events">
+              Events
             </NavLink>
           </Form>
           <Form>
@@ -53,10 +53,10 @@ const NAVBAR = props => {
                 Logout
               </NavLink>
             ) : (
-              <NavLink className="btn" href="/login">
-                Get Started
-              </NavLink>
-            )}
+                <NavLink className="btn" href="/login">
+                  Get Started
+                </NavLink>
+              )}
           </Form>
           <Form>
             <NavLink className="btn" href="/contact">

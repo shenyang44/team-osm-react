@@ -14,6 +14,7 @@ import Profile from "./pages/ProfilePage";
 import Blood from "./components/blood";
 import Donate from "./components/donate";
 import Contact from "./components/contact";
+import Events from './pages/Events';
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -151,18 +152,18 @@ function App() {
               {loggedIn ? (
                 <Redirect to="/profile" />
               ) : (
-                <Authorization
-                  usernameValid={usernameValid}
-                  checkUsername={checkUsername}
-                  password={password}
-                  address={address}
-                  username={username}
-                  email={email}
-                  confirmPassword={confirmPassword}
-                  handleSignUp={handleSignUp}
-                  handleChange={handleChange}
-                />
-              )}
+                  <Authorization
+                    usernameValid={usernameValid}
+                    checkUsername={checkUsername}
+                    password={password}
+                    address={address}
+                    username={username}
+                    email={email}
+                    confirmPassword={confirmPassword}
+                    handleSignUp={handleSignUp}
+                    handleChange={handleChange}
+                  />
+                )}
             </Route>
           </Switch>
         </div>
@@ -187,6 +188,9 @@ function App() {
         </Route>
         <Route path="/donate">
           <Donate />
+        </Route>
+        <Route exact path='/events'>
+          <Events />
         </Route>
       </AnimatePresence>
     </div>
