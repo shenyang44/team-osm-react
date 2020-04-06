@@ -19,22 +19,22 @@ const Events = () => {
     }, []);
 
     return (
-        <div>
-            Please halp
-            {events.map(event => (
-                <div>
-                    =======
-                    <br>
-                    </br>
-                    {event.date}
-                    <p>
-                        {event.location}
-                    </p>
-                    <p>
-                        {event.description}
-                    </p>
-                </div>
-            ))}
+        <div class='container'>
+            <div class="row row-cols-1 row-cols-md-2">
+                {events.map(event => (
+                    <div class="col mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">{event.event_name}</h5>
+                                <p class="card-text">{event.description} <br></br>@<br></br> {event.location}</p>
+                                <p>
+                                    Occuring on: {event.date}, {event.time}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     )
 }
