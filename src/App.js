@@ -13,7 +13,7 @@ import Ericdraft from ".//components/ericdrafts";
 import Profile from "./pages/ProfilePage";
 import Blood from "./components/blood";
 import Donate from "./components/donate";
-import Contact from "./components/contact";
+import Contact from "./pages/contact"
 import Events from './pages/Events';
 
 function App() {
@@ -132,6 +132,7 @@ function App() {
         });
     }
   }, [emailInput]);
+
   //Logout function
   function logout() {
     localStorage.removeItem("jwt");
