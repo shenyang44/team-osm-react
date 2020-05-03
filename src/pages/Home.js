@@ -1,15 +1,14 @@
 import React from "react";
-import "./Home.css";
 import { motion } from "framer-motion";
-import HOME from "../components/HomeCard";
+import HOME2 from "../components/Homecard2";
 
 const pageTransit = {
   in: {
-    opacity: 1
+    opacity: 1,
   },
   out: {
-    opacity: 0
-  }
+    opacity: 0,
+  },
 };
 
 const Home = () => {
@@ -22,7 +21,7 @@ const Home = () => {
         variants={pageTransit}
         className="iconss"
       >
-        <HOME />
+        <HOME2 />
       </motion.div>
     </div>
   );
