@@ -11,10 +11,12 @@ import Example from ".//components/carousel";
 import Profile from "./pages/ProfilePage";
 import Blood from "./components/blood";
 import Donate from "./components/donate";
+
 import Contact from "./components/contact";
 import Events from "./pages/Events";
 import HOME2 from "./components/Homecard2";
 // import NAVBAR2 from "./components/navbar2";
+
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -132,6 +134,7 @@ function App() {
         });
     }
   }, [emailInput]);
+
   //Logout function
   function logout() {
     localStorage.removeItem("jwt");

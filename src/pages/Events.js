@@ -22,7 +22,7 @@ const Events = () => {
         <div class='container'>
             <div class="row row-cols-1 row-cols-md-2">
                 {events.map(event => (
-                    <div class="col mb-4">
+                    <div class="col mb-2 mt-2">
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">{event.event_name}</h5>
