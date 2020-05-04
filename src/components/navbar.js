@@ -11,6 +11,7 @@ const NAVBAR = (props) => {
           <Nav.Link href="/blood">About Blood</Nav.Link>
           <Nav.Link href="/donate">FAQ</Nav.Link>
           <Nav.Link href="/events">Events</Nav.Link>
+          <Nav.Link href="/map">Locate</Nav.Link>
           <Nav.Link href="/profile">Profile</Nav.Link>
         </Nav>
         <Nav>
