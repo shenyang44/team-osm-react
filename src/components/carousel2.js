@@ -1,16 +1,28 @@
 import React from "react";
 import styled from "styled-components";
 import { Carousel } from "react-bootstrap";
+import banner from "../img/bloodbanner.jpg";
 
 const CarouselWrapper = styled.div`
   /* bottom: 0; */
-  position: absolute;
-  margin: 1rem;
+  //   position: absolute;
+  margin: auto;
   max-height: 100px;
-  max-width: 900px;
+  max-width: 800px;
   .carousel-control.left,
   .carousel-control.right {
     background: none;
+  }
+  .carousel-indicators {
+    display: none;
+  }
+  .carousel-inner > .item {
+    position: relative;
+    display: none;
+    -webkit-transition: 0.1s ease-in-out left;
+    -moz-transition: 0.1s ease-in-out left;
+    -o-transition: 0.1s ease-in-out left;
+    transition: 0.1s ease-in-out left;
   }
   .img-responsive,
   .thumbnail > img,
@@ -18,8 +30,11 @@ const CarouselWrapper = styled.div`
   .carousel-inner > .item > img,
   .carousel-inner > .item > a > img {
     display: block;
-    max-width: 100%;
-    max-height: 200px;
+
+    max-height: 100px;
+  }
+  .carousel-caption {
+    bottom: 0;
   }
 `;
 
@@ -29,21 +44,21 @@ function Carousell() {
       <CarouselWrapper>
         <Carousel>
           <Carousel.Item>
-            <img width={900} height={250} alt="500x500" src="/carousel.png" />
+            <img src={banner} alt="500x500" />
             <Carousel.Caption>
               <h3>First slide label</h3>
               <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img width={900} height={250} alt="900x500" src="/carousel.png" />
+            <img src={banner} alt="900x500" />
             <Carousel.Caption>
               <h3>Second slide label</h3>
               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
-            <img width={900} height={250} alt="900x500" src="/carousel.png" />
+            <img src={banner} alt="900x500" />
             <Carousel.Caption>
               <h3>Third slide label</h3>
               <p>

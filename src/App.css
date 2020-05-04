@@ -2,3 +2,7 @@
   display: flex;
   justify-content: center;
 }
+
+#contact-container{
+  padding-top: 2em;
+}

@@ -4,17 +4,17 @@ import { Route, Switch, Redirect } from "react-router-dom";
 import NAVBAR from "./components/navbar";
 import Authorization from "./pages/Authorization";
 import Home from "./pages/Home";
-import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import { AnimatePresence, motion } from "framer-motion";
 import Example from ".//components/carousel";
-import Ericdraft from ".//components/ericdrafts";
 import Profile from "./pages/ProfilePage";
 import Blood from "./components/blood";
 import Donate from "./components/donate";
-import Contact from "./components/contact";
+import Contact from "./pages/contact";
 import Events from "./pages/Events";
+import HOME2 from "./components/Homecard2";
+// import NAVBAR2 from "./components/navbar2";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -132,6 +132,7 @@ function App() {
         });
     }
   }, [emailInput]);
+
   //Logout function
   function logout() {
     localStorage.removeItem("jwt");
@@ -142,7 +143,6 @@ function App() {
     <div className="App">
       <AnimatePresence>
         <NAVBAR loggedIn={loggedIn} logout={logout} />
-        {/* <Example /> */}
         <Route exact path="/">
           <Home />
         </Route>
@@ -173,12 +173,6 @@ function App() {
         <Route path="/SearchForm">
           <SearchForm />
         </Route>
-        <Route path="/anotherfaq">
-          <FAQ />
-        </Route>
-        <Route path="/faq">
-          <Ericdraft />
-        </Route>
         <Route path="/contact">
           <Contact />
         </Route>
@@ -191,6 +185,9 @@ function App() {
         </Route>
         <Route exact path="/events">
           <Events />
+        </Route>
+        <Route exact path="/home2">
+          <HOME2 />
         </Route>
       </AnimatePresence>
     </div>

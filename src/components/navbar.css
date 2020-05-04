@@ -1,4 +1,4 @@
-.navtabs:hover {
+/* .navtabs:hover {
   border-radius: 30px;
   color: white;
   background-color: rgb(240, 58, 58);
@@ -10,10 +10,8 @@
   border-radius: 30px;
   background: none;
   color: rgb(174, 4, 4);
-  /* font-weight: bold; */
   position: relative;
   transition: color 0.25s ease;
-  /* border: 3px solid white; */
 }
 
 .btn:hover {
@@ -36,4 +34,4 @@
 
 .btn:hover::after {
   width: 100%;
-}
+} */
