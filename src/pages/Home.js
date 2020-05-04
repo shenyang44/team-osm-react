@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import HOME2 from "../components/Homecard2";
+import Carousell from "../components/carousel2";
 
 const pageTransit = {
   in: {
@@ -22,6 +23,7 @@ const Home = () => {
         className="iconss"
       >
         <HOME2 />
+        <Carousell />
       </motion.div>
     </div>
   );

@@ -1,5 +1,5 @@
 .home {
-  height: 60vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,23 +38,23 @@
 }
 
 #btn-1 {
-  background-image: url(/img/blood-cells.jpg);
+  background-image: url(../img/blood-cells.jpg);
 }
 
 #btn-2 {
-  background-image: url(/img/hero-hand.jpg);
+  background-image: url(../img/hero-hand.jpg);
 }
 
 #btn-3 {
-  background-image: url(/img/blood-donor.jpg);
+  background-image: url(../img/blood-donor.jpg);
 }
 
 #btn-4 {
-  background-image: url(/img/blood-donor.jpg);
+  background-image: url(../img/blood-donor.jpg);
 }
 /*/////////////////// RESPONSIVE // MOBILE /////////////////////////*/
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1000px) {
   .home {
     flex-direction: column;
     height: 70vh;
