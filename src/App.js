@@ -8,13 +8,13 @@ import FAQ from "./pages/faq";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import { AnimatePresence, motion } from "framer-motion";
-import Example from ".//components/Start";
+import Example from ".//components/carousel";
 import Ericdraft from ".//components/ericdrafts";
 import Profile from "./pages/ProfilePage";
 import Blood from "./components/blood";
 import Donate from "./components/donate";
 import Contact from "./components/contact";
-import Events from './pages/Events';
+import Events from "./pages/Events";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -95,16 +95,16 @@ function App() {
           password: passwordInput,
           number: number,
           address: addressInput,
-          bloodType: bloodTypeInput
-        }
+          bloodType: bloodTypeInput,
+        },
       })
-        .then(response => {
+        .then((response) => {
           console.log(response);
           localStorage.setItem("jwt", response.data.access_token);
           successCallback();
           setLoggedIn(localStorage.getItem("jwt") !== null);
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(error);
         });
     }
@@ -118,16 +118,16 @@ function App() {
         url: "https://team-osm.herokuapp.com/api/v1/users/login",
         data: {
           email: emailInput,
-          password: passwordInput
-        }
+          password: passwordInput,
+        },
       })
-        .then(response => {
+        .then((response) => {
           console.log(response);
           localStorage.setItem("jwt", response.data.access_token);
           successCallback();
           setLoggedIn(localStorage.getItem("jwt") !== null);
         })
-        .catch(error => {
+        .catch((error) => {
           console.error(error);
         });
     }
@@ -142,7 +142,7 @@ function App() {
     <div className="App">
       <AnimatePresence>
         <NAVBAR loggedIn={loggedIn} logout={logout} />
-        <Example />
+        {/* <Example /> */}
         <Route exact path="/">
           <Home />
         </Route>
@@ -152,18 +152,18 @@ function App() {
               {loggedIn ? (
                 <Redirect to="/profile" />
               ) : (
-                  <Authorization
-                    usernameValid={usernameValid}
-                    checkUsername={checkUsername}
-                    password={password}
-                    address={address}
-                    username={username}
-                    email={email}
-                    confirmPassword={confirmPassword}
-                    handleSignUp={handleSignUp}
-                    handleChange={handleChange}
-                  />
-                )}
+                <Authorization
+                  usernameValid={usernameValid}
+                  checkUsername={checkUsername}
+                  password={password}
+                  address={address}
+                  username={username}
+                  email={email}
+                  confirmPassword={confirmPassword}
+                  handleSignUp={handleSignUp}
+                  handleChange={handleChange}
+                />
+              )}
             </Route>
           </Switch>
         </div>
@@ -189,7 +189,7 @@ function App() {
         <Route path="/donate">
           <Donate />
         </Route>
-        <Route exact path='/events'>
+        <Route exact path="/events">
           <Events />
         </Route>
       </AnimatePresence>

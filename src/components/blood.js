@@ -5,7 +5,6 @@ import {
   CardBody,
   Card,
   CardText,
-  CardTitle
 } from "reactstrap";
 import "../components/blood.css";
 
@@ -23,7 +22,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Whole Blood
@@ -71,7 +70,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Red Cells
@@ -115,7 +114,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Prestorage Leukocyte-Reduced Red Blood Cells
@@ -133,7 +132,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Donating Red Blood Cells
@@ -149,7 +148,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Platelets
@@ -201,7 +200,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Donating Platelets
@@ -216,7 +215,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Plasma
@@ -265,7 +264,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Plasma Derivaties
@@ -306,7 +305,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Donating AB Plasma
@@ -322,7 +321,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Cryo
@@ -364,7 +363,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Donating Cryoprecipitated AHF
@@ -376,7 +375,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 White Cells & Granulocytes
@@ -397,7 +396,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Granulocytes
@@ -415,7 +414,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Medium",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 Donating Granulocytes
@@ -440,7 +439,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 The ABO system
@@ -486,7 +485,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 The Rh system
@@ -515,7 +514,7 @@ const Blood = () => {
                 style={{
                   color: "black",
                   fontSize: "Large",
-                  fontWeight: "bold"
+                  fontWeight: "bold",
                 }}
               >
                 How is the blood type identified?
