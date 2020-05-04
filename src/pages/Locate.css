@@ -1,0 +1,31 @@
+.mapBox {
+  width: 80vw;
+  margin: auto;
+}
+
+.tab-list {
+  border-bottom: 1px solid #ccc;
+  padding-left: 0;
+  background-color: red;
+  color: #fff;
+}
+
+.tab-list-item {
+  display: inline-block;
+  list-style: none;
+  margin-bottom: -1px;
+  padding: 0.5rem 0.75rem;
+  width: 15vw;
+  text-align: center;
+}
+
+.tab-list-active {
+  background-color: #fff;
+  color: red;
+  border: solid red;
+  border-width: 1px 1px 0 1px;
+}
+
+.tab-content {
+  background-color: bpink;
+}

@@ -7,14 +7,12 @@ import Home from "./pages/Home";
 import axios from "axios";
 import SearchForm from "./components/searchbar";
 import { AnimatePresence, motion } from "framer-motion";
-import Example from ".//components/carousel";
 import Profile from "./pages/ProfilePage";
 import Blood from "./components/blood";
 import Donate from "./components/donate";
 import Contact from "./pages/contact";
 import Events from "./pages/Events";
-import HOME2 from "./components/Homecard2";
-// import NAVBAR2 from "./components/navbar2";
+import Locate from "./pages/Locate";
 
 function App() {
   const [usernameValid, setUsernameValid] = useState(true);
@@ -186,8 +184,8 @@ function App() {
         <Route exact path="/events">
           <Events />
         </Route>
-        <Route exact path="/home2">
-          <HOME2 />
+        <Route exact path="/map">
+          <Locate />
         </Route>
       </AnimatePresence>
     </div>

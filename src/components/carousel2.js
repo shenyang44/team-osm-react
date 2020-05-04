@@ -33,9 +33,10 @@ const CarouselWrapper = styled.div`
 
     max-height: 100px;
   }
-  .carousel-caption {
-    bottom: 0;
-  }
+  // .carousel-caption {
+  //   padding-top: auto;
+  //   padding-bottom: auto;
+  // }
 `;
 
 function Carousell() {
@@ -46,23 +47,24 @@ function Carousell() {
           <Carousel.Item>
             <img src={banner} alt="500x500" />
             <Carousel.Caption>
-              <h3>First slide label</h3>
-              <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+              <p>Your body makes about 2 million new red cells every second</p>
             </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img src={banner} alt="900x500" />
             <Carousel.Caption>
-              <h3>Second slide label</h3>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img src={banner} alt="900x500" />
-            <Carousel.Caption>
-              <h3>Third slide label</h3>
               <p>
-                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                When you donate blood, you give just under a pint (about 470ml)
+                of blood.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img src={banner} alt="900x500" />
+            <Carousel.Caption>
+              <p>
+                Donating blood burns calories. But it won’t become a weight loss
+                fad any time soon =(
               </p>
             </Carousel.Caption>
           </Carousel.Item>

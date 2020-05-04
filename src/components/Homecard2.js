@@ -39,7 +39,7 @@ const HOME2 = () => {
           natural lead-in to additional content.
         </p>
       </a>
-      <a className="home-btn" id="btn-4" href="/">
+      <a className="home-btn" id="btn-4" href="/map">
         <div className="home-btn-title">
           <i class="fas fa-search-location fa-4x"></i>
           <h5>Locater</h5>
