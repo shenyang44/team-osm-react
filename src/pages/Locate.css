@@ -4,7 +4,6 @@
 }
 
 .tab-list {
-  border-bottom: 1px solid #ccc;
   padding-left: 0;
   background-color: red;
   color: #fff;
@@ -28,4 +27,20 @@
 
 .tab-content {
   background-color: bpink;
+}
+
+/*/////////////////// RESPONSIVE // MOBILE /////////////////////////*/
+
+@media only screen and (max-width: 1000px) {
+  .mapBox {
+    width: 100%;
+  }
+
+  .tab-list-item {
+    width: 33vw;
+  }
+
+  .tab-list-active {
+    border: none;
+  }
 }
